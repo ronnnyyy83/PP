@@ -1,0 +1,43 @@
+﻿<div class="settings">
+    <div class="settings-content">
+        <div class="clearfix">
+            <div class="locations-container">
+                <div class="locations-title">
+                    <span>Locations</span>                   
+                </div>
+                <div class="locations-list">                    
+                    <ul>
+                        <li><span></span>Powerplug</li>
+                    </ul>                    
+                </div>
+            </div>
+            <div class="locations-details-container">
+                <div class="location-input-container">
+                    <div class="input-label" ng-model="vm.location.location">Name</div>
+                    <div class="input-text"><input type="text"  ng-model="vm.location.location"/></div>
+                </div>
+                <div class="location-input-container">
+                    <div class="input-label">Description</div>
+                    <div class="input-text"><textarea  ng-model="vm.location.locationDesc"></textarea></div>
+                </div>
+                <div class="location-input-container">
+                    <div class="input-text-short">
+                        <input type="text" readonly value="{{vm.getTodayRate()}}" /><input type="button" value="Change Power Rate" class="btn-save-green" ng-click="vm.showLocationPowerRateDialog()"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

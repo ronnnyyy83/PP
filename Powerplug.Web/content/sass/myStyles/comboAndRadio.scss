@@ -1,0 +1,238 @@
+$offColor: #f3f3f3;
+$onColor: #8fc73e;
+$textColor: #898989;
+custom-radio-button-type-one {
+    display: block;
+    &:focus {
+        outline: none;
+    }
+    div {
+        outline: none;
+    }
+}
+custom-radio-button-type-one input[type="radio"] {
+    display: none;
+}
+custom-radio-button-type-one input[type="radio"] + label {
+    color: $textColor;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+custom-radio-button-type-one input[type="radio"] + label span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+custom-radio-button-type-one input[type="radio"] + label > span:first-child {
+    background-color: $offColor;
+}
+custom-radio-button-type-one input[type="radio"]:checked + label > span:first-child {
+    background-color: $onColor;
+}
+custom-radio-button-type-one input[type="radio"] + label span,
+custom-radio-button-type-one input[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+}
+custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
+    color: #333333 !important;
+    font-weight: 700 !important;
+}
+
+
+input.custom-checkbox-green {
+    & + label {
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    &:checked {
+        & + label {
+            &:before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #d7d7d7;
+            }
+        }
+    }
+    &:not(checked) {
+        position: absolute;
+        opacity: 0;
+        & + label {
+            position: relative;
+            padding: 0 0 0 30px;
+            &:before {
+                content: '\f00c';
+                font-family: 'FontAwesome';
+                font-size: 12px;
+                color: #93c349;
+                position: absolute;
+                top: -10px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #989898;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+// Custom radio button type 2
+input.custom-radio-button-t2[type="radio"] {
+    display: none;
+}
+input.custom-radio-button-t2[type="radio"] + label {
+    color: #898989;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+input.custom-radio-button-t2[type="radio"] + label span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+input.custom-radio-button-t2[type="radio"] + label span span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 2px 2px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+input.custom-radio-button-t2[type="radio"] + label > span {
+    border: 1px solid #dbdbdb;
+}
+input.custom-radio-button-t2[type="radio"] + label span span {
+    background-color: #dbdbdb;
+}
+input.custom-radio-button-t2[type="radio"]:checked + label span span {
+    background-color: #8fc73e;
+}
+input.custom-radio-button-t2[type="radio"] + label span,
+input.custom-radio-button-t2[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+}
+
+
+
+
+.customDropdown {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: -0.182px;
+    > span {
+        line-height: 40px;
+    }
+    > select {
+        height: 40px;
+        width: 150px;
+    }
+}
+.buttonTypeOneAdd {
+    &:before {
+        font-family: 'FontAwesome';
+        font-size: 17px;
+        content: '\f055';
+        color: #8ecc38;
+        margin-right: 1px;
+    }
+}
+.buttonTypeOneRemove {
+    &:before {
+        font-family: 'FontAwesome';
+        font-size: 17px;
+        content: '\f1f8';
+        color: #8ecc38;
+        margin-right: 1px;
+    }
+}
+.disabled-btn.buttonTypeOneRemove {
+   cursor: default;
+     &:before {
+         color: #C4C4C4;
+    }
+}
+.buttonTypeOneEdit {
+    &:before {
+        font-family: 'FontAwesome';
+        font-size: 17px;
+        content: '\f040';
+        color: #8ecc38;
+        margin-right: 1px;
+    }
+}
+.buttonTypeOneRefresh {
+    &:before {
+        font-family: 'FontAwesome';
+        font-size: 17px;
+        content: '\f021';
+        color: #8ecc38;
+        margin-right: 5px;
+    }
+}
+
+
+input.custom-radio-button-type-one {
+    display: block;
+}
+input.custom-radio-button-type-one[type="radio"] {
+    display: none;
+}
+input.custom-radio-button-type-one[type="radio"] + label {
+    color: $textColor;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+input.custom-radio-button-type-one[type="radio"] + label span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
+    background-color: $offColor;
+}
+input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
+    background-color: $onColor;
+}
+input.custom-radio-button-type-one[type="radio"] + label span,
+input.custom-radio-button-type-one[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+}
+input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
+    color: #333333 !important;
+    font-weight: 700 !important;
+}

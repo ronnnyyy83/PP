@@ -1,0 +1,23 @@
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Define Computer Group Members</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="row-padding">
+                <label>Computer Name</label>
+                 <select ng-model="memberTypeId" ng-change="isChange = true" 
+                         ng-options="option.value as option.name for option in memberTypeOptions"></select>
+                <input type="text" ng-model="computerName" ng-change="isChange = true" class="med-input"/>
+            </div>
+            <div class="settings-side-note"> wildcard "*" can be used to include multiple computers</div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="add()">OK</button>
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

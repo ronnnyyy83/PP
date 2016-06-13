@@ -1,0 +1,282 @@
+<div>
+  <div class = "week-view-total row">
+    <div class="week-view-head">
+      <div class="left-span">
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+
+      </div>
+    </div>
+    <div class="week-view-position" >
+     <div >
+      <div>
+        <div class="calendar clear">
+          <div ng-scrollbars ng-scrollbars-config="config" >
+            <div class="left-span clear">
+
+              <div class="numbers">
+                <div class="number" ng-repeat="curTime in timeLine track by $index">
+                  <span ng-show="$index%2==0">{{curTime}}</span>
+                </div>
+              </div>
+
+              <div class="lines"  id="time-lines">
+                <div ng-class="{line1:($index%2==0),line2:($index%2!=0)}"    ng-repeat="curTime in timeLine track by $index"></div>
+              </div>
+            </div>
+            <div  class="right-span clear">
+
+              <div class="day-coll">
+
+              <div class = "back-block-blure"></div>
+
+                <div class="day" daypos="sun">
+                  <div class="day-wrape" daypos="sun">
+                    <div ng-repeat="workTime in workTimePos.sun track by $index" class="work-time" day="sun" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.sun track by $index" class="event-time" day="sun" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('sun',$index)">{{eventsTimePos['sun'][$index].type}}</div>
+                        <div class="popover-block popover-up" tabindex="1"  day="sun" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+                <div class="day" daypos="mon">
+                  <div class="day-wrape" daypos="mon">
+                    <div ng-repeat="workTime in workTimePos.mon track by $index" class="work-time" day="mon" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.mon track by $index" class="event-time" day="mon" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('mon',$index)">{{eventsTimePos['mon'][$index].type}}</div>
+                        <div class="popover-block popover-up"  tabindex="1"  day="mon" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="day" daypos="tue">
+                  <div class="day-wrape" daypos="tue">
+                    <div ng-repeat="workTime in workTimePos.tue track by $index" class="work-time" day="tue" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.tue track by $index" class="event-time" day="tue" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('tue',$index)">{{eventsTimePos['tue'][$index].type}}</div>
+                        <div class="popover-block popover-up" tabindex="1"   day="tue" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="day" daypos="wed">
+                  <div class="day-wrape" daypos="wed">
+                    <div ng-repeat="workTime in workTimePos.wed track by $index" class="work-time" day="wed" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.wed track by $index" class="event-time" day="wed" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('wed',$index)">{{eventsTimePos['wed'][$index].type}}</div>
+                        <div class="popover-block popover-up"  tabindex="1"  day="wed" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="day" daypos="thu">
+                  <div class="day-wrape" daypos="thu">
+                    <div ng-repeat="workTime in workTimePos.thu track by $index" class="work-time" day="thu" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.thu track by $index" class="event-time" day="thu" num="{{$index}}" ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('thu',$index)">{{eventsTimePos['thu'][$index].type}}</div>
+                        <div class="popover-block popover-up" tabindex="1"   day="thu" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="day" daypos="fri">
+                  <div class="day-wrape" daypos="fri">
+                    <div ng-repeat="workTime in workTimePos.fri track by $index" class="work-time" day="fri" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.fri track by $index" class="event-time" day="fri" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('fri',$index)">{{eventsTimePos['fri'][$index].type}}</div>
+                        <div class="popover-block popover-up" tabindex="1"   day="fri" num="{{$index}}"  ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="day" daypos="sat">
+                  <div class="day-wrape" daypos="sat">
+                    <div ng-repeat="workTime in workTimePos.sat track by $index" class="work-time" day="sat" num="{{$index}}" ng-style="{top:workTime.begin+'px',height:workTime.size+'px', left:0}"><div class="triangle"></div></div>
+
+                    <div ng-repeat="eventTime in eventsTimePos.sat track by $index" class="event-time" day="sat" num="{{$index}}"  ng-style="{top:eventTime.pos+'px', left:0}">
+                      <div class="wrape-relative">
+                        <div class="line" ng-click="popoverViewChange('sat',$index)">{{eventsTimePos['sat'][$index].type}}</div>
+                        <div class="popover-block popover-up" tabindex="1"  day="sat" num="{{$index}}" ng-show="eventTime.viewPopup">
+                          <div class="arrow"></div>
+                          <img ng-show="eventTime.type=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+                          <img ng-show="eventTime.type=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+                          <div class="event-name">{{eventTime.title}}</div>
+                          <div class="event-text">{{eventTime.text}}</div>
+                          <div  class="btndiv btn-edit" >
+                            <img src="/content/images/pen.png">
+                            Edit
+                          </div>
+                          <div  class="btndiv btn-remove" >
+                            <img src="/content/images/trash.png">
+                            Remove
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="lines">
+                <div ng-class="{line1:($index%2==0),line2:($index%2!=0)}" ng-repeat="curTime in timeLine track by $index"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="events" ng-scrollbars ng-scrollbars-config="config">
+
+          <div ng-repeat="event in actions"  class = "event-block" ng-click="actionEdit({data:event.actionKey})">
+            <img ng-show="event.perform=='Wake'" src="/content/images/savingPlans/Overview/Alarm.png" class="event-img">
+            <img ng-show="event.perform=='Restart'" src="/content/images/savingPlans/Overview/Restart.png" class="event-img">
+            <div class="event-name"  ng-show="event.perform=='Wake'">Wake Up</div>
+            <div class="event-name" ng-show="event.perform=='Restart'">Restart</div>
+            <div class="event-text">{{event.scheduleText}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-week-view">
+      <div class="day-limit-left-bord"></div>
+        <div class="day-limit-right ">
+            <div class="day-limit-right-bord ">
+                <span class="title">Resolution</span>
+                <select class="customCombobox" ng-change="timeIntervalChange()" ng-model="timeInterval" ng-options="time as time.label for time in timeIntervalList track by time.value"></select>
+            </div>
+        </div>
+      <div class="day-limit">
+        <div class="day-wrap clear">
+
+          <div class="day" ng-repeat="(key, value) in workTimeLimit">
+            <div class="day-text">
+              <span ng-show="value.view">{{value.begin}}-{{value.end}}</span>
+              <span ng-show="!value.view"> </span>
+            </div>
+          </div>
+         
+          </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="time-lmit-block">
+    <input type="checkbox" id="time-lmit" name="chb1" ng-model="useDefaultWorkHours" class="custom-checkbox-green-type01"/>
+    <label for="time-lmit">
+      <span class = "thick-text">Use default system work time </span>
+      <span class="thin-text">(9am - 6:30pm)</span>
+    </label>
+  </div>
+</div>
+</div>

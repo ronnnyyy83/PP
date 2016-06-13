@@ -1,0 +1,71 @@
+﻿<div class="settings">
+    <div class="settings-content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Owner</td>
+                    <td>Description</td>
+                    <td colspan="2"> <span ng-click="vm.openComputerGroupDialog(-1)" class="buttonTypeOneAdd  action-settings">Add</span> </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="computerGroup in vm.computerGroups" class="computer-group-row" ng-class="{ 'bg-row-selected': $index == vm.selectedGroupIndex }"
+                    data-id="{{computerGroup.compGroupId}}" ng-click="vm.selectComputerGroup($index)">
+                    <td>{{ computerGroup.groupName}}</td>
+                    <td>{{ computerGroup.owner}}</td>
+                    <td>{{ computerGroup.groupDesc}}</td>
+                    <td style="width: 250px;"><span ng-click="vm.openComputerGroupDialog($index)" class="buttonTypeOneEdit  action-settings">Edit</span></td>
+                    <td style="width: 150px;"><span ng-click="vm.removeComputerGroup(computerGroup, $index)" class="buttonTypeOneRemove action-settings">Remove</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <uib-tabset active="active" ng-show="vm.selectedGroupId > 0">
+            <uib-tab index="0" heading="Members">
+                <div class="green-line"> </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td colspan="2">Memeber Definition</td>
+                            <td colspan="2">
+                                <span class="buttonTypeOneAdd action-settings" ng-click="vm.openAddDialog(-1)" style="margin-top:11px;">Add</span>
+                                <select ng-model="vm.popupType" class="action-settings big-select" ng-options="option.value as option.name for option in vm.popupTypeOptions"></select>
+                                <select ng-model="vm.incExc" class="action-settings big-select">
+                                    <option>Include</option>
+                                    <option>Exclude</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="computer in vm.groupMembersHash[vm.selectedGroupId].members">
+                            <td width="20px"> <i class="fa" aria-hidden="true" ng-class="computer.memberIncExc? 'fa-plus': 'fa-minus'"></i></td>
+                            <td>{{vm.getComputerDefinitionText(computer)}} </td>
+                            <td style="width: 450px; "> 
+                                <span ng-if="(computer.memberTypeId > 1) && (computer.memberTypeId < 7)" class="buttonTypeOneEdit action-settings" ng-click="vm.openAddDialog($index)">Edit</span>
+                             </td>
+                            <td style="width:150px;"> <span class="buttonTypeOneRemove action-settings" ng-click="vm.removeComputer(computer, $index)">Remove</span> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+            <uib-tab index="1" heading="Security" style="display:none;">
+                <div style="margin-bottom:100px;"></div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+
+</div>
+<style>
+    div.content-wrapper {
+        background-color: #fff;
+    }
+</style>

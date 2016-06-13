@@ -1,0 +1,73 @@
+﻿<div class="configuration-partial">
+    <div class="configuration-header">Agent</div>
+    <div class="configuration-body">
+        <div class="section">
+            <div class="section-title">Agent Options</div>
+            <div class="section-body">
+                <div class="checkbox-wrapper">
+                    <input id="agent-tray-cb" type="checkbox" class="custom-checkbox-green-type01"
+                           ng-model="vm.agent.displayTrayIcon">
+                    <label for="agent-tray-cb">Display PowerPlug Pro Tray Icon</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="auto-upgrade-agent-cb" type="checkbox" class="custom-checkbox-green-type01"
+                           ng-model="vm.agent.autoUpgrade">
+                    <label for="auto-upgrade-agent-cb"> Automatically Upgrade Agents on Product Upgrades</label>
+                </div>
+                <div>
+                    <label> Support Information URL: <input type="text" ng-model="vm.agent.infoUrl" /></label>
+                </div>
+                <div>
+                    <label>
+                        Agent Display Language:
+                        <select ng-model="vm.agent.uiLocale">
+                            <option ng-repeat="option in vm.language" value="{{option.id}}" label="{{option.name}}"
+                                    ng-selected="vm.agent.uiLocale == option.id">
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label class="fixed-width">
+                        Automatic "Keep Awake":
+                        <input decimals="0" type="number" class="big-arrows small"
+                               natural-number ng-model-options="{allowInvalid:true}"
+                               ng-model="vm.agent.autoKeepAwakeMin" />
+                    </label>
+                    <span>minutes</span>
+
+                </div>
+                <div class="remark">
+                    (for every unattnded wake-up)
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Working Intervals</div>
+            <div class="section-body">
+                <div>
+                    <label class="fixed-width">
+                        Check for updates every
+                        <input natural-number decimals="0" ng-model="vm.agent.chkForUpdateSec" type="number" class="big-arrows small" />
+                    </label>
+                    <span> minutes</span>
+                </div>
+                <div>
+
+                    <label class="fixed-width">
+                        Upload Collected Data every
+                        <input natural-number decimals="0" ng-model="vm.agent.uploadDataIntervalSec" type="number" class="big-arrows small" />
+                    </label>
+                    <span>hours</span>
+                </div>
+                <div>
+                    <label class="fixed-width">
+                        Preform Inventory Scan every
+                        <input natural-number decimals="0" ng-model="vm.agent.hardwareInventoryScanHours" type="number" class="big-arrows small" />
+                    </label>
+                    <span>days</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

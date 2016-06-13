@@ -1,0 +1,111 @@
+my-tree-view {
+  > ul {
+    &:first-child {
+      > li {
+        
+        &:last-child {
+          > span {
+            &::before {
+              position: absolute;
+              left: 15px;
+              top: 2px;
+              content: '\f196';
+              font-family: 'FontAwesome';
+              color: black;
+              margin-right: 10px;
+            }
+            &:nth-child(2) {
+              &::before {
+                position: inherit;
+                content: '\f0c2';
+                font-family: 'FontAwesome';
+                color: black;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+        &:first-child {
+          > span {
+            &:last-child {
+              &::before {
+                content: '\f111';
+                font-family: 'FontAwesome';
+                color: #8cc63f;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  display: block;
+  padding-top: 10px;
+  ul {
+    &:first-child {
+      > li {
+        &:first-child {
+          > span {
+            &:first-child {
+              > span {
+                &:first-child {
+                  border-left: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    list-style-position: outside;
+    display: block;
+    position: relative;
+    > li {
+      font-family: Calibri;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.182px;
+      padding-left: 20px;
+      list-style: none;
+      position: relative;
+      &:last-child {
+        > span {
+          &:first-child {
+            > span {
+              &:last-child {
+                border-left: none;
+              }
+            }
+          }
+        }
+      }
+      > span {
+        &:first-child {
+          height: 16px;
+          width: 15px;
+          display: block;
+          float: left;
+          > span {
+            display: block;
+            height: 50%;
+            &:first-child {
+              border-left: 1px dotted black;
+              border-bottom: 1px dotted black;
+            }
+            &:last-child {
+              border-left: 1px dotted black;
+            }
+          }
+        }
+        &:last-child {
+          &::before {
+
+          }
+        }
+      }
+    }
+  }
+}

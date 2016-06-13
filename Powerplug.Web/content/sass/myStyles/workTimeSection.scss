@@ -1,0 +1,431 @@
+.savingPlanWorkTime {
+    padding: 40px;
+    background-color: #f2f2f2;
+    margin: 0 -49px;
+    .animate-hide {
+      transition: all linear 1s;
+      opacity: 1;
+    }
+    .animate-hide.ng-hide {
+      opacity: 0;    
+    }
+    > div[active="active"] {
+        > ul {
+            border-bottom: none;
+            > li {
+                width: 165px;
+                text-align: center;
+                &:not(:first-child) {
+                    margin-left: 5px;
+                }
+            }
+        }
+        > div.tab-content {
+            > div.tab-pane {
+                &:first-child,
+                &:nth-child(2) {
+                    //Work and non work time panes
+                    > div.container-fluid {
+                        background-color: #f2f2f2;
+                        > div.flexo {
+                          background-color: #ffffff;
+                          margin: 0px -15px;
+                          padding: 10px 0px;
+                          display: flex;
+                          font-family: Calibri;
+                          color: rgba(26, 26, 26, 0.7);
+                          font-size: 14px;
+                          font-weight: 300;
+                          letter-spacing: -0.182px;
+                          > div {
+                            > label {
+                              margin-bottom: 0px;
+                                > span {
+                                    margin-right: 13px;
+                                }
+                                > select {
+                                    background-color: #ffffff;
+                                    border-color: #d9d9d9;
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14px;
+                                    font-weight: 300;
+                                    letter-spacing: -0.182px;
+                                    width: 125px;
+                                    &:focus {
+                                      outline: none;
+                                    }
+                                    &:disabled{
+                                       background-color: #f6f6f6;
+                                       color:#6C8050;
+                                    }
+                                }
+                            }
+                            &:first-child,
+                            &:nth-child(2),
+                            &:nth-child(3) {
+                              margin-left: 15px;
+                            }
+                            &:last-child {
+                              flex-grow: 1;
+                              text-align: right;
+                              > div {
+                                  display: flex;
+                                  position: relative;
+                                  float: right;
+                                  margin-right: 10px;
+                                  > a {
+                                      height: 39px;
+                                      width: 40px;
+                                      display: inline-block;
+                                      text-align: center;
+                                      line-height: 39px;
+                                      background-color: #238fb5;
+                                      color: #ffffff;
+                                  }
+                                  > span {
+                                      height: 39px;
+                                      width: 85px;
+                                      background-color: #29abe2;
+                                      display: inline-block;
+                                      line-height: 39px;
+                                      color: #ffffff;
+                                      padding-left: 15px;
+                                      font-family: Calibri;
+                                      font-size: 15px;
+                                      font-weight: 700;
+                                      text-align: left;
+                                  }
+                                  > ul {
+                                      position: absolute;
+                                      width: 160px;
+                                  }
+                              }
+                            }
+                          }
+                        }
+                        > div.row {
+                            font-family: Calibri;
+                            color: rgba(26, 26, 26, 0.7);
+                            font-size: 14px;
+                            font-weight: 300;
+                            letter-spacing: -0.182px;
+                            &:last-child {
+                                //Down part of work time pane
+                                background-color: #ffffff;
+                                margin-top: 5px;
+                                padding-top: 20px;
+                                padding-bottom: 20px;
+                                > div {
+                                    //Inner tab control
+                                    position: relative;
+                                    > ul {
+                                        width: 241px;
+                                        margin-left: 24px;
+                                        > li {
+                                            display: block;
+                                            float: none;
+                                            text-align: center;
+                                            > a {
+                                                border-bottom-color: #f7f7f7;
+                                                background-color: #f7f7f7;
+                                                font-family: Calibri;
+                                                color: #cccccc;
+                                                font-size: 16.85px;
+                                                font-weight: 300;
+                                            }
+                                            &.active {
+                                                > a {
+                                                    border-bottom-color: #88b73d;
+                                                    background-color: #a3d165;
+                                                    font-family: Calibri;
+                                                    color: #ffffff;
+                                                    font-size: 16.85px;
+                                                    font-weight: 700;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    > div.tab-content {
+                                        width: calc(100% - 289px);
+                                        position: absolute;
+                                        top: 0;
+                                        left: 289px;
+                                        padding: 0;
+                                        > div.tab-pane {
+                                            padding-left: 70px;
+                                            &:first-child {
+                                                > options-tab {
+                                                    > div.container-fluid {
+                                                        > div.row {
+                                                            > div.col-xs-12 {
+                                                                line-height: 40px;
+                                                                height: 40px;
+                                                            }
+                                                            input.custom-checkbox-green-type01 {
+                                                                display: none;
+                                                                &+label {
+                                                                    margin: 0;
+                                                                    font-family: Calibri;
+                                                                    color: rgba(26, 26, 26, 0.7);
+                                                                    font-size: 13px;
+                                                                    font-weight: 300;
+                                                                    letter-spacing: -0.169px;
+                                                                    line-height: 14px;
+                                                                    text-align: left;
+                                                                }
+                                                                &+label::before {
+                                                                    position: absolute;
+                                                                    content: '';
+                                                                    height: 24px;
+                                                                    width: 24px;
+                                                                    left: -15px;
+                                                                    top: 7px;
+                                                                    border: 1px solid #d9d9d9;
+                                                                }
+                                                                &:checked + label::before {
+                                                                    position: absolute;
+                                                                    content: '\f00c';
+                                                                    font-family: 'FontAwesome';
+                                                                    color: #a3d165;
+                                                                    height: 24px;
+                                                                    width: 24px;
+                                                                    left: -15px;
+                                                                    top: 7px;
+                                                                    border: 1px solid #d9d9d9;
+                                                                    text-align: center;
+                                                                    line-height: 24px;
+                                                                }
+                                                            }
+                                                            &:first-child {}
+                                                            &:nth-child(2) {}
+                                                            &:last-child {
+                                                                button {
+                                                                    outline: none;
+                                                                    background-color: #29abe2;
+                                                                    border: none;
+                                                                    height: 29px;
+                                                                    line-height: 29px;
+                                                                    width: 80px;
+                                                                    font-family: Calibri;
+                                                                    color: #ffffff;
+                                                                    font-size: 13px;
+                                                                    font-weight: 700;
+                                                                    margin-left: 20px;
+                                                                    &:disabled{ 
+                                                                        background-color:#ececec;
+                                                                        color: grey;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:nth-child(2) {
+                                                > application-tab {
+                                                    > div.container-fluid {
+                                                        >.row {
+                                                            > div{
+                                                            &:first-child {
+                                                                font-family: Calibri;
+                                                                color: rgba(26, 26, 26, 0.7);
+                                                                font-size: 16px;
+                                                                font-weight: 400;
+                                                                letter-spacing: -0.208px;
+                                                                text-align: left;
+                                                            }
+                                                            &:not(:first-child) {
+                                                                float: right;
+                                                                font-family: Calibri;
+                                                                color: rgba(26, 26, 26, 0.7);
+                                                                font-size: 12.66px;
+                                                                font-weight: 700;
+                                                                text-align: right;
+                                                                &:focus {
+                                                                  outline: none;
+                                                                }
+                                                            }
+                                                            }
+                                                        }
+                                                        > div {
+                                                            > div.container-fluid {
+                                                                > div.row {
+                                                                    &:first-child {
+                                                                        padding-top: 20px;
+                                                                        padding-bottom: 5px;
+                                                                        font-family: Calibri;
+                                                                        color: rgba(26, 26, 26, 0.7);
+                                                                        font-size: 14px;
+                                                                        font-weight: 700;
+                                                                        letter-spacing: -0.182px;
+                                                                        border-top: 3px solid #8cc63f;
+                                                                        border-bottom: 1px solid #bcbcbc;
+                                                                    }
+                                                                    &:last-child {
+                                                                        height: 130px;
+                                                                        overflow-y: auto;
+                                                                        > ul {
+                                                                            > li {
+                                                                                list-style: none;
+                                                                                > div {
+                                                                                    height: 50px;
+                                                                                    line-height: 50px;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:nth-child(3) {
+                                                > computers-tab {
+                                                    > div.container-fluid {
+                                                        > span {
+                                                            &:first-child {
+                                                                font-family: Calibri;
+                                                                color: rgba(26, 26, 26, 0.7);
+                                                                font-size: 16px;
+                                                                font-weight: 400;
+                                                                letter-spacing: -0.208px;
+                                                                text-align: left;
+                                                            }
+                                                            &:not(:first-child) {
+                                                                float: right;
+                                                                margin-left: 22px;
+                                                                font-family: Calibri;
+                                                                color: rgba(26, 26, 26, 0.7);
+                                                                font-size: 12.66px;
+                                                                font-weight: 700;
+                                                                text-align: left;
+                                                                &:focus {
+                                                                  outline: none;
+                                                                }
+                                                            }
+                                                        }
+                                                        > div {
+                                                            > div.container-fluid {
+                                                                > div.row {
+                                                                    &:first-child {
+                                                                        padding-top: 20px;
+                                                                        padding-bottom: 5px;
+                                                                        font-family: Calibri;
+                                                                        color: rgba(26, 26, 26, 0.7);
+                                                                        font-size: 14px;
+                                                                        font-weight: 700;
+                                                                        letter-spacing: -0.182px;
+                                                                        border-top: 3px solid #8cc63f;
+                                                                        border-bottom: 1px solid #bcbcbc;
+                                                                    }
+                                                                    &:last-child {
+                                                                        height: 130px;
+                                                                        overflow-y: auto;
+                                                                        > ul {
+                                                                            > li {
+                                                                                list-style: none;
+                                                                                > div {
+                                                                                    height: 50px;
+                                                                                    line-height: 50px;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:last-child {
+                                                > performance-metrics-tab {
+                                                    > div.container-fluid {
+                                                        > span {
+                                                            &:first-child {
+                                                                font-family: Calibri;
+                                                                color: rgba(26, 26, 26, 0.7);
+                                                                font-size: 16px;
+                                                                font-weight: 400;
+                                                                letter-spacing: -0.208px;
+                                                                text-align: left;
+                                                            }
+                                                        }
+                                                        > div {
+                                                            > div.container-fluid {
+                                                                > div.row {
+                                                                    input{
+                                                                        padding-left:5px;
+                                                                    }
+                                                                    &:first-child {
+                                                                        border-top: 3px solid #8cc63f;
+                                                                        padding-top:20px;
+                                                                    }
+                                                                    > div.col-xs-12 {
+                                                                        height: 55px;
+                                                                        > input {
+                                                                            &:nth-child(3) {
+                                                                                height: 25px;
+                                                                                width: 100px;
+                                                                                margin-left: 22px;
+                                                                                border: 1px solid #ececec;
+                                                                            }
+                                                                            &:focus {
+                                                                                outline: none;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                input.custom-checkbox-green-type01 {
+                                                                    display: none;
+                                                                    &+label {
+                                                                        margin: 0 0 0 50px;
+                                                                        font-family: Calibri;
+                                                                        color: rgba(26, 26, 26, 0.7);
+                                                                        font-size: 13px;
+                                                                        font-weight: 300;
+                                                                        letter-spacing: -0.169px;
+                                                                        line-height: 14px;
+                                                                        text-align: left;
+                                                                        position: relative;
+                                                                    }
+                                                                    &+label::before {
+                                                                        position: absolute;
+                                                                        content: '';
+                                                                        height: 24px;
+                                                                        width: 24px;
+                                                                        left: -35px;
+                                                                        top: -6px;
+                                                                        border: 1px solid #d9d9d9;
+                                                                    }
+                                                                    &:checked + label::before {
+                                                                        position: absolute;
+                                                                        content: '\f00c';
+                                                                        font-family: 'FontAwesome';
+                                                                        color: #a3d165;
+                                                                        height: 24px;
+                                                                        width: 24px;
+                                                                        left: -35px;
+                                                                        top: -6px;
+                                                                        border: 1px solid #d9d9d9;
+                                                                        text-align: center;
+                                                                        line-height: 24px;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

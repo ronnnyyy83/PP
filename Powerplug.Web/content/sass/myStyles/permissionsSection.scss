@@ -1,0 +1,109 @@
+div.permissionsWrapper {
+    background-color: #ffffff;
+    margin: 0 -50px 23px;
+    padding: 0 50px;
+    > div {
+        &:first-child {
+            display: flex;
+            justify-content: space-between;
+            > span {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 15px;
+                font-weight: 700;
+                letter-spacing: -0.195px;
+            }
+            > div {
+                > span {
+                    margin-left: 10px;
+                    &:first-child {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 15px;
+                        font-weight: 300;
+                        letter-spacing: -0.195px;
+                    }
+                    &:nth-child(2) {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 15px;
+                        font-weight: 700;
+                        letter-spacing: -0.195px;
+                    }
+                    &:last-child {
+                        font-family: Calibri;
+                        color: #8cc63f;
+                        font-size: 15px;
+                        font-weight: 700;
+                        letter-spacing: -0.195px;
+                    }
+                }
+            }
+        }
+        &.tableWrapper {
+            background-color: #f8f8f8;
+            padding: 23px 16px;
+            min-height: 170px;
+            > table {
+                width: 100%;
+                > thead {
+                    border-bottom: 1px solid #b3b3b3;
+                    font-family: Calibri;
+                    color: rgba(26, 26, 26, 0.7);
+                    font-size: 14px;
+                    font-weight: 700;
+                    letter-spacing: -0.182px;
+                    > tr {
+                        > td {
+                            &:last-child {
+                                position: relative;
+                                > span {
+                                    &:last-child {
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        font-family: Calibri;
+                                        color: rgba(26, 26, 26, 0.7);
+                                        font-size: 18px;
+                                        font-weight: 700;
+                                        &:before {
+                                            font-size: 21px;
+                                            margin-right: 9px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                > tbody {
+                    > tr {
+                        height: 40px;
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        > td {
+                            &:last-child {
+                                position: relative;
+                                > span {
+                                    &:last-child {
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 50%;
+                                        transform: translate(0%, 50%);
+                                        cursor: pointer;
+                                        > i {
+                                            color: #8cc63f;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

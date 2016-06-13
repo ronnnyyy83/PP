@@ -1,0 +1,224 @@
+.eventsWrapper {
+    background-color: #ffffff;
+    margin: 0 -50px;
+    padding: 25px 50px 1px;
+    #events-scripts{
+      overflow-y: auto;
+      height: 115px;
+      overflow-x: hidden;
+    }
+    > div {
+        border-top: 5px solid #8cc63f;
+        height: 325px;
+        > div {
+            float: left;
+            height: 100%;
+            &:first-child {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                width: 40%;
+                > div {
+                    margin-top: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    &:first-child {
+                        > div {
+                            &:first-child {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 5px;
+                            }
+                            &:last-child {
+                                ul {
+                                    margin: 0;
+                                    padding: 0;
+                                    li {
+                                        cursor: auto;
+                                        list-style: none;
+                                        height: 40px;
+                                        &:focus {
+                                            outline: none;
+                                        }
+                                        &:first-child {
+                                            padding-top: 8px;
+                                        }
+                                        &:nth-child(2) {
+                                            padding-top: 10px;
+                                        }
+                                        &:nth-child(3) {
+                                            padding-top: 12px;
+                                        }
+                                        &:nth-child(4) {
+                                            padding-top: 13px;
+                                        }
+                                        &:nth-child(5) {
+                                            padding-top: 14px;
+                                        }
+                                        &:nth-child(6) {
+                                            padding-top: 15px;
+                                        }
+                                        > input {
+                                            & + label {
+                                                font-family: Calibri;
+                                                color: rgba(128, 128, 128, 0.7);
+                                                font-size: 13px;
+                                                font-weight: 300;
+                                                letter-spacing: -0.169px;
+                                                text-align: center;
+                                            }
+                                        }
+                                        > input:checked {
+                                            & + label {
+                                                font-family: Calibri;
+                                                color: #333333;
+                                                font-size: 13px;
+                                                font-weight: 700;
+                                                letter-spacing: -0.169px;
+                                                text-align: center;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            > div {
+                                border-left: 2px dotted black;
+                                border-top: 2px dotted black;
+                                border-bottom: 2px dotted black;
+                                border-radius: 10px 0 0 10px;
+                                > div {
+                                    width: 40px;
+                                    height: 41px;
+                                    &:not(:first-child) {
+                                        border-top: 2px dotted black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                > div {
+                    margin-top: 40px;
+                    width: 425px;
+                    > span {
+                        display: block;
+                        &:first-child {
+                            font-family: Calibri;
+                            color: #1a1a1a;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            text-align: left;
+                        }
+                        &:nth-child(2) {
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 12px;
+                            font-weight: 300;
+                            letter-spacing: -0.156px;
+                            line-height: 18px;
+                            text-align: justify;
+                        }
+                    }
+                    > div {
+                        &:nth-child(3) {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 30px;
+                            > span {
+                                display: block;
+                                &:first-child {
+                                    float: left;
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    letter-spacing: -0.182px;
+                                }
+                                &:last-child {
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14.83px;
+                                    font-weight: 700;
+                                    text-align: left;
+                                    float: right;
+                                    &::before {
+                                        margin-right: 5px;
+                                    }
+                                    &:focus {
+                                      outline: none;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(4) {
+                            > ul {
+                                margin: 0;
+                                padding: 0;
+                                > li {
+                                    list-style: none;
+                                    border-top: 1px solid #cccccc;
+                                    background-color: #f8f8f8;
+                                    &:hover {
+                                        background-color: #efefef;
+                                        > div {
+                                            > span {
+                                                &:first-child {
+                                                    font-weight: 700;
+                                                }
+                                                &:last-child {
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:last-child {
+                                        border-bottom: 1px solid #cccccc;
+                                    }
+                                    > div {
+                                        height: 37px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        span {
+                                            line-height: 37px;
+                                            &:first-child {
+                                                margin-left: 21px;
+                                                font-family: Calibri;
+                                                color: #333333;
+                                                font-size: 13px;
+                                                font-weight: 300;
+                                                letter-spacing: -0.169px;
+                                                text-align: left;
+                                            }
+                                            &:last-child {
+                                                display: none;
+                                                margin-right: 13px;
+                                                font-family: Calibri;
+                                                color: rgba(26, 26, 26, 0.7);
+                                                font-size: 12.66px;
+                                                font-weight: 700;
+                                                text-align: left;
+                                                &::before {
+                                                    margin-right: 5px;
+                                                    content: '\f1f8';
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

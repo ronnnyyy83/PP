@@ -1,0 +1,21 @@
+﻿<div class="power-plug-dialog week-view-dialog">
+    <div class="modal-header">
+        <div>Define Work Time</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+  
+
+
+        <week-view data-actions='[]' use-default-work-hours="false"
+                   data-work-time-list='workHours' work-time-change="{}" action-remove="{}"
+                   action-edit="{}" calendar-work-time="calendarWorkTime"></week-view>
+
+
+
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="add()">Add</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

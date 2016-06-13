@@ -1,0 +1,55 @@
+﻿<div class="configuration-partial">
+    <div class="configuration-header">General</div>
+    <div class="configuration-body">
+        <div class="section">
+            <div class="section-title">Maintenance</div>
+            <div class="section-body clearfix">
+                <div>
+                    <label class="fixed-width">
+                        Mark computers as inactive if they did not send data for
+                        <input decimals="0" type="number" natural-number ng-model="vm.general.compInactiveDays" class="big-arrows small" /> days
+                    </label>
+                </div>
+                <div>
+                    <div class="checkbox-wrapper">
+                        <input id="purge-cb" type="checkbox" class="custom-checkbox-green-type01" ng-model="vm.general.keepDailyData">
+                        <label for="purge-cb">Automatically purge daily information after </label>
+                        <input decimals="0" type="number" natural-number
+                               ng-disabled="!vm.general.keepDailyData"
+                               class="big-arrows small" ng-model="vm.general.keepDailyDataMonths" />
+                    </div>
+                    <span> months </span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Enviromental Parameters</div>
+            <div class="section-body">
+                <div>
+                    <label class="fixed-width">
+                        CO2 Emissions Resulted by 1 kWh Electricity Generation:
+                        <input natural-number decimals="0" type="number" class="big-arrows small" ng-model="vm.general.co2For1KwhKg" />
+                    </label>
+                    <span>(g)</span>
+                </div>
+                <div>
+                    <label class="fixed-width">
+                        Annual CO2 Emissions Generation by an Average Family Car:
+                        <input natural-number decimals="0" type="number" ng-model="vm.general.carAvgCo2EmissionKg" class="big-arrows small" />
+                    </label>
+                    <span>(kg)</span>
+                </div>
+                <div class="remark">
+                    (Estimated at 20,000 km / 12,500 miles annually)
+                </div>
+                <div>
+                    <label class="fixed-width">
+                        Total CO2 Emissions absorb by a Tree During its Lifetime:
+                        <input natural-number decimals="0" type="number" ng-model="vm.general.treeCo2AbsorbKg" class="big-arrows small" />
+                    </label>
+                    <span>(kg)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

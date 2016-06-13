@@ -1,0 +1,16 @@
+<div>
+  <div class="logo">
+  </div>
+  <ul class="left-menu">
+    <!-- <li ng-repeat="item in vm.menuItems" ng-init="pIndex = $index" ui-sref="{{item.sref}}" data-toggle="collapse" data-target="{{$index === 1 ? 'nope' : '#submenu' + $index}}" aria-expanded="{{vm.state.current.title === item.stateName}}" ng-class="{ current: vm.state.current.url.indexOf(item.sref) >= 0, collapsed : vm.state.current.title !== item.stateName }"> -->
+    <li ng-repeat="item in vm.menuItems" ng-init="pIndex = $index" ui-sref="{{item.sref}}" data-toggle="collapse" data-target="nope" aria-expanded="{{vm.state.current.title === item.stateName}}" ng-class="{ current: vm.state.current.url.indexOf(item.sref) >= 0, collapsed : vm.state.current.title !== item.stateName }">
+      <i class="{{item.icon}}"></i> {{item.text}}
+      <ul id="{{'submenu' + $index}}" class="collapse" aria-expanded="{{vm.state.current.subMenu === true}}" ng-class="{'in' : vm.state.current.subMenu === true}" ng-style="vm.state.current.subMenu === true && {'height':'inherit'}">
+        <!-- <li ng-repeat="subitem in item.submenu" ng-init="pIndex = $index" ng-href="{{subitem.sref}}"> -->
+        <li title={{subitem.text()}} ng-repeat="subitem in item.submenu" ng-init="pIndex = $index" ng-click="vm.keepOpened($event)">
+          {{subitem.text()}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

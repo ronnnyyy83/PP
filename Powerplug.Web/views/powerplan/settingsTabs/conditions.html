@@ -1,0 +1,19 @@
+﻿<div class="tab-line">
+    <label class="tab-label"> Computer is idle for:
+        <select  ng-model="idleTime"  class="tab-select">
+            <option value="15" ng-selected="jsonobject.idleTime == 15 "> 15 minutes </option>
+            <option value="30" ng-selected="jsonobject.idleTime == 30 "> 30 minutes </option>
+            <option value="45" ng-selected="jsonobject.idleTime == 45 "> 45 minutes </option>
+            <option value="60" ng-selected="jsonobject.idleTime == 60 "> 1 hour </option>
+            <option value="120" ng-selected="jsonobject.idleTime == 120 "> 2 hour </option>
+            <option value="180" ng-selected="jsonobject.idleTime == 180 "> 3 hour </option>
+            <option value="240" ng-selected="jsonobject.idleTime == 240 "> 4 hour </option>
+            <option value="300" ng-selected="jsonobject.idleTime == 300 "> 5 hour </option>
+        </select></label>
+</div>
+<div class="tab-line">
+    <label class="tab-label">
+        Computer was not restarted for
+        <input type="number" class="tab-input big-arrows" ng-model="hoursLastBoot" ng-change="getHoursLastBootValue()"/> Days
+    </label>
+</div>

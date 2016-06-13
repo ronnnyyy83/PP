@@ -1,0 +1,10 @@
+<div>
+  <div class="wraper-tinymce">
+    <textarea ui-tinymce options="uiTinymceConfig" ng-model="defaultText"></textarea>
+
+    <div ng-if="showBtns" class="btn-block-tinymce">
+      <button class="btn btn-success" ng-click="doneAction()">Done</button>
+      <button class="btn btn-primary" ng-click="previewAction()">Preview</button>
+    </div>
+  </div>
+</div>

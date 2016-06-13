@@ -1,0 +1,27 @@
+﻿<div class="power-plug-dialog report-days-container">
+    <div class="modal-header">
+        <div>Define Work Time</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeDaysDialog()">
+    </div>
+    <div class="modal-body">
+        <ul>
+            <li ng-repeat="day in days">
+                <input id="li-{{$index}}" type="checkbox" class="custom-checkbox-green-type00" ng-disabled="day.disabled" ng-model="day.selected"/>
+                <label for="li-{{$index}}" ng-class="day.disabled ? 'custom-disabled': '' "></label>
+                <span> {{ day.name }} </span>
+            </li>
+        </ul>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="addDays()">OK</button>
+            <button ng-click="closeDaysDialog()">Cancel</button>
+        </div>
+    </div>
+</div>
+<style>
+    div.content-wrapper {
+        background-color: #fff;
+    }
+</style>

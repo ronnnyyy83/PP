@@ -1,0 +1,229 @@
+﻿<style>
+    .md-datepicker-calendar-pane.md-pane-open {
+        z-index: 1090;
+    }
+</style>
+<div class="power-plug-dialog" ng-cloak>
+    <div class="modal-header">
+        <div>
+            <span class="title-before">Define Plan Action</span>
+            <span ng-show="perform=='Restart'" class="title">System Restart</span>
+            <span ng-show="perform=='Wake'" class="title">Scheduled Wake Up</span>
+        </div>
+        <div ng-click="cancel()" class="pull-right close-btn">
+            x
+        </div>
+    </div>
+    <div class="modal-body">
+        <ng-form name="newAction">
+            <div class="validation">
+                <div class="help-block error" ng-show="isValide.error">{{isValide.message}}</div>
+            </div>
+            <span class="small-title">When (date & Time)</span>
+            <div class="row action-type-select">
+                <div class="col-xs-12 left-block-line">
+                    <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}"
+                           ng-model="scheduleType" value="EveryDay" id="Every-Day">
+                    <label for="Every-Day" class="ratio-label"><span><span></span></span>Every Day</label>
+                </div>
+            </div>
+
+            <div class="row action-type-select">
+
+                <div class="col-sm-2 left-block-line">
+                    <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfWeek" id="Day-of-week">
+                    <label for="Day-of-week" class="ratio-label"><span><span></span></span>Day of Week:</label>
+                </div>
+
+                <div class="col-sm-10 day-list form-group" ng-class="{'has-error': (newAction.dayOfweekGroup.$error.required && toValidate)}">
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'" class="custom-checkbox-green-type01"
+                                   ng-model="Sunday.Value" ng-true-value="1" ng-false-value="-2"
+                                   ng-model-options="{ getterSetter: true }" id="sun-check">
+                            <label for="sun-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :'' ">
+                                Sunday
+                            </label>
+                        </span>
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"
+                                   ng-model="Monday.Value" ng-true-value="2" ng-false-value="-3"
+                                   ng-model-options="{ getterSetter: true }" id="mon-check" class="custom-checkbox-green-type01">
+                            <label for="mon-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :''">
+                                Monday
+                            </label>
+                        </span>
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'" ng-model="Tuesday.Value"
+                                   ng-true-value="4" ng-false-value="-5" ng-model-options="{ getterSetter: true }"
+                                   id="tue-check" class="custom-checkbox-green-type01">
+                            <label for="tue-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :''">
+                                Tuesday
+                            </label>
+                        </span>
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'" ng-model="Wednesday.Value"
+                                   ng-true-value="8" ng-false-value="-9" ng-model-options="{ getterSetter: true }"
+                                   id="wed-check" class="custom-checkbox-green-type01">
+                            <label for="wed-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :''">
+                                Wednesday
+                            </label>
+                        </span>
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"
+                                   ng-model="Thursday.Value" ng-true-value="16" ng-false-value="-17"
+                                   ng-model-options="{ getterSetter: true }" id="thu-check"
+                                   class="custom-checkbox-green-type01">
+                            <label for="thu-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :''">
+                                Thursday
+                            </label>
+                        </span>
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"
+                                   ng-model="Friday.Value" ng-true-value="32" ng-false-value="-33" ng-model-options="{ getterSetter: true }"
+                                   id="fri-check" class="custom-checkbox-green-type01">
+                            <label for="fri-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :''">
+                                Friday
+                            </label>
+                        </span>
+                        <span class="day-select">
+                            <input type="checkbox" ng-disabled="scheduleType != 'DayOfWeek'"
+                                   ng-model="Saturday.Value" ng-true-value="64" ng-false-value="-65"
+                                   ng-model-options="{ getterSetter: true }" id="sat-check"
+                                   class="custom-checkbox-green-type01">
+                            <label for="sat-check" ng-class="scheduleType != 'DayOfWeek'? 'custom-disabled' :''">
+                                Saturday
+                            </label>
+                        </span>
+                </div>
+            </div>
+
+            <div class="row action-type-select">
+
+                <div class="col-sm-2 left-block-line">
+                    <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="scheduleType" value="DayOfMonth" id="DayOfMonth">
+                    <label for="DayOfMonth" class="ratio-label"><span><span></span></span>Day of Month</label>
+                </div>
+
+                <div class="col-sm-10 right-block-line">
+                    <input class="big-arrows" ng-disabled="scheduleType != 'DayOfMonth'"
+                           type='number' decimals="0" ng-model="daysOfMonth" ng-change="getDaysOfMonthValue()" />
+                </div>
+            </div>
+
+            <div class="row  action-type-select">
+                <div class="col-sm-2 left-block-line">
+                    <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}"
+                           ng-model="scheduleType" value="SpecificDate" id="SpecificDate">
+                    <label for="SpecificDate" class="ratio-label"><span><span></span></span>Specific Date</label>
+                </div>
+                <div class="col-sm-10 right-block-line">
+                    <!--********************************************************************-->
+                    <div class="form-group date-picker">
+                        <div class='input-group date specific-date' ng-class="{'has-error': (newAction.specificDate.$error.date && toValidate)}">
+                            <input type='text' id="specific-date"
+                                   class="form-control" ng-disabled="scheduleType != 'SpecificDate'" 
+                                  />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-triangle-bottom">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!--********************************************************************-->
+                </div>
+            </div>
+
+            <hr />
+            <div>
+                <div ng-if="perform == 'Wake'" class="time-chuse-line">
+                    <span class="small-title time-picker-label">
+                        <b> At:</b>
+                    </span>
+
+
+
+                    <div class="time-picker">
+                        <div class='input-group date datetimepicker picker-from-date'>
+                            <input type='text' id="atDate" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div ng-if="perform == 'Restart'" class="time-chuse-line" ng-class="{'has-error': (newAction.hoursRange.$error.range && toValidate)}">
+                    <span class="small-title time-picker-label">Between:</span>
+
+                    <div class="time-picker">
+                        <div class='input-group date datetimepicker picker-from-date'>
+                            <input id="atDate" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <span class="body-enter-justify time-picker-label">and:</span>
+
+                    <div class="time-picker">
+                        <div class='input-group date datetimepicker picker-to-date'>
+                            <input id="toTime" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr />
+            <div>
+                <span class="small-title">Action Settings:</span>
+                <div ng-if="perform == 'Wake'">
+
+                    <span class="day-select keepMonitorOn">
+                        <input class="custom-checkbox-green-type01" type="checkbox" ng-model="checkbox.keepMonitorOn" id="keepMonitorOn">
+                        <label for="keepMonitorOn">
+                            Keep monitor on
+                        </label>
+                    </span>
+                    <br>
+                    <label class="midle-text">
+                        Keep awake for
+                    </label>
+                    <input type="number" class="big-arrows" ng-model="keepAlive.num" ng-change="getKeepAliveValue()" />
+                </div>
+            </div>
+            <!--TABS-->
+            <div ng-if="perform == 'Restart'">
+                <uib-tabset class="clearfix uibTabSet">
+                    <uib-tab heading="Conditions" class="col-xs=12">
+                        <conditions-tab jsonobject="options" class="tabs"></conditions-tab>
+                    </uib-tab>
+                    <uib-tab heading="Options" class="col-xs=12">
+                        <options-tab jsonobject="options" save-event=true class="tabs"></options-tab>
+                    </uib-tab>
+                    <uib-tab heading="Applications" class="col-xs=12">
+                        <application-tab worktype='work' jsonobject="options" save-event=true class="tabs"></application-tab>
+                    </uib-tab>
+                    <uib-tab heading="Performance Metrics" class="col-xs=12">
+                        <performance-metrics-tab jsonobject="options" worktype='Work' save-event=true class="tabs"></performance-metrics-tab>
+                    </uib-tab>
+                </uib-tabset>
+            </div>
+        </ng-form>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="Add('Add')" class="btn btn-success add">
+            Add
+        </button>
+        <button ng-click="cancel()" style="margin-right:20px;" class="btn btn-warning cancel">
+            Cancel
+        </button>
+    </div>
+</div>

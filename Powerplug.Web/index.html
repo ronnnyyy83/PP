@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="content/css/powerplan.min.css" rel="stylesheet" />
+    <link href="content/angular-material.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" />
+    <link rel="stylesheet" href="content/css/myStyle.css">
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
+</head>
+<body ng-app="powerPlug">
+    <div>
+        <div class="topGreenLine"></div>
+        <div ng-if="!innerTemplate()">           
+            <div ui-view></div>           
+        </div>
+        <div ng-if="innerTemplate()">            
+            <div class="main-wrapper">
+                <nav ng-include="'views/leftMenu.html'" ng-controller="LeftMenuController as vm"></nav>
+                <div class="content-wrapper">
+                    <header ng-include="'views/header.html'" ng-controller="HeaderController as vm"></header>
+                    <div class="content" ui-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div ng-include="'views/powerplan/computerGroupsView.html'"></div>-->
+    <!-- Library Scripts -->
+    <script src="content/js/vendor/moment.min.js"></script>
+    <script src="content/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="content/js/vendor/angular.js"></script>
+    <script src="content/js/vendor/angular-animate.min.js"></script>
+    <script src="content/js/vendor/angular-aria.min.js"></script>
+    <script src="content/js/vendor/angular-resource.min.js"></script>
+    <script src="content/js/vendor/angular-ui-router.min.js"></script>
+    <script src="content/js/vendor/angular-cookies.js"></script>
+    <script src="content/js/vendor/angular-material.min.js"></script>
+    <script src="content/js/vendor/ui-bootstrap-tpls.min.js"></script>
+    <script src="content/js/vendor/angular-fusioncharts.min.js"></script>
+    <script src="content/js/vendor/textAngular-rangy.min.js"></script>
+    <script src="content/js/vendor/textAngular-sanitize.min.js"></script>
+    <script src="content/js/vendor/textAngular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bower_components/highcharts/highcharts.js"></script>
+    <script src="bower_components/highcharts-ng/dist/highcharts-ng.min.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/tinymce-dist/tinymce.min.js"></script>
+    <script src="bower_components/angular-ui-tinymce/dist/tinymce.min.js"></script>
+    <script src="content/js/vendor/sortable.js"></script>
+    <!--<script src="bower_components/angular-ui-numeric/src/angular-ui-numeric.js"></script>
+    <script src="bower_components/angular-numeric-directive/src/numeric-directive.js"></script>-->
+
+    <!--updated file-->
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="app/services/common/common.services.js"></script>
+    <script src="app/services/authentication/user.service.js"></script>
+    <script src="app/services/authentication/authentication.service.js"></script>
+    <script src="app/services/authentication/flash.service.js"></script>
+    <script src="app/services/powerplan/computerGroupsResource.js"></script>
+    <script src="app/services/powerplan/savingPlansResource.js"></script>
+    <script src="app/services/powerplan/computersResource.js"></script>
+    <script src="app/services/powerplan/scriptsResource.js"></script>
+    <script src="app/services/powerplan/powerConsumptionResource.js"></script>
+    <script src="app/services/powerplan/consolePermissionResource.js"></script>
+    <script src="app/services/powerplan/electricityPriceResource.js"></script>
+    <script src="app/services/powerplan/wakeupPortalPermissionResource.js"></script>
+    <script src="app/services/powerplan/locationsResource.js"></script>
+    <script src="app/services/powerplan/reportsResource.js"></script>
+    <script src="app/services/powerplan/reportTemplateService.js"></script>
+    <script src="app/services/powerplan/reportListService.js"></script>
+    <script src="app/services/powerplan/statisticsResource.js"></script>
+    <script src="app/services/powerplan/devicesResource.js"></script>
+    <script src="app/services/powerplan/energyUsageResource.js"></script>
+    <script src="app/services/powerplan/activeComputersGraphResource.js"></script>
+    <script src="app/services/powerplan/activityAnalysisGraphResource.js"></script>
+    <script src="app/services/powerplan/powerConsumptionGraphResource.js"></script>
+    <script src="app/services/powerplan/otherSavingGraphResource.js"></script>
+    <script src="app/services/powerplan/powerPlansResource.js"></script>
+    <script src="app/services/powerplan/licensingResource.js"></script>
+    <script src="app/services/settings/configurationResource.js"></script>
+    <script src="app/services/settings/wolConfigResource.js"></script>
+
+    <!-- Directive -->
+    <script src="app/directives/settingsTabs/optionsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/applicationsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/computersTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/performanceMetricsTabDirective.js"></script>
+    <script src="app/directives/settingsTabs/conditionsTabDirective.js"></script>
+    <script src="app/directives/colorLetter/colorLetterDirective.js"></script>
+    <script src="app/directives/charts/charts.js"></script>
+    <script src="app/directives/weekView/weekView.js"></script>
+    <script src="app/directives/descripotion/descripotion.js"></script>
+    <script src="app/directives/customRadioButtonTypeOne/customRadioButton.directive.js"></script>
+    <script src="app/directives/validateNumber/validateNumberDirective.js"></script>
+    <script src="app/directives/convertToNumber/convertToNumberDirective.js"></script>
+    <script src="app/directives/myTreeView/myTreeView.directive.js"></script>
+
+    <!-- Factory -->
+    <script src="app/factory/jsonLoaderFactory.js"></script>
+
+    <!-- PowerPlug Login Page Controller -->
+    <script src="app/controllers/login/loginCtrl.js"></script>
+    <script src="app/controllers/leftMenuCtrl.js"></script>
+    <script src="app/controllers/headerCtrl.js"></script>
+    <!-- PowerPlug Common Controller -->
+    <script src="app/controllers/common/dialogs/computersNameHandler.js"></script>
+    <script src="app/controllers/common/dialogs/computerGroupDialogHandler.js"></script>
+    <!-- PowerPlug Settings Page Controller -->
+    <script src="app/controllers/settings/computerGroupsCtrl.js"></script>
+    <script src="app/controllers/settings/scriptsCtrl.js"></script>
+    <script src="app/controllers/settings/configurationCtrl.js"></script>
+    <script src="app/controllers/settings/wakeOnLanCtrl.js"></script>
+    <script src="app/controllers/settings/powerConsumptionCtrl.js"></script>
+    <script src="app/controllers/settings/consolePermissionCtrl.js"></script>
+    <script src="app/controllers/settings/electricityPriceCtrl.js"></script>
+    <script src="app/controllers/settings/wakeupPortalPermissionCtrl.js"></script>
+    <script src="app/controllers/settings/locationsCtrl.js"></script>
+    <script src="app/controllers/settings/licensingCtrl.js"></script>
+    <!-- PowerPlug Settings Page Dialogs -->
+    <script src="app/controllers/settings/dialogs/IPMaskPopupHandler.js"></script>
+    <script src="app/controllers/settings/dialogs/computerGroupPopupHandler .js"></script>
+    <script src="app/controllers/settings/dialogs/computerMaskPopupHandler.js"></script>
+    <script src="app/controllers/settings/dialogs/IPRangePopupHandler.js"></script>
+    <script src="app/controllers/settings/dialogs/addUserPopupHandler.js"></script>
+    <script src="app/controllers/settings/dialogs/editWakeupPortalPermissionHandler.js"></script>
+    <!-- PowerPlug Saving Plan Page Controller -->
+    <script src="app/controllers/powerplan/savingPlansCtrl.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorOverview.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorActions.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorWorkHours.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorSavings.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorEvents.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorComputers.js"></script>
+    <script src="app/controllers/powerplan/partials/savingPlanEditorPermissions.js"></script>
+    <!--PowerPlug  Saving Plan Dialogs-->
+    <script src="app/controllers/powerplan/dialogs/actionDialogHandler.js"></script>
+    <script src="app/controllers/powerplan/dialogs/managePPListHandler.js"></script>
+        <!--powerPlan Saving Paln MainController-->
+    <script src="app/controllers/powerplan/savingPlanEditorCtrl.js"></script>
+    <!-- PowerPlug Reports Controller -->
+    <script src="app/controllers/reports/reportListCtrl.js"></script>
+    <script src="app/controllers/reports/reportGenerateCtrl.js"></script>
+    <!-- PowerPlug Dashbord -->
+    <script src="app/controllers/dashboard/dashboardCtrl.js"></script>
+</body>
+</html>

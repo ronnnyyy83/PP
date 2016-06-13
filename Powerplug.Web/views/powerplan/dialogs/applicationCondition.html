@@ -1,0 +1,67 @@
+<div class="addAppWrapper power-plug-dialog">
+    <div class="modal-header">
+        <span>Application Condition</span>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeSavingApplication()">
+    </div>
+    <div class="modal-body">
+        <div>
+        <ng-form name="newApp">
+                <div class="row action-type-select">
+                    <div class="col-sm-4 left-block-line"> <label>Application Process</label></div>
+                    <div class="open-dialog col-sm-8" 
+                         ng-class="{'has-error': newApp.exeName.$error.required && toValidate}">
+                        <input name="exeName" required type="text" id="exeName" ng-model="appMetric.appName" style="width:240px" 
+                           class="form-control" ng-change="validateFields()" />
+                        <input type="file" accept=".exe" id="files" class="open-dialog middle" style="visibility: hidden;"
+                               onchange="angular.element(this).scope().copyExeName(this)" />
+                        <label for="files">
+                            <btn class="open-dialog middle" role="button">...</btn>
+                        </label>
+                    </div>
+                </div>
+                <div class="small-title">Do not perform the computer power savings operation while:</div>
+                <div class="row action-type-select">
+                    <div class="col-sm-6 left-block-line">
+                        <input class="custom-radio-button-t2" type='radio' id='running' name='appOperation'
+                                ng-model="appMetric.counter" value="Running" />
+                        <label for='running'><span><span></span></span>Process is Running</label>
+                    </div>
+                </div>
+                <div class="row action-type-select">
+                    <div class="col-sm-6 left-block-line">
+                        <input class="custom-radio-button-t2" type='radio' id='cpu' 
+                               name='appOperation'
+                               ng-model="appMetric.counter" value="Cpu"
+                               />
+                        <label for='cpu'><span><span></span></span>CPU utilization is above</label>
+                    </div>
+                    <div class="col-sm-6 right-block-line">
+                        <input type="number" class="big-arrows" min="0" max="100" id="cpuText" 
+                               ng-disabled="appMetric.counter != 'Cpu'" 
+                               ng-model="threshold.Cpu" /> Percent
+                    </div>
+                </div>
+                <div class="row action-type-select">
+                    <div class="col-sm-6 left-block-line">
+                        <input class="custom-radio-button-t2" type='radio' id='io' name='appOperation' value="Io"
+                               ng-model="appMetric.counter"
+                                />
+                        <label for='io'><span><span></span></span>Disk I/O operations are above</label>
+                    </div>
+                    <div class="col-sm-6 right-block-line">
+                        <input class="big-arrows" type="number" min="0" id="ioText" 
+                               ng-disabled="appMetric.counter != 'Io'" 
+                               ng-model="threshold.Io" /> KB/Second
+                    </div>
+                </div>
+                <div class="validation">
+                    <div class="help-block error" ng-show="isValide.error">{{isValide.message}}</div>
+                </div>
+            </ng-form>
+           </div>
+</div>
+    <div class="buttonsBlock">
+        <button ng-click="upsertSavingApplication(appMetric.appKey)">OK</button>
+        <button ng-click="closeSavingApplication()">Cancel</button>
+    </div>
+</div>

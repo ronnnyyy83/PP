@@ -1,0 +1,22 @@
+﻿<div class="settings">
+    <div class="settings-content configuration-content">
+        <div ui-view="overview"></div>
+        <div id="agent" ui-view="agent"></div>
+        <div id="console" ui-view="console"></div>
+        <div id="computers" ui-view="computers"></div>
+        <div id="system" ui-view="system"></div>
+        <div id="general" ui-view="general"></div>
+    </div>
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

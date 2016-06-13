@@ -1,0 +1,174 @@
+<div class="savingPlanWorkTime">
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Work time">
+            <div class="container-fluid">
+                <div class="flexo">
+                    <div>
+                        <label class="customDropdown"><span>Turn off the display</span>
+                            <select ng-model="vm.savingPlan.savings.work.displalyMinutes" convert-to-number ng-change="vm.setSummaryText()">
+                                <option value="-1"  ng-selected="vm.savingPlan.savings.work.displalyMinutes == -1"></option>
+                                <option value="1" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 1">1 minute</option>
+                                <option value="2" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 2">2 minutes</option>
+                                <option value="3" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 3">3 minutes</option>
+                                <option value="5" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 5">5 minutes</option>
+                                <option value="10" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 10">10 minutes</option>
+                                <option value="15" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 15">15 minutes</option>
+                                <option value="20" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 20">20 minutes</option>
+                                <option value="25" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 25">25 minutes</option>
+                                <option value="30" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 30">30 minutes</option>
+                                <option value="45" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 45">45 minutes</option>
+                                <option value="60" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 60">1 hour</option>
+                                <option value="120" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 120">2 hours</option>
+                                <option value="180" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 180">3 hours</option>
+                                <option value="240" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 240">4 hours</option>
+                                <option value="300" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 300">5 hours</option>
+                                <option value="0" ng-selected="vm.savingPlan.savings.work.displalyMinutes == 0">Never</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="customDropdown"><span>Computer Power Savings</span>
+                            <select ng-model="vm.savingPlan.savings.work.computerMinutes" ng-change="vm.performValueChange('work');vm.setSummaryText()" 
+                                    convert-to-number>
+                                <option value="-1" ng-selected="vm.savingPlan.savings.work.computerMinutes == -1"></option>
+                                <option value="1" ng-selected="vm.savingPlan.savings.work.computerMinutes == 1">1 minute</option>
+                                <option value="2" ng-selected="vm.savingPlan.savings.work.computerMinutes == 2">2 minutes</option>
+                                <option value="3" ng-selected="vm.savingPlan.savings.work.computerMinutes == 3">3 minutes</option>
+                                <option value="5" ng-selected="vm.savingPlan.savings.work.computerMinutes == 5">5 minutes</option>
+                                <option value="10" ng-selected="vm.savingPlan.savings.work.computerMinutes == 10">10 minutes</option>
+                                <option value="15" ng-selected="vm.savingPlan.savings.work.computerMinutes == 15">15 minutes</option>
+                                <option value="20" ng-selected="vm.savingPlan.savings.work.computerMinutes == 20">20 minutes</option>
+                                <option value="25" ng-selected="vm.savingPlan.savings.work.computerMinutes == 25">25 minutes</option>
+                                <option value="30" ng-selected="vm.savingPlan.savings.work.computerMinutes == 30">30 minutes</option>
+                                <option value="45" ng-selected="vm.savingPlan.savings.work.computerMinutes == 45">45 minutes</option>
+                                <option value="60" ng-selected="vm.savingPlan.savings.work.computerMinutes == 60">1 hour</option>
+                                <option value="120" ng-selected="vm.savingPlan.savings.work.computerMinutes == 120">2 hours</option>
+                                <option value="180" ng-selected="vm.savingPlan.savings.work.computerMinutes == 180">3 hours</option>
+                                <option value="240" ng-selected="vm.savingPlan.savings.work.computerMinutes == 240">4 hours</option>
+                                <option value="300" ng-selected="vm.savingPlan.savings.work.computerMinutes == 300">5 hours</option>
+                                <option value="0" ng-selected="vm.savingPlan.savings.work.computerMinutes == 0">Never</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="customDropdown"><span>Perform</span>
+                            <select ng-model="vm.savingPlan.savings.work.perform" ng-disabled="vm.savingPlan.savings.work.computerMinutes == -1" ng-change="vm.setSummaryText()">
+                                <option value="Sleep" ng-selected="vm.savingPlan.savings.work.perform == 'Sleep'">Sleep</option>
+                                <option value="Hibernate" ng-selected="vm.savingPlan.savings.work.perform == 'Hibernate'">Hibernate</option>
+                                <option value="Shutdown" ng-selected="vm.savingPlan.savings.work.perform == 'Shutdown'">Shut down</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <div ng-click="isShowMenu = isShowMenu? false: true">
+                            <a title="Toggle dropdown menu"> <span class="fa" ng-class="isShowMenu? 'fa-caret-up':'fa-caret-down' " title="Toggle dropdown menu"></span> </a>
+                            <span>Settings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row animate-hide" ng-hide="isShowMenu? false: true">
+                    <uib-tabset active="0">
+                        <uib-tab index="0" heading="Options">
+                            <options-tab jsonobject="vm.savingPlan.savings.work.options" save-event=f alse></options-tab>
+                        </uib-tab>
+                        <uib-tab index="1" heading="Applications">
+                            <application-tab worktype='work' jsonobject="vm.savingPlan.savings.work.options" save-event=false></application-tab>
+                        </uib-tab>
+                        <uib-tab index="2" heading="Computers">
+                            <computers-tab jsonobject="vm.savingPlan.savings.work.options" worktype='Work'></computers-tab>
+                        </uib-tab>
+                        <uib-tab index="3" heading="Performance Metrics">
+                            <performance-metrics-tab jsonobject="vm.savingPlan.savings.work.options" worktype='work' save-event=f alse></performance-metrics-tab>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Non Work time">
+            <div class="container-fluid">
+                <div class="flexo">
+                    <div>
+                        <label class="customDropdown"><span>Turn off the display</span>
+                            <select ng-model="vm.savingPlan.savings.nonWork.displalyMinutes" convert-to-number ng-change="vm.setSummaryText()">
+                                <option value="-1" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == -1"></option>
+                                <option value="1" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 1">1 minute</option>
+                                <option value="2" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 2">2 minutes</option>
+                                <option value="3" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 3">3 minutes</option>
+                                <option value="5" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 5">5 minutes</option>
+                                <option value="10" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 10">10 minutes</option>
+                                <option value="15" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 15">15 minutes</option>
+                                <option value="20" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 20">20 minutes</option>
+                                <option value="25" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 25">25 minutes</option>
+                                <option value="30" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 30">30 minutes</option>
+                                <option value="45" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 45">45 minutes</option>
+                                <option value="60" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 60">1 hour</option>
+                                <option value="120" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 120">2 hours</option>
+                                <option value="180" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 180">3 hours</option>
+                                <option value="240" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 240">4 hours</option>
+                                <option value="300" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 300">5 hours</option>
+                                <option value="0" ng-selected="vm.savingPlan.savings.nonWork.displalyMinutes == 0">Never</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="customDropdown"><span>Computer Power Savings</span>
+                            <select ng-model="vm.savingPlan.savings.nonWork.computerMinutes" ng-change="vm.performValueChange('nonWork');vm.setSummaryText()"
+                                     convert-to-number>
+                                <option value="-1" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == -1"></option>
+                                <option value="1" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 1">1 minute</option>
+                                <option value="2" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 2">2 minutes</option>
+                                <option value="3" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 3">3 minutes</option>
+                                <option value="5" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 5">5 minutes</option>
+                                <option value="10" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 10">10 minutes</option>
+                                <option value="15" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 15">15 minutes</option>
+                                <option value="20" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 20">20 minutes</option>
+                                <option value="25" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 25">25 minutes</option>
+                                <option value="30" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 30">30 minutes</option>
+                                <option value="45" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 45">45 minutes</option>
+                                <option value="60" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 60">1 hour</option>
+                                <option value="120" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 120">2 hours</option>
+                                <option value="180" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 180">3 hours</option>
+                                <option value="240" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 240">4 hours</option>
+                                <option value="300" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 300">5 hours</option>
+                                <option value="0" ng-selected="vm.savingPlan.savings.nonWork.computerMinutes == 0">Never</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="customDropdown"><span>Perform</span>
+                            <select ng-model="vm.savingPlan.savings.nonWork.perform" 
+                                    ng-disabled="vm.savingPlan.savings.nonWork.computerMinutes == -1" ng-change="vm.setSummaryText()">
+                                <option value="Sleep" ng-selected="vm.savingPlan.savings.nonWork.perform == 'Sleep'">Sleep</option>
+                                <option value="Hibernate" ng-selected="vm.savingPlan.savings.nonWork.perform == 'Hibernate'">Hibernate</option>
+                                <option value="Shutdown" ng-selected="vm.savingPlan.savings.nonWork.perform == 'Shutdown'">Shut down</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <div ng-click="isShowMenu = isShowMenu? false: true">
+                            <a title="Toggle dropdown menu"> <span class="fa" ng-class="isShowMenu? 'fa-caret-up':'fa-caret-down' " title="Toggle dropdown menu"></span> </a>
+                            <span>Settings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row animate-hide" ng-hide="isShowMenu? false: true">
+                    <uib-tabset active="0">
+                        <uib-tab index="0" heading="Options">
+                            <options-tab jsonobject="vm.savingPlan.savings.nonWork.options" save-event=f alse></options-tab>
+                        </uib-tab>
+                        <uib-tab index="1" heading="Applications">
+                            <application-tab worktype='nonWork' jsonobject="vm.savingPlan.savings.nonWork.options" save-event=false></application-tab>
+                        </uib-tab>
+                        <uib-tab index="2" heading="Computers">
+                            <computers-tab jsonobject="vm.savingPlan.savings.nonWork.options" worktype='nonWork'></computers-tab>
+                        </uib-tab>
+                        <uib-tab index="3" heading="Performance Metrics">
+                            <performance-metrics-tab jsonobject="vm.savingPlan.savings.nonWork.options" worktype='nonWork' save-event=false></performance-metrics-tab>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

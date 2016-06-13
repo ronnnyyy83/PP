@@ -1,0 +1,100 @@
+.addComputerGroupWrapper {
+  > div.modal-body {
+    /*overflow-y: auto;*/
+    > div.container-fluid {
+        table{
+            thead{
+                td:first-child{
+                    width:50px;
+                }
+               font-family: Calibri;
+               color: rgba(26, 26, 26, 0.7);
+               font-size: 14px;
+               font-weight: 700;
+               letter-spacing: -0.182px;
+            }
+        }
+      padding: 0px;
+      > div.row {
+        &:first-child {
+          button {
+            width: 218px;
+            height: 43px;
+            background-color: #8cc63f;
+            border: none;
+            outline: none;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 20.3px;
+            font-weight: 700;
+          }
+        }
+        /*&:nth-child(2) {
+          margin-top: 13px;
+          margin-left: 0px;
+          margin-right: 0px;
+          /*> div.col-xs-12 {
+            background-color: #f8f8f8;
+            padding-left: 0px;
+            padding-bottom: 17px;
+            border-bottom: 1px solid #b3b3b3;
+            > span {
+              display: block;
+              font-family: Calibri;
+              color: #4d4d4d;
+              font-size: 18px;
+              font-weight: 700;
+              margin-left: 24px;
+              margin-top: 21px;
+              margin-bottom: 15px;
+            }
+            > input.custom-checkbox-green-type00 {
+              & + label {
+                display: inline;
+                width: inherit;
+                margin-left: 92px;
+                font-family: Calibri;
+                color: #333333;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.182px;
+                &::before {
+                  left: -34px;
+                  top: 0px;
+                }
+                &:checked + label {
+                  &::before {
+                    left: -34px;
+                    top: 0px;
+                  }
+                }
+              }
+            }  
+          }
+        }*/
+        &:nth-child(2) {
+          margin: 25px 0px;
+          font-family: Calibri;
+          color: #4d4d4d;
+          font-size: 18px;
+          font-weight: 700;
+        }
+        /*&:last-child {
+          > div.col-xs-12 {
+            > table {
+              width: 100%;
+              font-family: Calibri;
+              color: rgba(26, 26, 26, 0.7);
+              font-size: 14px;
+              font-weight: 700;
+              letter-spacing: -0.182px;
+              > thead {
+                border-bottom: 1px solid #b3b3b3;
+              }
+            }
+          }
+        }*/
+      }
+    }
+  }
+}

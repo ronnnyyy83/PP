@@ -1,0 +1,51 @@
+<div class="power-plug-dialog message-editor">
+    <div class="modal-header">
+        <div>Message Editor</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeSavingApplication()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div>
+                <descripotion show-btns="true" done="vm.done(data)" preview="vm.preview(data)" data-default-text="message.msgText"> </descripotion>
+            </div>
+            <div class="mesaage-options">
+                <div class="message-title">
+                    Message Options
+                </div>
+                <div class="message-caption">
+                    Window caption <input type="text" ng-model="message.msgTitle" />
+                </div>
+                <div class="checkbox-container">
+                    <input id="li-snooze" type="checkbox" ng-model="message.msgSnooze.allowSnooze" class="custom-checkbox-green-type00" />
+                    <label for="li-snooze"></label>
+                    Allow Users to Postpone (Snooze) the message
+                </div>
+                <div class="snooze-child">
+                    <span>Default snooze time</span>
+                    <select ng-model="message.msgSnooze.msgSnoozeDefMin" ng-disabled="!message.msgSnooze.allowSnooze"
+                            ng-options="obj.value as obj.label for obj in options">
+                    </select> 
+                    <span>Maximum</span>
+                    <select ng-model="message.msgSnooze.msgSnoozeMaxMin" 
+                            ng-disabled="!message.msgSnooze.allowSnooze"
+                            ng-options="obj.value as obj.label for obj in options">
+                    </select>
+                </div>
+                <div class="checkbox-container">
+                    <input ng-model="message.allowAbort" id="li-abort" type="checkbox" class="custom-checkbox-green-type00" />
+                    <label for="li-abort"></label>
+                    Allow Users to Abort the Power Saving operation
+                </div>
+                <div class="message-display">
+                    <span>Display timeout</span>
+                    <input ng-model="message.msgDisplaySec" ng-change="getMsgDisplaySec()" type="number" class="big-arrows" /> (seconds)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="upsertSavingApplication(appMetric.appKey)">OK</button>
+        <button ng-click="closeSavingApplication()">Cancel</button>
+    </div>
+</div>

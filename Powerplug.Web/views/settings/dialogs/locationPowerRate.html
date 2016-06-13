@@ -1,0 +1,41 @@
+﻿<div class="settings-prop locationPowerRate-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Location's Power Rate</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">        
+        <div>
+            <div class="settings-table-container">                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>From Date</td>
+                            <td>To Date</td>
+                            <td>Power Rate</td>
+                            <td colspan="2">
+                                <span class="buttonTypeOneAdd action-settings" ng-click="addLocationPowerRateDialog()">Add</span>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="rate in rates">
+                            <td>{{ formatDate(rate.fromDate)}}</td>
+                            <td> {{formatDate(rate.toDate)}}</td>
+                            <td>{{ rate.rateName}}</td>                            
+                            <td class="button-container">
+                                <span class="buttonTypeOneRemove action-settings" 
+                                      ng-class="rates.length - 1 <= $index ? '': 'disabled-btn' " 
+                                      ng-click="(rates.length - 1 > $index) || removeRate() ">Remove</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="add()">OK</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

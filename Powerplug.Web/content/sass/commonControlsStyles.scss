@@ -1,0 +1,15 @@
+$greenBorderTop : 5px solid #8cc63f;
+@font-face {
+    font-family: 'Calibri';
+    src: url('../fonts/Calibri.eot') format('embedded-opentype');
+}
+
+.buttonTypeOne {
+  &:before {
+    font-family: 'FontAwesome';
+    font-size: 17px;
+    content: '\f055';
+    color: #8ecc38;
+    margin-right: 1px;
+  }
+}

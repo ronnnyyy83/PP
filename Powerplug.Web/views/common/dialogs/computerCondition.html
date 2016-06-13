@@ -1,0 +1,77 @@
+<div class="addComputerWrapper power-plug-dialog">
+    <div class="modal-header">
+        <div>Add a Computer</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeSavingComputers()">
+    </div>
+    <div class="modal-body">
+      <uib-tabset active="0">
+        <uib-tab index="0" heading="PowerPlug Database">
+          <div class='savingsWrapper'>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <p>List Title</p>
+                    </div>
+                    <div class="row">
+                      <input id="12345" type="checkbox" class="custom-checkbox-green-type00"/>
+                      <label for='12345'>Include Sub-Groups</label>
+                    </div>
+                    <div class="row">
+                      <my-tree-view data="myData"></my-tree-view>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-8">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span>{{savingComputerList.length}} computers</span>
+                        <input type="text" placeholder="Search" name="computerSearch" ng-model="computerSearch.name">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="container-fluid">
+                          <table class="table table-striped">
+                              <thead>
+                                  <tr>
+                                      <td></td>
+                                      <td>Computer Name</td>
+                                      <td>Type</td>
+                                      <td>User</td>
+                                      <td>Last IP Adress</td>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr ng-repeat="computer in savingComputerList|filter:computerSearch">
+                                      <td>
+                                          <input id="{{$index}}" type="checkbox" ng-click="updateSelection(savingComputerList.indexOf(computer), savingComputerList)" ng-model="computer.checked"  data-name="{{computer.name}}" class="computer-selection custom-checkbox-green-type00"/>
+                                          <label for='{{$index}}'></label>
+                                      </td>
+                                      <td>{{computer.name}}</td>
+                                      <td>{{computer.computerType}}</td>
+                                      <td>{{computer.responsibleUser}}</td>
+                                      <td>{{computer.lastIPAddress}}</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Import" style="display:none;"></uib-tab>
+      </uib-tabset>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="addSavingComputers()">OK</button>
+        <button ng-click="closeSavingComputers()">Cancel</button>
+    </div>
+
+</div>

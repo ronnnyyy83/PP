@@ -1,0 +1,252 @@
+﻿.settings-content.configuration-content {
+    margin-left: -34px;
+
+    label {
+        margin-bottom: 0px;
+        line-height: 32px;
+    }
+
+    input, select {
+        font-family: Calibri;
+        font-size: 14px;
+    }
+
+    #agent {
+        .section-body {
+            label.fixed-width {
+                width: 277px;
+                vertical-align: middle;
+
+                & + span {
+                    vertical-align: middle;
+                }
+
+
+                input[type="number"] {
+                    float: right;
+                }
+            }
+
+            input[type="text"] {
+                padding-left: 8px;
+                height: 32px;
+                color: #1a1a1a;
+                margin: 0 21px 0px 47px;
+                width: 488px;
+            }
+
+            select {
+                width: 238px;
+                margin-left: 55px;
+            }
+        }
+    }
+
+    #general {
+        .section:first-child {
+            .section-body {
+                > div {
+                    width: 492px;
+                }
+            }
+        }
+
+        label.fixed-width {
+            width: 450px;
+
+            input[type="number"] {
+                float: right;
+            }
+        }
+
+        .checkbox-wrapper {
+            width: 422px;
+            float: left;
+
+            input {
+                float: right;
+            }
+
+            & + span {
+                float: right;
+            }
+        }
+    }
+
+    .configuration-partial {
+
+        .configuration-header {
+            background-color: #f2f2f2;
+            height: 52px;
+            padding: 16px 76px;
+            font-size: 18px;
+            font-family: Calibri;
+            font-weight: bold;
+            margin: 0 -34px;
+        }
+
+        .configuration-body {
+            padding: 9px 36px 57px 36px;
+            font-size: 14px;
+            font-weight: lighter;
+
+            .section {
+                width: 808px;
+                border-bottom: solid 1px #f2f2f2;
+                margin-top: 19px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .section-title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #1a1a1a;
+
+                    &.green-link {
+
+                        span:first-child {
+                            width: 160px;
+                            float: left;
+                            margin-right: 10px;
+                        }
+
+                        span:last-child {
+                            color: #8cc63f;
+                            font-weight: normal;
+                        }
+                    }
+                }
+
+                .section-body {
+                    padding: 19px 0;
+
+                    label {
+                        font-weight: lighter;
+                        font-family: Calibri;
+                    }
+
+                    .remark {
+                        margin-top: -20px;
+                        font-size: 13px;
+                        margin-bottom: 15px;
+                    }
+
+                    .open-dialog {
+                        float: right;
+                    }
+
+                    input[type="number"].small {
+                        width: 59px;
+                        padding-left: 8px;
+                        height: 32px;
+                        margin: 0 21px 0px 21px;
+                        color: #1a1a1a;
+                    }
+
+                    > div {
+                        margin-bottom: 16px;
+                    }
+
+                    select {
+                        padding-left: 8px;
+                        height: 32px;
+                        color: #1a1a1a;
+                        margin: 0 21px 0px 21px;
+                    }
+
+                    input[type=number].big-arrows::-webkit-inner-spin-button,
+                    input[type=number].big-arrows::-webkit-outer-spin-button {
+                        height: 32px;
+                        margin: 0;
+                    }
+
+                    .checkbox-wrapper {
+                        position: relative;
+                        left: 27px;
+                        margin-bottom: 15px;
+
+                        .remark {
+                            margin-top: -0px;
+                        }
+
+                        input[type="checkbox"] {
+                            display: none;
+                        }
+
+                        input.custom-checkbox-green-type01:checked + label::before {
+                            position: absolute;
+                            content: '\f00c';
+                            font-family: 'FontAwesome';
+                            color: #a3d165;
+                            height: 15px;
+                            width: 15px;
+                            left: -27px;
+                            border: 1px solid black;
+                            text-align: center;
+                            line-height: 15px;
+                            font-size: 14px;
+                        }
+
+                        input.custom-checkbox-green-type01 + label::before {
+                            position: absolute;
+                            content: '';
+                            height: 15px;
+                            width: 15px;
+                            top: 8px;
+                            border: 1px solid black;
+                            left: -27px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.power-plug-dialog.week-view-dialog {
+    .events, .time-lmit-block {
+        display: none;
+    }
+
+    .week-view-total .week-view-position .calendar {
+        padding-right: 0;
+    }
+
+
+    .week-view-total {
+        .week-view-head {
+            width: 100%;
+            padding-left: 49px;
+            padding-right: 16px;
+        }
+
+        .bottom-week-view {
+            width: calc(100% - 16px);
+
+            .day-limit-right {
+                display: none;
+            }
+        }
+    }
+
+    .mCSB_container_wrapper {
+        margin-right: 16px;
+
+        > .mCSB_container {
+            padding-right: 0px;
+        }
+    }
+}
+
+#wake-on-lan.settings-content.configuration-content {
+    .configuration-partial .configuration-body .section {
+        border: none;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        vertical-align: middle;
+        padding: 5px;
+    }
+}

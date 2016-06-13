@@ -1,0 +1,19 @@
+<div>
+    <span>{{vm.state.current.title}}</span>
+    <span ng-if="vm.state.current.policyName !== undefined" class="form-group" ng-class="{'has-error': vm.state.current.toValidateName && !vm.state.current.policyName}">
+        <input type="text" ng-model="vm.state.current.policyName" placeholder="Enter Plan Name" />
+    </span>
+</div>
+<div>
+    <!--<i class="fa fa-envelope"></i>
+    <i class="fa fa-bell"></i>-->
+    <img src="content/images/_ClipGroup_.png" />
+    <div class="dropdown">
+        <button class="dropdown-toggle" id="headerDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{vm.username}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="headerDropdownMenu">
+            <a class="dropdown-item" ui-sref="login">Logout</a>
+        </div>
+    </div>
+</div>

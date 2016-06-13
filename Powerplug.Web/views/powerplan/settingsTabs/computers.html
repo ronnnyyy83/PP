@@ -1,0 +1,20 @@
+﻿<div class="container-fluid">
+    <span>Do not Perform the operation while the following computers are on:</span>
+    <span class="buttonTypeOneAdd" ng-click="addSavingComputer($event, -1, worktype)">Add</span>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-8">Computer name</div>
+                <div class="col-xs-4"></div>
+            </div>
+            <div class="row">
+                <ul class="power-plug-list">
+                    <li ng-repeat="computer in jsonobject.computersNotRun">
+                        <div class="col-xs-11">{{computer.name}}</div>
+                        <div class="col-xs-1"><span class="buttonTypeOneRemove" ng-click="removeSavingComputer(computer.computerKey)">Remove</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

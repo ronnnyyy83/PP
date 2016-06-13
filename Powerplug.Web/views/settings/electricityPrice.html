@@ -1,0 +1,40 @@
+﻿<div class="settings">
+    <div class="settings-content">
+        <span>Available Power Rates</span>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Power Rate</td>
+                    <td>Type</td>
+                    <td>Cost per kWh</td>
+                    <td>Power Company</td>
+                    <td colspan="2">                        
+                        <span class="buttonTypeOneAdd action-settings" ng-click="vm.showPowerRateDialog(0)">Add</span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="rate in vm.powerRates" class="script-row" ng-click="vm.selectScript($event)">
+                    <td>{{ rate.rateName}}</td>
+                    <td>{{ rate.rateTypeId == 1 ? 'Fixed': 'Variable'}}</td>
+                    <td>{{ rate.rateTypeId == 1 ? vm.getPrice(rate): ''}}</td>
+                    <td>{{ rate.powerCompany}}</td>
+                    <td class="button-container"><span class="buttonTypeOneEdit action-settings" ng-click="vm.showPowerRateDialog(rate.powerRateId)">Edit</span></td>
+                    <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removePowerRate($index)">Remove</span></td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

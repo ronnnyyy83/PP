@@ -1,0 +1,36 @@
+﻿<div class="reports">
+    <div class="report-selection clearfix">
+        <span>
+            Create New Report
+        </span>
+        <span>
+            <select ng-model="vm.reportType" ng-change="vm.goToReport()">
+                <option value="" selected default>Choose Report Type</option>
+                <option ng-repeat="report in vm.reports" value="{{report.reportId}}">{{report.reportName}}</option>
+            </select>
+        </span>
+    </div>
+    <div class="template-list">
+        <div class="template-title">{{vm.reportTemplates.length}} Templates</div>
+        <ul class="templates-container">
+            <li class="clearfix" ng-repeat="reportTemplate in vm.reportTemplates" ui-sref="reportGenerate({ reportId : reportTemplate.reportId ,templateId : reportTemplate.savedReportId})">
+                <div ng-if="reportTemplate.savedReportId > 3" class="button-container">
+                    <span class="buttonTypeOneRemove action-settings" ng-click="vm.removeTemplate(reportTemplate.savedReportId);$event.stopPropagation();">Remove</span>
+                </div>
+                <div class="imgContainer">
+                    <img src="content/images/savingPlans/_Group_.png" />
+                </div>
+                <div class="dataContainer">
+                    <div><span class="template-name">Template Name |</span> <span>{{ reportTemplate.savedReportName}}</span></div>
+                    <div class="template-date" ng-if="reportTemplate.fromDate"><span>Date Range</span> <span class="template-date-green">{{ reportTemplate.fromDate }} - {{ reportTemplate.toDate }}</span></div>
+                    <div class="template-date" ng-if="reportTemplate.fromMonth"><span>Date Range</span> <span class="template-date-green">{{ reportTemplate.fromMonth }} - {{ reportTemplate.toMonth }}</span></div>
+                </div>
+            </li>
+        </ul>
+    </div>    
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

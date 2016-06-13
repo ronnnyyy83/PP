@@ -1,0 +1,22 @@
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Group Properties</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeDialog()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="settings-data-row">
+                <span>Group Name:</span> <input type="text" ng-change="isChange = true" ng-model="group.groupName"  />
+            </div>
+            <div class="settings-data-row">
+                <span>Description:</span> <textarea ng-change="isChange = true" ng-model="group.groupDesc"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="addUpdateGroup()">OK</button>
+            <button ng-click="closeDialog()">Cancel</button>
+        </div>
+    </div>
+</div>

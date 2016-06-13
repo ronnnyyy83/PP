@@ -1,0 +1,10 @@
+<div>
+    <h3>Work Hours & Actions</h3>
+    <span class="buttonTypeOneAdd" ng-click="vm.createNewAction('Restart', vm.savingPlan.actions)">Add Restart</span>
+    <span class="buttonTypeOneAdd" ng-click="vm.createNewAction('Wake', vm.savingPlan.actions)">Add Wakeup</span>
+</div>
+<div class="clearfix">
+    <week-view data-actions='vm.savingPlan.actions' use-default-work-hours="vm.savingPlan.workHours.workTimeUseDefault"
+                data-work-time-list='vm.workTime' work-time-change="vm.workTimeChange(data)" action-remove="vm.actionRemove(data)" 
+               action-edit="vm.actionEdit(data)" calendar-work-time="vm.calendarWorkTime"></week-view>
+</div>

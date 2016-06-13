@@ -1,0 +1,78 @@
+﻿<div class="settings">
+    <div class="settings-content configuration-content" id="wake-on-lan">
+        <div class="configuration-partial">
+            <div class="configuration-body">
+                <div class="section">
+                    <div class="section-title">Wake On LAN Options</div>
+                    <div class="section-body">
+                        <div class="checkbox-wrapper">
+                            <input id="conf-net-adapter-cb" type="checkbox" class="custom-checkbox-green-type01"
+                                   ng-model="vm.wakeOnLan.confNetAdapterToWol">
+                            <label for="conf-net-adapter-cb">Configure Windows to enable Wake On LAN for all network adapters</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="wol-scheduled-wake-cb" type="checkbox" class="custom-checkbox-green-type01"
+                                   ng-model="vm.wakeOnLan.wolForScheduledWakeUp">
+                            <label for="wol-scheduled-wake-cb"> Perform Wake On LAN for Secheduled Wake Up Events</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="configuration-partial">
+            <div class="configuration-header"></div>
+            <div class="configuration-body">
+                <div class="section">
+                    <div class="section-title">WOL Relay Options</div>
+                    <div class="section-body">
+                        <div class="checkbox-wrapper">
+                            <input id="enable-wol-relays-cb" type="checkbox" class="custom-checkbox-green-type01"
+                                   ng-model="vm.wakeOnLan.enableWolRelays">
+                            <label for="enable-wol-relays-cb"> Enable WOL Relays for each network subnet</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="disable-saving-wol-cb" type="checkbox" class="custom-checkbox-green-type01"
+                                   ng-model="vm.wakeOnLan.disableSavingOnWolRelays">
+                            <label for="disable-saving-wol-cb"> Disable Power Savings on computers while they act as WOL Relays</label>
+                            <div class="remark">
+                                (power savings will be disabled only when actively acting as WOL Relays)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-title">The following computers will be given higher priority when selecting a WOL Relays:</div>
+                    <div class="section-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td colspan="2">Computer Name</td>
+                                    <td colspan="2">
+                                        <span class="buttonTypeOneAdd action-settings" ng-click="vm.openComputerDialog()" style="margin-top:11px;">Add</span>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="computer in vm.wakeOnLan.wolRelayComputers">
+                                    <td colspan="3">{{computer.name}} </td>
+                                    <td style="width:150px;">
+                                        <span class="buttonTypeOneRemove action-settings" ng-click="vm.removeComputer($index)">Remove</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="save-button-margin"></div>
+        <div class="buttons-container">
+            <div>
+                <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+                <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+            </div>
+        </div>
+    </div>
+</div>

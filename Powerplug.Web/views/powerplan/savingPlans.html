@@ -1,0 +1,47 @@
+﻿<div class="savingPlans">    
+    <div class="clearfix">        
+        <div class="searchBlock">
+            <input type="text" name="search" placeholder="Search a Plan" ng-model="search.policyName">
+        </div>
+        <div class="manageBlock">
+            <span class="planTitle">{{vm.savingPlans.length}} Plans</span>
+            <div class="manageButton" ng-click="vm.openManageDialog()">Manage</div>
+        </div>
+    </div>
+    <span><span>Organization Name&nbsp;</span><span>({{vm.savingPlans.length}} Plans)</span></span>
+    <span class="buttonTypeOne" ui-sref="savingPlanEditor({ policyId : 0})">Add Plan</span>
+    <div class="collapse in" id="organizationName">
+        <div class="customTable">
+            <div class="customTableHead">
+                <div>
+                    <img src="content/images/savingPlans/_Group_.png">
+                    <span>Plan<br>Details</span>
+                </div>
+                <div>
+                    <img src="content/images/savingPlans/_Group_1.png">
+                    <span>Projected<br>Efficiency</span>
+                </div>
+                <div>Actual&nbsp;Reported<br>Efficiency</div>
+                <div>
+                    <img src="content/images/savingPlans/_Group_2.png">
+                    <span>Assigned<br>Computers</span>
+                </div>
+                <div>Actual<br>Reporting</div>
+            </div>
+            <div class="customTableRow" ng-repeat="row in vm.savingPlans|filter:search|orderBy:vm.sort.column:vm.sort.descending">
+                <div class="customTableCell">
+                    <span>{{row.orderNo}}</span>
+                    <a ui-sref="savingPlanEditor({ policyId : row.policyId})">{{row.policyName}}</a>
+                    <br>
+                    <i class="fa fa-user"></i>
+                    <span>Owner</span>
+                    <span>{{row.owner}}</span>
+                </div>
+                <div color-letter letter="row.plannedEfficiency"></div>
+                <div color-letter letter="row.actualEfficiency"></div>
+                <div>{{row.plannedComputers}}</div>
+                <div>{{row.actualComputers}}</div>
+            </div>
+        </div>
+    </div>
+</div>

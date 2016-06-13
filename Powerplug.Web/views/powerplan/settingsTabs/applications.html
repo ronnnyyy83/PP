@@ -1,0 +1,27 @@
+﻿<div class="container-fluid tab-line">
+    <div class="row">
+        <div class="col-xs-11">Do not Perform the operation while:</div>
+        <div class="buttonTypeOneAdd buttonTypeOne col-xs-1" ng-click="addSavingApplication($event, -1, worktype)">Add</div>
+    </div>
+    <div>
+        <div class="container-fluid">
+            <div class="row aplication-title">
+                <div class="col-xs-4">Application</div>
+                <div class="col-xs-4">Condition</div>
+            </div>
+            <div class="row">
+                <ul class="power-plug-list">
+                    <li ng-repeat="application in appMetrics">
+                        <div class="col-xs-4">{{application.appName}}</div>
+                        <div class="col-xs-6">{{application.counter.toLowerCase() === "cpu" ? "CPU usage > " + application.threshold + " percent" : application.counter.toLowerCase() === "io" ? "IO > " + (application.threshold / 1024) + " KB/Sec" : application.counter}}</div>
+                        <div class="col-xs-1">
+                            <span class="buttonTypeOneEdit buttonTypeOne"
+                                  ng-click="addSavingApplication($event, application.appKey, worktype)">Edit</span>
+                        </div>
+                        <div class="col-xs-1"><span class="buttonTypeOneRemove buttonTypeOne" ng-click="removeSavingApplication(application.appKey)">Remove</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿<div class="configuration-partial">
+    <div class="configuration-header">Console</div>
+    <div class="configuration-body">
+        <div class="section">
+            <div class="section-title">Power Plan Editor Options</div>
+            <div class="section-body">
+                <div class="checkbox-wrapper">
+                    <input id="default-plan-cb" type="checkbox" class="custom-checkbox-green-type01" ng-model= "vm.console.lastPlanAsDefault">
+                    <label for="default-plan-cb">Use the last On-Going Power Saving Plan in the list as a default plan</label>
+                    <div class="remark">
+                        (assigns the last global Power Savings to all computers that have no plan)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Display Options</div>
+            <div class="section-body">
+                <div class="checkbox-wrapper">
+                    <input id="display-usename-cb" type="checkbox" class="custom-checkbox-green-type01" ng-model= "vm.console.showUserAsDomain">
+                    <label for="display-usename-cb">Display Username as Domain\Username</label>
+                </div>
+                <label>
+                    Unit System 
+                    <select ng-model="vm.console.displayUnit">
+                        <option ng-repeat="option in vm.displayUnit" value="{{option.id}}" label="{{option.name}}"
+                                ng-selected="vm.console.displayUnit == option.id"></select>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

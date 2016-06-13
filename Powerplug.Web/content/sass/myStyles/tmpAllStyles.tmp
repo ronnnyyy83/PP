@@ -1,0 +1,2675 @@
+// Computers section styles
+// div.computersWrapper {
+    background-color: #f2f2f2;
+    margin: 0 -50px;
+    padding: 55px 40px;
+    > div[active="active"] {
+        > ul {
+            border-bottom: 4px solid #8cc63f;
+            > li {
+                width: 250px;
+                text-align: left;
+                > a {
+                    border: none;
+                    border-bottom: 6px solid #e6e6e6;
+                    background-color: #e6e6e6;
+                    padding: 0;
+                    margin: 0;
+                    font-family: Calibri;
+                    color: #808080;
+                    font-size: 20.3px;
+                    font-weight: 300;
+                    > uib-tab-heading {
+                        display: flex;
+                        height: 44px;
+                        justify-content: space-between;
+                        align-items: center;
+                        > span {
+                            margin-left: 17px;
+                        }
+                        > div {
+                            border-radius: 100%;
+                            background-color: #cccccc;
+                            font-family: Calibri;
+                            font-size: 16.15px;
+                            font-weight: 700;
+                            height: 27px;
+                            width: 27px;
+                            line-height: 27px;
+                            text-align: center;
+                            margin-right: 10px;
+                            > span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-family: Calibri;
+                                color: #808080;
+                                font-size: 16.15px;
+                                font-weight: 700;
+                                line-height: 31px;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    > a {
+                        border-bottom-color: #88b73d;
+                        background-color: #a3d165;
+                        color: #ffffff;
+                        font-weight: 700;
+                        > uib-tab-heading {
+                            > div {
+                                background-color: #ffffff;
+                                > span {
+                                    color: #8cc63f;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-left: 8px;
+                }
+            }
+        }
+        > div.tab-content {
+            > div.tab-pane {
+                &:first-child {
+                  > div {
+                      &:first-child {
+                          position: relative;
+                          > span {
+                              font-family: Calibri;
+                              color: rgba(26, 26, 26, 0.7);
+                              font-size: 18px;
+                              font-weight: 700;
+                              position: absolute;
+                              top: -51px;
+                              &.buttonTypeOneAdd {
+                                  right: 120px;
+                              }
+                              &.buttonTypeOneRemove {
+                                  right: 0;
+                              }
+                              &::before {
+                                  font-size: 20px;
+                                  margin-right: 10px;
+                              }
+                          }
+                      }
+                      &:nth-child(2) {
+                          border-bottom: 1px solid #b3b3b3;
+                          margin-top: 25px;
+                          font-family: Calibri;
+                          color: rgba(26, 26, 26, 0.7);
+                          font-size: 14px;
+                          font-weight: 700;
+                          letter-spacing: -0.182px;
+                          input.custom-checkbox-green-type00 {
+                              display: none;
+                              &+label {
+                                  position: relative;
+                                  margin: 0;
+                                  height: 15px;
+                                  width: 35px;
+                              }
+                              &+label::before {
+                                  position: absolute;
+                                  content: '';
+                                  height: 15px;
+                                  width: 15px;
+                                  border: 1px solid #d9d9d9;
+                                  left: 10px;
+                                  top: -2px;
+                                  background-color: #ffffff;
+                              }
+                              &:checked + label::before {
+                                  position: absolute;
+                                  content: '\f00c';
+                                  font-family: 'FontAwesome';
+                                  color: #a3d165;
+                                  height: 15px;
+                                  width: 15px;
+                                  border: 1px solid #d9d9d9;
+                                  text-align: center;
+                                  line-height: 15px;
+                                  left: 10px;
+                                  top: -2px;
+                                  background-color: #ffffff;
+                              }
+                          }
+
+                      }
+                      &:nth-child(3) {
+                          height: 329px;
+                          div.container-fluid {
+                              > div.row {
+                                  height: 47px;
+                                  border-bottom: 1px solid #cccccc;
+                                  font-family: Calibri;
+                                  color: #333333;
+                                  font-size: 14px;
+                                  font-weight: 300;
+                                  letter-spacing: -0.182px;
+                                  > div {
+                                      line-height: 47px;
+                                      &:first-child {
+                                          > input.custom-checkbox-green-type00 {
+                                              display: none;
+                                              &+label {
+                                                  position: relative;
+                                                  margin: 0;
+                                                  height: 15px;
+                                                  width: 35px;
+                                              }
+                                              &+label::before {
+                                                  position: absolute;
+                                                  content: '';
+                                                  height: 15px;
+                                                  width: 15px;
+                                                  border: 1px solid #d9d9d9;
+                                                  left: 10px;
+                                                  top: 3px;
+                                                  background-color: #ffffff;
+                                              }
+                                              &:checked + label::before {
+                                                  position: absolute;
+                                                  content: '\f00c';
+                                                  font-family: 'FontAwesome';
+                                                  color: #a3d165;
+                                                  height: 15px;
+                                                  width: 15px;
+                                                  border: 1px solid #d9d9d9;
+                                                  text-align: center;
+                                                  line-height: 15px;
+                                                  left: 10px;
+                                                  top: 3px;
+                                                  background-color: #ffffff;
+                                              }
+                                          }
+                                      }
+                                      // &:last-child {
+                                      //     display: none;
+                                      // }
+                                  }
+                                  &:hover {
+                                      font-family: Calibri;
+                                      color: #ffffff;
+                                      font-size: 14px;
+                                      font-weight: 700;
+                                      letter-spacing: -0.182px;
+                                      background-color: #333333;
+                                      > div {
+                                          // &:last-child {
+                                          //     display: block;
+                                          //     > i {
+                                          //         color: #86bd3e;
+                                          //     }
+                                          // }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+                }
+                &:nth-child(2) {
+                    > div {
+                        &:first-child {
+                            position: relative;
+                            > span {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 18px;
+                                font-weight: 700;
+                                position: absolute;
+                                top: -51px;
+                                &.buttonTypeOneAdd {
+                                    right: 120px;
+                                }
+                                &.buttonTypeOneRemove {
+                                    right: 0;
+                                }
+                                &::before {
+                                    font-size: 20px;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            border-bottom: 1px solid #b3b3b3;
+                            margin-top: 25px;
+                            font-family: Calibri;
+                            color: rgba(26, 26, 26, 0.7);
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            input.custom-checkbox-green-type00 {
+                                display: none;
+                                &+label {
+                                    position: relative;
+                                    margin: 0;
+                                    height: 15px;
+                                    width: 35px;
+                                }
+                                &+label::before {
+                                    position: absolute;
+                                    content: '';
+                                    height: 15px;
+                                    width: 15px;
+                                    border: 1px solid #d9d9d9;
+                                    left: 10px;
+                                    top: -2px;
+                                    background-color: #ffffff;
+                                }
+                                &:checked + label::before {
+                                    position: absolute;
+                                    content: '\f00c';
+                                    font-family: 'FontAwesome';
+                                    color: #a3d165;
+                                    height: 15px;
+                                    width: 15px;
+                                    border: 1px solid #d9d9d9;
+                                    text-align: center;
+                                    line-height: 15px;
+                                    left: 10px;
+                                    top: -2px;
+                                    background-color: #ffffff;
+                                }
+                            }
+
+                        }
+                        &:nth-child(3) {
+                            height: 329px;
+                            div.container-fluid {
+                                > div.row {
+                                    height: 47px;
+                                    border-bottom: 1px solid #cccccc;
+                                    font-family: Calibri;
+                                    color: #333333;
+                                    font-size: 14px;
+                                    font-weight: 300;
+                                    letter-spacing: -0.182px;
+                                    > div {
+                                        line-height: 47px;
+                                        &:first-child {
+                                            > input.custom-checkbox-green-type00 {
+                                                display: none;
+                                                &+label {
+                                                    position: relative;
+                                                    margin: 0;
+                                                    height: 15px;
+                                                    width: 35px;
+                                                }
+                                                &+label::before {
+                                                    position: absolute;
+                                                    content: '';
+                                                    height: 15px;
+                                                    width: 15px;
+                                                    border: 1px solid #d9d9d9;
+                                                    left: 10px;
+                                                    top: 3px;
+                                                    background-color: #ffffff;
+                                                }
+                                                &:checked + label::before {
+                                                    position: absolute;
+                                                    content: '\f00c';
+                                                    font-family: 'FontAwesome';
+                                                    color: #a3d165;
+                                                    height: 15px;
+                                                    width: 15px;
+                                                    border: 1px solid #d9d9d9;
+                                                    text-align: center;
+                                                    line-height: 15px;
+                                                    left: 10px;
+                                                    top: 3px;
+                                                    background-color: #ffffff;
+                                                }
+                                            }
+                                        }
+                                        &:last-child {
+                                            display: none;
+                                        }
+                                    }
+                                    &:hover {
+                                        font-family: Calibri;
+                                        color: #ffffff;
+                                        font-size: 14px;
+                                        font-weight: 700;
+                                        letter-spacing: -0.182px;
+                                        background-color: #333333;
+                                        > div {
+                                            &:last-child {
+                                                display: block;
+                                                > i {
+                                                    color: #86bd3e;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End computers section styles
+// Add application dialog styles
+// div.addAppWrapper {
+//     > div {
+//         &.modal-header {
+//             padding: 0;
+//             border: none;
+//             > span {
+//                 display: inline-block;
+//                 margin: 45px 33px;
+//                 font-family: Calibri;
+//                 color: rgba(26, 26, 26, 0.7);
+//                 font-size: 24px;
+//                 font-weight: 300;
+//             }
+//             > img {
+//                 float: right;
+//                 margin: 52px 30px;
+//             }
+//         }
+//         &.modal-body {
+//             border-top: 5px solid #8cc63f;
+//             padding: 0;
+//             margin: 0;
+//             > div.well {
+//                 border: none;
+//                 background-color: #ffffff;
+//                 padding: 0 33px;
+//                 margin: 0;
+//                 > div {
+//                     font-family: Calibri;
+//                     color: rgba(26, 26, 26, 0.7);
+//                     font-size: 14px;
+//                     font-weight: 300;
+//                     letter-spacing: -0.182px;
+//                     > input.custom-radio-button-t2 + label {
+//                         font-family: Calibri;
+//                         color: rgba(26, 26, 26, 0.7);
+//                         font-size: 13px;
+//                         font-weight: 300;
+//                         letter-spacing: -0.169px;
+//                         line-height: 14px;
+//                     }
+//                     > input.custom-radio-button-t2:checked + label {
+//                         font-weight: 700;
+//                     }
+//                     > input[type='number'] {
+//                         width: 90px;
+//                         margin-left: 25px;
+//                     }
+//                     &:last-child {
+//                         text-align: center;
+//                         background-color: #f2f2f2;
+//                         margin: 0 -33px;
+//                         > button {
+//                             border: none;
+//                             height: 40px;
+//                             width: 100px;
+//                             margin: 31px 0;
+//                             font-family: Calibri;
+//                             color: #ffffff;
+//                             font-size: 20.3px;
+//                             font-weight: 700;
+//                             &:first-child {
+//                                 background-color: #8cc63f;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// End add application dialog styles
+// Add computer modal dialog
+// md-dialog.addComputerWrapper {
+    min-height: 80%;
+    > md-toolbar {
+        background-color: #ffffff;
+        padding-left: 32px;
+        padding-right: 34px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > div {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 24px;
+            font-weight: 300;
+            text-align: left;
+        }
+        > img {
+            cursor: pointer;
+        }
+    }
+    > md-content {
+        > div {
+            &:first-child {
+                padding-left: 33px;
+                padding-right: 22px;
+                > ul {
+                    border-bottom: 5px solid #8cc63f;
+                    margin-bottom: 18px;
+                    > li {
+                        > a {
+                            padding: 0 30px;
+                            height: 44px;
+                            line-height: 44px;
+                        }
+                    }
+                }
+                > div.tab-content {
+                    > div.tab-pane {
+                        &:first-child {
+                            > div.savingsWrapper {
+                                > div.container-fluid {
+                                    padding-left: 0;
+                                    > div.row {
+                                        > div {
+                                            &:first-child {
+                                                > div.container-fluid {
+                                                    > div.row {
+                                                        &:first-child {
+                                                            font-family: Calibri;
+                                                            color: #4d4d4d;
+                                                            font-size: 18px;
+                                                            font-weight: 700;
+                                                        }
+                                                        &:nth-child(2) {
+                                                            font-family: Calibri;
+                                                            color: #4d4d4d;
+                                                            font-size: 12px;
+                                                            font-weight: 300;
+                                                            letter-spacing: -0.156px;
+                                                            > span {
+                                                                float: right;
+                                                                &::before {
+                                                                    font-size: 17px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:last-child {
+                                                padding-right: 0;
+                                                border-left: 1px solid #cccccc;
+                                                > div.container-fluid {
+                                                    > div.row {
+                                                        &:first-child {
+                                                            > div.col-xs-12 {
+                                                                padding: 0;
+                                                                display: flex;
+                                                                align-items: center;
+                                                                > span {
+                                                                    font-family: Calibri;
+                                                                    color: #4d4d4d;
+                                                                    font-size: 18px;
+                                                                    font-weight: 700;
+                                                                    text-align: left;
+                                                                    margin-right: 53px;
+                                                                }
+                                                                > input {
+                                                                    flex-grow: 1;
+                                                                    height: 33px;
+                                                                }
+                                                            }
+                                                        }
+                                                        &:last-child {
+                                                            > div.col-xs-12 {
+                                                                padding: 0;
+                                                                > div.container-fluid {
+                                                                    padding: 0;
+                                                                    > table {
+                                                                        > thead {
+                                                                            font-family: Calibri;
+                                                                            color: rgba(26, 26, 26, 0.7);
+                                                                            font-size: 14px;
+                                                                            font-weight: 700;
+                                                                            letter-spacing: -0.182px;
+                                                                        }
+                                                                        > tbody {
+                                                                            font-family: Calibri;
+                                                                            color: #333333;
+                                                                            font-size: 14px;
+                                                                            font-weight: 300;
+                                                                            letter-spacing: -0.182px;
+                                                                            background-color: #ffffff;
+                                                                            > tr {
+                                                                                > td {
+                                                                                    &:first-child {
+                                                                                        > input.custom-checkbox-green-type00 {
+                                                                                            display: none;
+                                                                                            &+label {
+                                                                                                position: relative;
+                                                                                                margin: 0;
+                                                                                                height: 15px;
+                                                                                                width: 35px;
+                                                                                            }
+                                                                                            &+label::before {
+                                                                                                position: absolute;
+                                                                                                content: '';
+                                                                                                height: 15px;
+                                                                                                width: 15px;
+                                                                                                border: 1px solid #d9d9d9;
+                                                                                                left: 10px;
+                                                                                                top: 3px;
+                                                                                            }
+                                                                                            &:checked + label::before {
+                                                                                                position: absolute;
+                                                                                                content: '\f00c';
+                                                                                                font-family: 'FontAwesome';
+                                                                                                color: #a3d165;
+                                                                                                height: 15px;
+                                                                                                width: 15px;
+                                                                                                border: 1px solid #d9d9d9;
+                                                                                                text-align: center;
+                                                                                                line-height: 15px;
+                                                                                                left: 10px;
+                                                                                                top: 3px;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                background-color: #f2f2f2;
+                text-align: center;
+                padding: 15px 0;
+                > button {
+                    height: 40px;
+                    width: 120px;
+                    border: none;
+                    font-family: Calibri;
+                    color: #ffffff;
+                    font-size: 20.3px;
+                    font-weight: 700;
+                    &:first-child {
+                        background-color: #8cc63f;
+                    }
+                    &:last-child {
+                        background-color: #808080;
+                    }
+                }
+            }
+        }
+    }
+}
+// End add computer modal dialog
+// Add script dialog
+// md-dialog.addScript {
+    > md-toolbar {
+        background-color: #ffffff;
+        padding-left: 32px;
+        padding-right: 34px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > div {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 24px;
+            font-weight: 300;
+            text-align: left;
+        }
+        > img {
+            cursor: pointer;
+        }
+    }
+    > md-content {
+        > span {
+            margin-left: 37px;
+            font-family: Calibri;
+            color: #4d4d4d;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        > div {
+            &:nth-child(2) {
+                background-color: #ffffff;
+                border: none;
+                > table {
+                    margin-bottom: 0;
+                    border-bottom: 1px solid #b2b2b2;
+                    > thead {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        td {
+                            padding-left: 0;
+                        }
+                    }
+                    > tbody {
+                        font-family: Calibri;
+                        color: #333333;
+                        font-size: 14px;
+                        font-weight: 300;
+                        letter-spacing: -0.182px;
+                        > tr {
+                            > td {
+                                &:first-child {
+                                    text-align: center;
+                                    /////////////
+                                    > input.custom-checkbox-green-type00 {
+                                        display: none;
+                                        &+label {
+                                            position: relative;
+                                            margin: 0;
+                                            height: 15px;
+                                            width: 35px;
+                                        }
+                                        &+label::before {
+                                            position: absolute;
+                                            content: '';
+                                            height: 15px;
+                                            width: 15px;
+                                            border: 1px solid #d9d9d9;
+                                            left: 10px;
+                                            top: 3px;
+                                        }
+                                        &:checked + label::before {
+                                            position: absolute;
+                                            content: '\f00c';
+                                            font-family: 'FontAwesome';
+                                            color: #a3d165;
+                                            height: 15px;
+                                            width: 15px;
+                                            border: 1px solid #d9d9d9;
+                                            text-align: center;
+                                            line-height: 15px;
+                                            left: 10px;
+                                            top: 3px;
+                                        }
+                                    }
+                                    /////////////
+                                }
+                                padding: 0;
+                                line-height: 40px;
+                            }
+                        }
+                    }
+                }
+                > div {
+                    &:nth-child(3) {
+                        text-align: center;
+                        padding: 15px 0;
+                        background-color: #f2f2f2;
+                    }
+                    > button {
+                        height: 40px;
+                        width: 120px;
+                        border: none;
+                        font-family: Calibri;
+                        color: #ffffff;
+                        font-size: 20.3px;
+                        font-weight: 700;
+                        &:first-child {
+                            background-color: #8cc63f;
+                        }
+                        &:last-child {
+                            background-color: #808080;
+                        }
+                    }
+                }
+            }
+            div.savedStriptInfo {
+                margin: 5px 0;
+                background-color: #f8f8f8;
+                > span {
+                    margin-top: 20px;
+                    display: inline-block;
+                    margin-left: 54px;
+                    font-family: Calibri;
+                    color: #4d4d4d;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                > div {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 19px;
+                    padding-bottom: 19px;
+                    border-bottom: 1px solid #b3b3b3;
+                    > div {
+                        &:nth-child(1) {
+                            margin-left: 89px;
+                            line-height: 27px;
+                        }
+                        &:nth-child(2) {
+                            line-height: 28px;
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 300;
+                            letter-spacing: -0.182px;
+                        }
+                        &:nth-child(3) {
+                            line-height: 28px;
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            margin-left: 73px;
+                        }
+                        &:nth-child(4) {
+                            margin-left: 24px;
+                            > label {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 13px;
+                                font-weight: 300;
+                                letter-spacing: -0.169px;
+                                line-height: 14px;
+                                text-align: left;
+                            }
+                        }
+                        &:nth-child(5) {
+                            margin-left: 48px;
+                            > label {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 13px;
+                                font-weight: 300;
+                                letter-spacing: -0.169px;
+                                line-height: 14px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// .topGreenLine {
+//     z-index: 100;
+// }
+// div.content-wrapper {
+//     background-color: #f9f9f9;
+// }
+// .overview {
+//     margin: 0 -48px;
+//     background-color: #f9f9f9;
+//     > div {
+//         &:first-child {
+//             height: 112px;
+//             display: flex;
+//             justify-content: flex-end;
+//             padding-left: 33px;
+//             > div {
+//                 &:first-child {
+//                     flex-grow: 1;
+//                 }
+//                 &:last-child {
+//                     width: 250px;
+//                     height: 112px;
+//                     background-color: #f2f2f2;
+//                     > div {
+//                         height: 56px;
+//                         > div {
+//                             display: inline-block;
+//                             float: left;
+//                             line-height: 56px;
+//                             &:first-child {
+//                                 width: 70px;
+//                                 margin-left: 38px;
+//                                 > span {
+//                                     font-family: Calibri;
+//                                     color: rgba(26, 26, 26, 0.7);
+//                                     font-size: 14px;
+//                                     font-weight: 300;
+//                                     letter-spacing: -0.182px;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//                 > div.row {
+//                     height: 28px;
+//                     &:nth-child(1),
+//                     &:nth-child(2) {
+//                         img {
+//                             margin-bottom: 8px;
+//                         }
+//                         span {
+//                             margin-left: 5px;
+//                         }
+//                     }
+//                     &:nth-child(3),
+//                     &:nth-child(4) {
+//                         img {
+//                             margin-left: 5px;
+//                             margin-bottom: 5px;
+//                         }
+//                         span {
+//                             margin-left: 10px;
+//                         }
+//                     }
+//                     > div.col-xs-12 {
+//                         > img.margin {
+//                             padding-left: 10px;
+//                         }
+//                         > span {
+//                             font-family: Calibri;
+//                             color: rgba(26, 26, 26, 0.7);
+//                             font-size: 16.93px;
+//                             font-weight: 300;
+//                             line-height: 26.338px;
+//                             text-align: left;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         &:nth-child(2) {
+//             background-color: #f2f2f2;
+//             padding-bottom: 35px;
+//             margin-top: 10px;
+//             > div {
+//                 &:last-child {
+//                     margin-top: 10px;
+//                     > div {
+//                         padding-top: 30px;
+//                         .bigNumber {
+//                             font-family: Calibri;
+//                             font-size: 33.39px;
+//                             font-weight: 700;
+//                             text-align: left;
+//                         }
+//                         .font {
+//                             font-family: Calibri;
+//                             color: rgba(26, 26, 26, 0.7);
+//                             font-size: 16.69px;
+//                             font-weight: 300;
+//                             text-align: left;
+//                         }
+//                         .green {
+//                             color: #8cc63f;
+//                         }
+//                         &:first-child {}
+//                     }
+//                 }
+//             }
+//         }
+//         &:last-child {
+//             height: 45px;
+//             background-color: #8cc63f;
+//             margin: 0 -12px;
+//             ul {
+//                 line-height: 45px;
+//                 text-align: center;
+//                 li {
+//                     > a {
+//                         font-family: Calibri;
+//                         color: #ffffff;
+//                         font-size: 17px;
+//                         font-weight: 400;
+//                         padding: 0 15px;
+//                         text-decoration: none;
+//                     }
+//                     list-style: none;
+//                     display: inline-block;
+//                     &:not(:first-child) {
+//                         border-left: 1px solid #ffffff;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// Chart directive
+// .chart-wraper {
+//     width: 100%;
+//     box-sizing: border-box;
+//     display: inline-block;
+//     padding: 0 5px;
+//     .chart-title {
+//         font-size: 20px;
+//         padding: 10px 0;
+//         font-family: Calibri;
+//         color: rgba(26, 26, 26, 0.7);
+//         font-size: 17px;
+//         font-weight: 400;
+//         text-align: left;
+//     }
+//     .chart-work {
+//         padding: 10px;
+//         box-sizing: border-box;
+//         background-color: #fff;
+//     }
+//     .chart-non-work {
+//         padding: 10px;
+//         box-sizing: border-box;
+//         background-color: #e6e6e6;
+//     }
+// }
+// md-datepicker {
+    display: inline-block;
+    height: 30px;
+    > div {
+        margin: 7px 0 0 12px;
+        &.md-datepicker-input-container {
+            border: none;
+            width: 88px;
+        }
+    }
+    > button {
+        display: none !important;
+    }
+    button.md-focused {
+        background-color: none;
+    }
+    button {
+        top: 0 !important;
+        left: 53px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    input {
+        font-family: Calibri;
+        color: rgba(102, 102, 102, 0.7) !important;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.182px;
+        text-align: left;
+    }
+}
+//Calendar styles
+// div[ui-view="workhoursaction"] {
+//     > div {
+//         &:first-child {
+//             height: 40px;
+//             border-bottom: 5px solid #8cc63f;
+//             margin-bottom: 44px;
+//             margin-top: 46px;
+//             > h3 {
+//                 font-family: Calibri;
+//                 color: rgba(26, 26, 26, 0.7);
+//                 font-size: 23px;
+//                 font-weight: 300;
+//                 float: left;
+//                 margin: 0;
+//             }
+//             > span.buttonTypeOneAdd {
+//                 float: right;
+//                 font-family: Calibri;
+//                 color: rgba(26, 26, 26, 0.7);
+//                 font-size: 18px;
+//                 font-weight: 700;
+//                 text-align: left;
+//                 &:before {
+//                     margin-right: 5px;
+//                     font-size: 20px;
+//                 }
+//                 &:last-child {
+//                     margin-right: 30px;
+//                 }
+//             }
+//         }
+//     }
+// }
+// .week-view-total {
+//     position: relative;
+//     z-index: 5;
+//     .week-view-head {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: calc(100% - 160px);
+//         height: 43px;
+//         background-color: #fbfbfb;
+//         padding-left: 57px;
+//         padding-right: 15px;
+//         z-index: 50;
+//         .left-span {
+//             font-size: 0;
+//             .day {
+//                 display: inline-block;
+//                 width: 14.2857%;
+//                 font-size: 16px;
+//                 line-height: 43px;
+//                 text-align: center;
+//             }
+//         }
+//     }
+//     .week-view-position {
+//         position: relative;
+//         width: 100%;
+//         border-right: 1px solid #cfcfcf;
+//         .calendar {
+//             width: 100%;
+//             padding-right: 152px;
+//             position: relative;
+//             .left-span {
+//                 background-color: #fbfbfb;
+//                 padding-top: 43px;
+//                 width: 57px;
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 margin-right: -100%;
+//                 font-size: 0;
+//                 z-index: 10;
+//                 .numbers {
+//                     width: 50px;
+//                     font-size: 16px;
+//                     float: left;
+//                     height: 100%;
+//                     padding-bottom: 8px;
+//                 }
+//                 .number {
+//                     color: #dbdbdb;
+//                     height: 16px;
+//                     box-sizing: border-box;
+//                     text-align: center;
+//                 }
+//                 .lines {
+//                     width: 7px;
+//                     font-size: 16px;
+//                     float: right;
+//                     height: 100%;
+//                     padding-top: 8px;
+//                 }
+//             }
+//             .line1 {
+//                 border-top: 1px solid #e6e6e6;
+//                 height: 16px;
+//                 box-sizing: border-box;
+//             }
+//             .line2 {
+//                 border-top: 1px solid #f0f0f0;
+//                 height: 16px;
+//                 box-sizing: border-box;
+//             }
+//             .right-span {
+//                 background-color: #fbfbfb;
+//                 padding-top: 43px;
+//                 width: 100%;
+//                 box-sizing: border-box;
+//                 padding-left: 57px;
+//                 padding-right: 15px;
+//                 position: relative;
+//                 .lines {
+//                     width: 100%;
+//                     font-size: 16px;
+//                     float: right;
+//                     height: 100%;
+//                     padding-top: 8px;
+//                 }
+//                 .day-coll {
+//                     font-size: 0;
+//                     z-index: 15;
+//                     position: absolute;
+//                     top: 51px;
+//                     left: 57px;
+//                     width: calc(100% - 72px);
+//                     height: calc(100% - 66px);
+//                     .day {
+//                         display: inline-block;
+//                         width: 14.2857%;
+//                         font-size: 16px;
+//                         height: 100%;
+//                         position: relative;
+//                         box-sizing: border-box;
+//                         .day-wrape {
+//                             margin: 0 2px;
+//                             position: relative;
+//                             box-sizing: border-box;
+//                             height: 100%;
+//                             .event-time {
+//                                 box-sizing: border-box;
+//                                 position: absolute;
+//                                 display: block;
+//                                 width: 100%;
+//                                 z-index: 17;
+//                                 height: 16px;
+//                                 .wrape-relative {
+//                                     position: relative;
+//                                     .popover-block {
+//                                         outline: none;
+//                                         position: absolute;
+//                                         bottom: 15px;
+//                                         left: calc(-112px + 50%);
+//                                         background-color: #fff;
+//                                         width: 224px;
+//                                         display: block;
+//                                         border: 1px solid #29abe2;
+//                                         text-align: center;
+//                                         font-size: 0;
+//                                         .btn {
+//                                             border-radius: 0px!important;
+//                                             margin: 0 !important;
+//                                             background-color: #29abe2;
+//                                             border: 1px solid #29abe2;
+//                                             width: 50%;
+//                                             box-sizing: border-box;
+//                                         }
+//                                         .btndiv {
+//                                             color: #fff;
+//                                             cursor: pointer;
+//                                             padding: 6px 12px;
+//                                             border-radius: 0px!important;
+//                                             margin: 0 !important;
+//                                             background-color: #29abe2;
+//                                             border: 1px solid #29abe2;
+//                                             width: 50%;
+//                                             float: left;
+//                                             font-size: 14px;
+//                                             box-sizing: border-box;
+//                                         }
+//                                         .event-img {
+//                                             height: 26px;
+//                                             margin: 10px 0;
+//                                         }
+//                                         .event-name {
+//                                             font-weight: bolder;
+//                                             margin: 2px 0;
+//                                             font-size: 16px;
+//                                             padding: 0 5px;
+//                                         }
+//                                         .event-text {
+//                                             padding: 0 5px 5px;
+//                                             font-size: 16px;
+//                                         }
+//                                         .arrow {
+//                                             position: absolute;
+//                                             bottom: -10px;
+//                                             left: calc(50% + 10px);
+//                                             margin-left: -11px;
+//                                             border: 5px solid transparent;
+//                                             border-left: 5px solid #29abe2;
+//                                             border-top: 5px solid #29abe2;
+//                                         }
+//                                     }
+//                                 }
+//                                 .line {
+//                                     display: block;
+//                                     width: 100%;
+//                                     background-color: #29abe2;
+//                                     height: 5px;
+//                                 }
+//                             }
+//                             .work-time {
+//                                 box-sizing: border-box;
+//                                 position: absolute;
+//                                 display: block;
+//                                 width: 100%;
+//                                 z-index: 16;
+//                                 border: 1px solid #8cc63f;
+//                                 background-color: #a3d165;
+//                                 opacity: 0.5;
+//                                 height: 128px;
+//                                 .triangle {
+//                                     border: 8px solid transparent;
+//                                     border-top: 8px solid #629900;
+//                                     border-right: 8px solid #629900;
+//                                     position: absolute;
+//                                     top: 0;
+//                                     right: 0;
+//                                     z-index: 95;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         .events {
+//             width: 144px;
+//             position: absolute;
+//             right: 0;
+//             top: 0;
+//             margin-left: -100%;
+//             border-left: 1px solid #e0e0e0;
+//             height: 100%;
+//             padding: 0 0 0 5px;
+//             .title {
+//                 text-align: left;
+//                 font-size: 16px;
+//             }
+//             .event-block {
+//                 padding: 0 5px 0 0;
+//                 .event-img {
+//                     height: 16px;
+//                     margin-top: 20px;
+//                     margin-bottom: 10px;
+//                 }
+//                 .event-name {
+//                     text-align: left;
+//                     font-size: 12px;
+//                     font-weight: bold;
+//                 }
+//                 .event-text {
+//                     text-align: left;
+//                     font-size: 12px;
+//                 }
+//             }
+//         }
+//     }
+//     .bottom-week-view {
+//         width: 100%;
+//         box-sizing: border-box;
+//         height: 28px;
+//         position: relative;
+//         margin-top: 10px;
+//         .day-limit-left-bord {
+//             width: 56px;
+//             box-sizing: border-box;
+//             position: absolute;
+//             top: 0;
+//             margin-right: -100%;
+//             left: 0;
+//             background-color: #badd8b;
+//             height: 100%;
+//             line-height: 28px;
+//         }
+//         .day-limit-right {
+//             width: calc(14.2857% + 150px);
+//             display: inline-block;
+//             box-sizing: border-box;
+//             padding: 0 15px 0 1px;
+//         }
+//         .day-limit-right-bord {
+//             box-sizing: border-box;
+//             right: 15px;
+//             background-color: #badd8b;
+//             height: 100%;
+//             line-height: 28px;
+//             text-align: center;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             font-size: 16px;
+//             .title {
+//                 height: 28px;
+//                 width: 85px;
+//                 text-align: left;
+//                 line-height: 28px;
+//                 display: inline-block;
+//                 position: relative;
+//                 font-size: 16px;
+//                 top: 0;
+//             }
+//         }
+//         .day-limit {
+//             width: 100%;
+//             box-sizing: border-box;
+//             padding-left: 57px;
+//             position: relative;
+//             top: 0;
+//             height: 100%;
+//             font-size: 0;
+//             .day-wrap .day {
+//                 display: block;
+//                 float: left;
+//                 box-sizing: border-box;
+//                 width: calc(14.2857% - 25px);
+//                 height: 28px;
+//                 line-height: 28px;
+//                 padding: 0 1px;
+//                 font-size: 14px;
+//                 .day-text {
+//                     box-sizing: border-box;
+//                     height: 100%;
+//                     line-height: 30px;
+//                     text-align: center;
+//                     background-color: #8cc63e;
+//                     color: #fff;
+//                 }
+//             }
+//         }
+//     }
+//     .clear:after {
+//         content: '';
+//         display: block;
+//         clear: both;
+//     }
+//     .ui-icon,
+//     .ui-widget-content .ui-icon {
+//         position: absolute;
+//         bottom: 0;
+//         right: 0;
+//         height: 15px;
+//         width: 100%;
+//     }
+// }
+// .mCSB_container_wrapper {
+//     margin-right: 7px !important;
+// }
+// .mCSB_scrollTools {
+//     width: 7px!important;
+// }
+// .mCSB_scrollTools .mCSB_draggerContainer {
+//     margin: 2px 0 !important;
+// }
+// .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+//     width: 6px!important;
+//     background-color: #8ac841!important;
+//     border-radius: 0!important;
+// }
+// .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+//     background-color: #8ac841!important;
+// }
+// .mCSB_scrollTools .mCSB_draggerRail {
+//     box-sizing: border-box!important;
+//     width: 6px!important;
+//     background-color: #e8e8e8!important;
+// }
+// .mCSB_container_wrapper > .mCSB_container {
+//     padding-right: 0 !important;
+// }
+// .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden {
+//     margin-right: 7px !important;
+// }
+// .time-lmit-block {
+//     position: relative;
+//     line-height: 75px;
+//     padding-left: 30px;
+//     color: #494949;
+//     input.custom-checkbox-green-type01 {
+//         display: none;
+//         &+label {
+//             margin: 0;
+//             font-family: Calibri;
+//             color: rgba(26, 26, 26, 0.7);
+//             font-size: 13px;
+//             font-weight: 300;
+//             letter-spacing: -0.169px;
+//             line-height: 14px;
+//             text-align: left;
+//         }
+//         &+label::before {
+//             position: absolute;
+//             content: '';
+//             height: 17px;
+//             width: 17px;
+//             left: 0;
+//             top: 28px;
+//             border: 1px solid #d9d9d9;
+//         }
+//         &:checked + label::before {
+//             position: absolute;
+//             content: '\f00c';
+//             font-family: 'FontAwesome';
+//             color: #a3d165;
+//             height: 17px;
+//             width: 17px;
+//             left: 0;
+//             top: 28px;
+//             border: 1px solid #d9d9d9;
+//             text-align: center;
+//             line-height: 17px;
+//         }
+//     }
+//     .thin-text {
+//         font-weight: 300;
+//     }
+//     .thick-text {
+//         font-weight: 700;
+//     }
+// }
+//Saving Plan Styles
+// .savingPlans > div#organizationName > .customTable > .customTableHead > div:focus {
+    outline: none;
+}
+//CustomRadioButtomTypeOneStyles
+// $offColor: #f3f3f3;
+// $onColor: #8fc73e;
+// $textColor: #898989;
+// custom-radio-button-type-one {
+//     display: block;
+//     &:focus {
+//         outline: none;
+//     }
+//     div {
+//         outline: none;
+//     }
+// }
+// custom-radio-button-type-one input[type="radio"] {
+//     display: none;
+// }
+// custom-radio-button-type-one input[type="radio"] + label {
+//     color: $textColor;
+//     font-family: Arial, sans-serif;
+//     font-size: 14px;
+//     outline: none;
+// }
+// custom-radio-button-type-one input[type="radio"] + label span {
+//     display: inline-block;
+//     width: 16px;
+//     height: 16px;
+//     margin: -1px 4px 0 0;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     -moz-border-radius: 50%;
+//     border-radius: 50%;
+// }
+// custom-radio-button-type-one input[type="radio"] + label > span:first-child {
+//     background-color: $offColor;
+// }
+// custom-radio-button-type-one input[type="radio"]:checked + label > span:first-child {
+//     background-color: $onColor;
+// }
+// custom-radio-button-type-one input[type="radio"] + label span,
+// custom-radio-button-type-one input[type="radio"]:checked + label span {
+//     -webkit-transition: background-color 0.4s linear;
+//     -o-transition: background-color 0.4s linear;
+//     -moz-transition: background-color 0.4s linear;
+//     transition: background-color 0.4s linear;
+// }
+// custom-radio-button-type-one input[type="radio"]:checked + label span:last-child {
+//     color: #333333 !important;
+//     font-weight: 700 !important;
+// }
+// Events page
+// .eventsWrapper {
+    background-color: #ffffff;
+    margin: 0 -50px;
+    padding: 25px 50px 1px;
+    > div {
+        border-top: 5px solid #8cc63f;
+        height: 325px;
+        > div {
+            float: left;
+            height: 100%;
+            &:first-child {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                width: 40%;
+                > div {
+                    margin-top: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    &:first-child {
+                        > div {
+                            &:first-child {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 5px;
+                            }
+                            &:last-child {
+                                ul {
+                                    margin: 0;
+                                    padding: 0;
+                                    li {
+                                        cursor: auto;
+                                        list-style: none;
+                                        height: 40px;
+                                        &:focus {
+                                            outline: none;
+                                        }
+                                        &:first-child {
+                                            padding-top: 8px;
+                                        }
+                                        &:nth-child(2) {
+                                            padding-top: 10px;
+                                        }
+                                        &:nth-child(3) {
+                                            padding-top: 12px;
+                                        }
+                                        &:nth-child(4) {
+                                            padding-top: 13px;
+                                        }
+                                        &:nth-child(5) {
+                                            padding-top: 14px;
+                                        }
+                                        &:nth-child(6) {
+                                            padding-top: 15px;
+                                        }
+                                        > input {
+                                            & + label {
+                                                font-family: Calibri;
+                                                color: rgba(128, 128, 128, 0.7);
+                                                font-size: 13px;
+                                                font-weight: 300;
+                                                letter-spacing: -0.169px;
+                                                text-align: center;
+                                            }
+                                        }
+                                        > input:checked {
+                                            & + label {
+                                                font-family: Calibri;
+                                                color: #333333;
+                                                font-size: 13px;
+                                                font-weight: 700;
+                                                letter-spacing: -0.169px;
+                                                text-align: center;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            > div {
+                                border-left: 2px dotted black;
+                                border-top: 2px dotted black;
+                                border-bottom: 2px dotted black;
+                                border-radius: 10px 0 0 10px;
+                                > div {
+                                    width: 40px;
+                                    height: 41px;
+                                    &:not(:first-child) {
+                                        border-top: 2px dotted black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                > div {
+                    margin-top: 40px;
+                    width: 425px;
+                    > span {
+                        display: block;
+                        &:first-child {
+                            font-family: Calibri;
+                            color: #1a1a1a;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            text-align: left;
+                        }
+                        &:nth-child(2) {
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 12px;
+                            font-weight: 300;
+                            letter-spacing: -0.156px;
+                            line-height: 18px;
+                            text-align: justify;
+                        }
+                    }
+                    > div {
+                        &:nth-child(3) {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 30px;
+                            > span {
+                                display: block;
+                                &:first-child {
+                                    float: left;
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    letter-spacing: -0.182px;
+                                }
+                                &:last-child {
+                                    font-family: Calibri;
+                                    color: rgba(26, 26, 26, 0.7);
+                                    font-size: 14.83px;
+                                    font-weight: 700;
+                                    text-align: left;
+                                    float: right;
+                                    &::before {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(4) {
+                            > ul {
+                                margin: 0;
+                                padding: 0;
+                                > li {
+                                    list-style: none;
+                                    border-top: 1px solid #cccccc;
+                                    background-color: #f8f8f8;
+                                    &:hover {
+                                        background-color: #efefef;
+                                        > div {
+                                            > span {
+                                                &:first-child {
+                                                    font-weight: 700;
+                                                }
+                                                &:last-child {
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:last-child {
+                                        border-bottom: 1px solid #cccccc;
+                                    }
+                                    > div {
+                                        height: 37px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        span {
+                                            line-height: 37px;
+                                            &:first-child {
+                                                margin-left: 21px;
+                                                font-family: Calibri;
+                                                color: #333333;
+                                                font-size: 13px;
+                                                font-weight: 300;
+                                                letter-spacing: -0.169px;
+                                                text-align: left;
+                                            }
+                                            &:last-child {
+                                                display: none;
+                                                margin-right: 13px;
+                                                font-family: Calibri;
+                                                color: rgba(26, 26, 26, 0.7);
+                                                font-size: 12.66px;
+                                                font-weight: 700;
+                                                text-align: left;
+                                                &::before {
+                                                    margin-right: 5px;
+                                                    content: '\f1f8';
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//tinyMCE description
+// .mce-menubar,
+// .mce-statusbar {
+//     display: none!important;
+// }
+// .mce-container-body:after {
+//     display: block;
+//     clear: both;
+//     content: '';
+// }
+// .mce-stack-layout {
+//     position: relative;
+// }
+// .mce-toolbar-grp {
+//     float: right!important;
+//     width: 525px!important;
+//     position: relative!important;
+//     margin-left: -100% !important;
+//     padding-top: 0 !important;
+//     margin-top: -4px !important;
+// }
+// .mce-edit-area {
+//     float: left!important;
+//     width: 100%!important;
+//     box-sizing: border-box!important;
+//     padding-right: 525px !important;
+// }
+// .mce-tinymce,
+// .mce-toolbar-grp,
+// .wraper-tinymce .mce-panel {
+//     background-color: transparent!important;
+//     border: none!important;
+//     border-width: 0px!important;
+//     border-color: transparent!important;
+// }
+// .mce-edit-area iframe {
+//     border: 1px solid #9e9e9e;
+//     min-height: 162px;
+// }
+// .mce-toolbar {
+//     padding-left: 20px !important;
+//     padding-right: 20px !important;
+// }
+// .mce-btn {
+//     background-color: transparent!important;
+// }
+// .mce-btn-group {
+//     background: rgba(255,255,255,1)!important;
+//     background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+//     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)))!important;
+//     background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+//     background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+//     background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+//     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)!important;
+//     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffffff', endColorstr='#ededed', GradientType=0 )!important;
+//     padding: 2px !important;
+// }
+// .mce-btn-group:not(:first-child) {
+//     margin-left: 0 !important;
+// }
+// .mce-btn-group {
+//     border-left: 1px solid #d9d9d9!important;
+//     margin-left: 0 !important;
+//     margin-right: 0 !important;
+// }
+// .wraper-tinymce {
+//     position: relative;
+//     .btn-block-tinymce {
+//         position: absolute;
+//         bottom: 0;
+//         right: 353px;
+//         .btn {
+//             border-radius: 0;
+//             border: 0;
+//             font-weight: bold;
+//         }
+//         .btn-success {
+//             background-color: #8cc63e;
+//         }
+//         .btn-primary {
+//             background-color: #28b8ed;
+//         }
+//     }
+// }
+//Description styles
+// .descriptionWrapper {
+    margin: 0 -50px;
+    padding: 22px 51px 35px 50px;
+    background-color: #f2f2f2;
+    > h3 {
+        font-family: Calibri;
+        color: rgba(26, 26, 26, 0.7);
+        font-size: 23px;
+        font-weight: 300;
+        text-align: left;
+    }
+    > div.panel-body {
+        border-top: 5px solid #8cc63f;
+        padding: 16px 15px 15px 0;
+        > span {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.195px;
+            text-align: left;
+        }
+        > div {
+            margin-top: 5px;
+        }
+    }
+}
+// Custom green checkbox styles
+// input.custom-checkbox-green {
+    & + label {
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    &:checked {
+        & + label {
+            &:before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #d7d7d7;
+            }
+        }
+    }
+    &:not(checked) {
+        position: absolute;
+        opacity: 0;
+        & + label {
+            position: relative;
+            padding: 0 0 0 30px;
+            &:before {
+                content: '\f00c';
+                font-family: 'FontAwesome';
+                font-size: 12px;
+                color: #93c349;
+                position: absolute;
+                top: -10px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #989898;
+                text-align: center;
+            }
+        }
+    }
+}
+// Custom radio button type 2
+// input.custom-radio-button-t2[type="radio"] {
+//     display: none;
+// }
+// input.custom-radio-button-t2[type="radio"] + label {
+//     color: #898989;
+//     font-family: Arial, sans-serif;
+//     font-size: 14px;
+// }
+// input.custom-radio-button-t2[type="radio"] + label span {
+//     display: inline-block;
+//     width: 24px;
+//     height: 24px;
+//     margin: -1px 4px 0 0;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     -moz-border-radius: 50%;
+//     border-radius: 50%;
+// }
+// input.custom-radio-button-t2[type="radio"] + label span span {
+//     display: inline-block;
+//     width: 18px;
+//     height: 18px;
+//     margin: 2px 2px 0;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     -moz-border-radius: 50%;
+//     border-radius: 50%;
+// }
+// input.custom-radio-button-t2[type="radio"] + label > span {
+//     border: 1px solid #dbdbdb;
+// }
+// input.custom-radio-button-t2[type="radio"] + label span span {
+//     background-color: #dbdbdb;
+// }
+// input.custom-radio-button-t2[type="radio"]:checked + label span span {
+//     background-color: #8fc73e;
+// }
+// input.custom-radio-button-t2[type="radio"] + label span,
+// input.custom-radio-button-t2[type="radio"]:checked + label span {
+//     -webkit-transition: background-color 0.4s linear;
+//     -o-transition: background-color 0.4s linear;
+//     -moz-transition: background-color 0.4s linear;
+//     transition: background-color 0.4s linear;
+// }
+// Work time section
+// .nav-tabs {
+//     border-bottom: none;
+//     > li {
+//         margin-bottom: 8px;
+//         > a,
+//         a:focus,
+//         a:hover {
+//             border: none;
+//             background-color: #808080;
+//             font-family: Calibri;
+//             color: #ffffff;
+//             font-size: 19px;
+//             font-weight: 300;
+//             outline: none;
+//             border: none;
+//             border-bottom: 6px solid #808080;
+//             padding: 5px 0;
+//         }
+//         &.active {
+//             > a,
+//             a:focus,
+//             a:hover {
+//                 background-color: #a3d165;
+//                 color: #ffffff;
+//                 border: none;
+//                 border-bottom: 6px solid #88b73d;
+//                 font-weight: 700;
+//             }
+//         }
+//     }
+// }
+// .customDropdown {
+//     font-family: Calibri;
+//     color: rgba(26, 26, 26, 0.7);
+//     font-size: 14px;
+//     font-weight: 300;
+//     letter-spacing: -0.182px;
+//     > span {
+//         line-height: 40px;
+//     }
+//     > select {
+//         height: 40px;
+//         width: 150px;
+//     }
+// }
+// .buttonTypeOneAdd {
+//     &:before {
+//         font-family: 'FontAwesome';
+//         font-size: 17px;
+//         content: '\f055';
+//         color: #8ecc38;
+//         margin-right: 1px;
+//     }
+// }
+// .buttonTypeOneRemove {
+//     &:before {
+//         font-family: 'FontAwesome';
+//         font-size: 17px;
+//         content: '\f1f8';
+//         color: #8ecc38;
+//         margin-right: 1px;
+//     }
+// }
+// .buttonTypeOneEdit {
+//     &:before {
+//         font-family: 'FontAwesome';
+//         font-size: 17px;
+//         content: '\f040';
+//         color: #8ecc38;
+//         margin-right: 1px;
+//     }
+// }
+// .buttonTypeOneRefresh {
+//     &:before {
+//         font-family: 'FontAwesome';
+//         font-size: 17px;
+//         content: '\f021';
+//         color: #8ecc38;
+//         margin-right: 1px;
+//     }
+// }
+// .savingPlanWorkTime {
+//     padding: 40px;
+//     background-color: #f2f2f2;
+//     margin: 0 -49px;
+//     > div[active="active"] {
+//         > ul {
+//             border-bottom: none;
+//             > li {
+//                 width: 165px;
+//                 text-align: center;
+//                 &:not(:first-child) {
+//                     margin-left: 5px;
+//                 }
+//             }
+//         }
+//         > div.tab-content {
+//             > div.tab-pane {
+//                 &:first-child,
+//                 &:nth-child(2) {
+//                     //Work and non work time panes
+//                     > div.container-fluid {
+//                         background-color: #f2f2f2;
+//                         > div.row {
+//                             font-family: Calibri;
+//                             color: rgba(26, 26, 26, 0.7);
+//                             font-size: 14px;
+//                             font-weight: 300;
+//                             letter-spacing: -0.182px;
+//                             &:first-child {
+//                                 //Upper part of work time pane
+//                                 background-color: #ffffff;
+//                                 > div.container-fluid {
+//                                     margin-top: 15px;
+//                                     > div.row {
+//                                         > div.col-xs-3 {
+//                                             > label {
+//                                                 > span {
+//                                                     margin-right: 13px;
+//                                                 }
+//                                                 > select {
+//                                                     background-color: #ffffff;
+//                                                     border-color: #d9d9d9;
+//                                                     font-family: Calibri;
+//                                                     color: rgba(26, 26, 26, 0.7);
+//                                                     font-size: 14px;
+//                                                     font-weight: 300;
+//                                                     letter-spacing: -0.182px;
+//                                                     width: 125px;
+//                                                 }
+//                                             }
+//                                             &:last-child {
+//                                                 > div {
+//                                                     display: flex;
+//                                                     position: relative;
+//                                                     float: right;
+//                                                     > a {
+//                                                         height: 39px;
+//                                                         width: 40px;
+//                                                         display: inline-block;
+//                                                         text-align: center;
+//                                                         line-height: 39px;
+//                                                         background-color: #238fb5;
+//                                                         color: #ffffff;
+//                                                     }
+//                                                     > span {
+//                                                         height: 39px;
+//                                                         width: 85px;
+//                                                         background-color: #29abe2;
+//                                                         display: inline-block;
+//                                                         line-height: 39px;
+//                                                         color: #ffffff;
+//                                                         padding-left: 15px;
+//                                                         font-family: Calibri;
+//                                                         font-size: 15px;
+//                                                         font-weight: 700;
+//                                                     }
+//                                                     > ul {
+//                                                         position: absolute;
+//                                                         width: 160px;
+//                                                     }
+//                                                 }
+//                                             }
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                             &:last-child {
+//                                 //Down part of work time pane
+//                                 background-color: #ffffff;
+//                                 margin-top: 5px;
+//                                 padding-top: 20px;
+//                                 padding-bottom: 20px;
+//                                 > div {
+//                                     //Inner tab control
+//                                     position: relative;
+//                                     > ul {
+//                                         width: 241px;
+//                                         margin-left: 24px;
+//                                         > li {
+//                                             display: block;
+//                                             float: none;
+//                                             text-align: center;
+//                                             > a {
+//                                                 border-bottom-color: #f7f7f7;
+//                                                 background-color: #f7f7f7;
+//                                                 font-family: Calibri;
+//                                                 color: #cccccc;
+//                                                 font-size: 16.85px;
+//                                                 font-weight: 300;
+//                                             }
+//                                             &.active {
+//                                                 > a {
+//                                                     border-bottom-color: #88b73d;
+//                                                     background-color: #a3d165;
+//                                                     font-family: Calibri;
+//                                                     color: #ffffff;
+//                                                     font-size: 16.85px;
+//                                                     font-weight: 700;
+//                                                 }
+//                                             }
+//                                         }
+//                                     }
+//                                     > div.tab-content {
+//                                         width: calc(100% - 289px);
+//                                         position: absolute;
+//                                         top: 0;
+//                                         left: 289px;
+//                                         padding: 0;
+//                                         > div.tab-pane {
+//                                             padding-left: 70px;
+//                                             &:first-child {
+//                                                 > options-tab {
+//                                                     > div.container-fluid {
+//                                                         > div.row {
+//                                                             > div.col-xs-12 {
+//                                                                 line-height: 40px;
+//                                                                 height: 40px;
+//                                                             }
+//                                                             input.custom-checkbox-green-type01 {
+//                                                                 display: none;
+//                                                                 &+label {
+//                                                                     margin: 0;
+//                                                                     font-family: Calibri;
+//                                                                     color: rgba(26, 26, 26, 0.7);
+//                                                                     font-size: 13px;
+//                                                                     font-weight: 300;
+//                                                                     letter-spacing: -0.169px;
+//                                                                     line-height: 14px;
+//                                                                     text-align: left;
+//                                                                 }
+//                                                                 &+label::before {
+//                                                                     position: absolute;
+//                                                                     content: '';
+//                                                                     height: 24px;
+//                                                                     width: 24px;
+//                                                                     left: -15px;
+//                                                                     top: 7px;
+//                                                                     border: 1px solid #d9d9d9;
+//                                                                 }
+//                                                                 &:checked + label::before {
+//                                                                     position: absolute;
+//                                                                     content: '\f00c';
+//                                                                     font-family: 'FontAwesome';
+//                                                                     color: #a3d165;
+//                                                                     height: 24px;
+//                                                                     width: 24px;
+//                                                                     left: -15px;
+//                                                                     top: 7px;
+//                                                                     border: 1px solid #d9d9d9;
+//                                                                     text-align: center;
+//                                                                     line-height: 24px;
+//                                                                 }
+//                                                             }
+//                                                             &:first-child {}
+//                                                             &:nth-child(2) {}
+//                                                             &:last-child {
+//                                                                 button {
+//                                                                     outline: none;
+//                                                                     background-color: #29abe2;
+//                                                                     border: none;
+//                                                                     height: 29px;
+//                                                                     line-height: 29px;
+//                                                                     width: 80px;
+//                                                                     font-family: Calibri;
+//                                                                     color: #ffffff;
+//                                                                     font-size: 13px;
+//                                                                     font-weight: 700;
+//                                                                     margin-left: 20px;
+//                                                                 }
+//                                                             }
+//                                                         }
+//                                                     }
+//                                                 }
+//                                             }
+//                                             &:nth-child(2) {
+//                                                 > application-tab {
+//                                                     > div.container-fluid {
+//                                                         > span {
+//                                                             &:first-child {
+//                                                                 font-family: Calibri;
+//                                                                 color: rgba(26, 26, 26, 0.7);
+//                                                                 font-size: 16px;
+//                                                                 font-weight: 400;
+//                                                                 letter-spacing: -0.208px;
+//                                                                 text-align: left;
+//                                                             }
+//                                                             &:not(:first-child) {
+//                                                                 float: right;
+//                                                                 margin-left: 22px;
+//                                                                 font-family: Calibri;
+//                                                                 color: rgba(26, 26, 26, 0.7);
+//                                                                 font-size: 12.66px;
+//                                                                 font-weight: 700;
+//                                                                 text-align: left;
+//                                                                 &::before {}
+//                                                             }
+//                                                         }
+//                                                         > div {
+//                                                             > div.container-fluid {
+//                                                                 > div.row {
+//                                                                     &:first-child {
+//                                                                         padding-top: 28px;
+//                                                                         font-family: Calibri;
+//                                                                         color: rgba(26, 26, 26, 0.7);
+//                                                                         font-size: 14px;
+//                                                                         font-weight: 700;
+//                                                                         letter-spacing: -0.182px;
+//                                                                         border-top: 3px solid #8cc63f;
+//                                                                         border-bottom: 1px solid #bcbcbc;
+//                                                                     }
+//                                                                     &:last-child {
+//                                                                         height: 130px;
+//                                                                         overflow-y: auto;
+//                                                                         > ul {
+//                                                                             > li {
+//                                                                                 list-style: none;
+//                                                                                 > div {
+//                                                                                     height: 50px;
+//                                                                                     line-height: 50px;
+//                                                                                 }
+//                                                                             }
+//                                                                         }
+//                                                                     }
+//                                                                 }
+//                                                             }
+//                                                         }
+//                                                     }
+//                                                 }
+//                                             }
+//                                             &:nth-child(3) {
+//                                                 > computers-tab {
+//                                                     > div.container-fluid {
+//                                                         > span {
+//                                                             &:first-child {
+//                                                                 font-family: Calibri;
+//                                                                 color: rgba(26, 26, 26, 0.7);
+//                                                                 font-size: 16px;
+//                                                                 font-weight: 400;
+//                                                                 letter-spacing: -0.208px;
+//                                                                 text-align: left;
+//                                                             }
+//                                                             &:not(:first-child) {
+//                                                                 float: right;
+//                                                                 margin-left: 22px;
+//                                                                 font-family: Calibri;
+//                                                                 color: rgba(26, 26, 26, 0.7);
+//                                                                 font-size: 12.66px;
+//                                                                 font-weight: 700;
+//                                                                 text-align: left;
+//                                                                 &::before {}
+//                                                             }
+//                                                         }
+//                                                         > div {
+//                                                             > div.container-fluid {
+//                                                                 > div.row {
+//                                                                     &:first-child {
+//                                                                         padding-top: 28px;
+//                                                                         font-family: Calibri;
+//                                                                         color: rgba(26, 26, 26, 0.7);
+//                                                                         font-size: 14px;
+//                                                                         font-weight: 700;
+//                                                                         letter-spacing: -0.182px;
+//                                                                         border-top: 3px solid #8cc63f;
+//                                                                         border-bottom: 1px solid #bcbcbc;
+//                                                                     }
+//                                                                     &:last-child {
+//                                                                         height: 130px;
+//                                                                         overflow-y: auto;
+//                                                                         > ul {
+//                                                                             > li {
+//                                                                                 list-style: none;
+//                                                                                 > div {
+//                                                                                     height: 50px;
+//                                                                                     line-height: 50px;
+//                                                                                 }
+//                                                                             }
+//                                                                         }
+//                                                                     }
+//                                                                 }
+//                                                             }
+//                                                         }
+//                                                     }
+//                                                 }
+//                                             }
+//                                             &:last-child {
+//                                                 > performance-metrics-tab {
+//                                                     > div.container-fluid {
+//                                                         > span {
+//                                                             &:first-child {
+//                                                                 font-family: Calibri;
+//                                                                 color: rgba(26, 26, 26, 0.7);
+//                                                                 font-size: 16px;
+//                                                                 font-weight: 400;
+//                                                                 letter-spacing: -0.208px;
+//                                                                 text-align: left;
+//                                                             }
+//                                                         }
+//                                                         > div {
+//                                                             > div.container-fluid {
+//                                                                 > div.row {
+//                                                                     &:first-child {
+//                                                                         border-top: 3px solid #8cc63f;
+//                                                                     }
+//                                                                     > div.col-xs-12 {
+//                                                                         height: 55px;
+//                                                                         line-height: 55px;
+//                                                                         > input {
+//                                                                             &:nth-child(3) {
+//                                                                                 height: 25px;
+//                                                                                 width: 100px;
+//                                                                                 margin-left: 22px;
+//                                                                                 border: 2px solid #ececec;
+//                                                                             }
+//                                                                             &:focus {
+//                                                                                 outline: none;
+//                                                                             }
+//                                                                             // &::-webkit-inner-spin-button {
+//                                                                             //     -webkit-appearance: none;
+//                                                                             //     cursor:pointer;
+//                                                                             //     display:block;
+//                                                                             //     width:8px;
+//                                                                             //     color: #333;
+//                                                                             //     text-align:center;
+//                                                                             //     position:relative;
+//                                                                             // }
+//                                                                             // &::-webkit-inner-spin-button:after,
+//                                                                             // &::-webkit-inner-spin-button:before {
+//                                                                             //     content: "z";
+//                                                                             //     position: absolute;
+//                                                                             //     right: 0px;
+//                                                                             //     top: 0px;
+//                                                                             //     font-family: monospace;
+//                                                                             //     // line-height:40px;
+//                                                                             // }
+//                                                                             // &::-webkit-inner-spin-button:before {
+//                                                                             //     top:0px;
+//                                                                             // }
+//                                                                         }
+//                                                                     }
+//                                                                 }
+//                                                                 input.custom-checkbox-green-type01 {
+//                                                                     display: none;
+//                                                                     &+label {
+//                                                                         margin: 0 0 0 50px;
+//                                                                         font-family: Calibri;
+//                                                                         color: rgba(26, 26, 26, 0.7);
+//                                                                         font-size: 13px;
+//                                                                         font-weight: 300;
+//                                                                         letter-spacing: -0.169px;
+//                                                                         line-height: 14px;
+//                                                                         text-align: left;
+//                                                                         position: relative;
+//                                                                     }
+//                                                                     &+label::before {
+//                                                                         position: absolute;
+//                                                                         content: '';
+//                                                                         height: 24px;
+//                                                                         width: 24px;
+//                                                                         left: -35px;
+//                                                                         top: -6px;
+//                                                                         border: 1px solid #d9d9d9;
+//                                                                     }
+//                                                                     &:checked + label::before {
+//                                                                         position: absolute;
+//                                                                         content: '\f00c';
+//                                                                         font-family: 'FontAwesome';
+//                                                                         color: #a3d165;
+//                                                                         height: 24px;
+//                                                                         width: 24px;
+//                                                                         left: -35px;
+//                                                                         top: -6px;
+//                                                                         border: 1px solid #d9d9d9;
+//                                                                         text-align: center;
+//                                                                         line-height: 24px;
+//                                                                     }
+//                                                                 }
+//                                                             }
+//                                                         }
+//                                                     }
+//                                                 }
+//                                             }
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+////////////
+//CustomRadioButtomTypeOneStyles
+// input.custom-radio-button-type-one {
+//     display: block;
+// }
+// input.custom-radio-button-type-one[type="radio"] {
+//     display: none;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label {
+//     color: $textColor;
+//     font-family: Arial, sans-serif;
+//     font-size: 14px;
+//     outline: none;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label span {
+//     display: inline-block;
+//     width: 16px;
+//     height: 16px;
+//     margin: -1px 4px 0 0;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     -moz-border-radius: 50%;
+//     border-radius: 50%;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label > span:first-child {
+//     background-color: $offColor;
+// }
+// input.custom-radio-button-type-one[type="radio"]:checked + label > span:first-child {
+//     background-color: $onColor;
+// }
+// input.custom-radio-button-type-one[type="radio"] + label span,
+// input.custom-radio-button-type-one[type="radio"]:checked + label span {
+//     -webkit-transition: background-color 0.4s linear;
+//     -o-transition: background-color 0.4s linear;
+//     -moz-transition: background-color 0.4s linear;
+//     transition: background-color 0.4s linear;
+// }
+// input.custom-radio-button-type-one[type="radio"]:checked + label span:last-child {
+//     color: #333333 !important;
+//     font-weight: 700 !important;
+// }
+/********************************************/
+/* action calendar popup form*/
+/*
+@media (min-width: 768px){
+    .action-calendar .modal-dialog {
+        width: 930px!important;
+    }
+}
+
+.action-calendar{
+    .modal-content{
+        border-radius: 0px;
+    }
+    .modal-header{
+        border-bottom: 0px;
+        padding-top:2   5px;
+        .title-before{
+            display: inline-block;
+            padding-right: 20px;
+            border-right: 1px solid #9b9b9b;
+            color:#9b9b9b;
+            font-size:24px;
+            font-weight: 100;
+        }
+        .title{
+            display: inline-block;
+            padding-left: 15px;
+            color:#7b7b7b;
+            font-size:24px;
+            font-weight: 100;
+        }
+        .close-btn{
+            line-height: 29px;
+            font-weight: 100;
+            color: #868686;
+            font-size: 20px;
+        }
+    }
+    .modal-body{
+        padding-bottom: 35px;
+        .time-picker-label{
+            display: inline-block;
+            line-height: 34px;
+            padding: 0 10px 0 5px;
+        }
+        input[type="number"]{
+            background: transparent;
+            height: 32px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        input[type="time"]{
+            background: transparent;
+            height: 32px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 32px;
+            margin: 0 10px;
+            -webkit-appearance:none;
+        }
+
+        input[type="time"]::-webkit-clear-button {
+            display: none;
+            -webkit-appearance:none;
+        }
+
+        hr{
+          border-top: 1px solid #ccc;
+        }
+        .body-enter{
+
+            color:#333333;
+            font-size:16px;
+            font-weight: bold;
+        }
+        .action-type-select{
+            padding: 15px 0;
+            .left-col{
+                padding-right: 0px;
+            }
+            .datepicker-wrape{
+                border:1px solid #d9d9d9;
+                display: inline-block;
+                width: 120px;
+                z-index: 50;
+            }
+            .ratio-label{
+                color:#7b7b7b;
+                font-weight: bold;
+                margin-bottom: 0px;
+                span span{
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .md-datepicker-input-mask{
+                display: none;
+            }
+
+        }
+        .keepMonitorOn{
+            display: inline-block;
+            margin: 15px 0;
+        }
+        .midle-text{
+            display: inline-block;
+            padding-right: 20px;
+            font-weight: 100;
+        }
+        .day-select{
+            position: relative;
+            display: inline-block;
+            padding-left: 30px;
+            padding-right: 15px;
+            line-height: 30px;
+        }
+        input.custom-checkbox-green-type01 {
+           display: none;
+           &+label {
+               margin: 0;
+               font-family: Calibri;
+               color: rgba(26, 26, 26, 0.7);
+               font-size: 14px;
+               font-weight: 300;
+               letter-spacing: -0.169px;
+               line-height: 16px;
+               text-align: left;
+           }
+           &+label::before {
+               position: absolute;
+               content: '';
+               height: 24px;
+               width: 24px;
+               left: 0px;
+               top: 2px;
+               border: 1px solid #d9d9d9 ;
+           }
+           &:checked + label::before {
+               position: absolute;
+               content: '\f00c';
+               font-family: 'FontAwesome';
+               color: #a3d165 ;
+               height: 24px;
+               width: 24px;
+               left: 0px;
+               top: 2px;
+               border: 1px solid #d9d9d9 ;
+               text-align: center;
+               line-height: 24px;
+           }
+        }
+        .nav-tabs{
+            width:100%;
+            li > a, .nav-tabs > li a:focus, .nav-tabs > li a:hover{
+                padding:5px 10px!important;
+            }
+        }
+        .uibTabSet{
+            margin-top: 20px;
+            .conditions{
+                div{
+                    padding: 25px 0 0 0;
+                    label{
+                        font-weight: 100;
+                    }
+                    select{
+                        border-radius: 0;
+                        background: transparent;
+                        height: 32px;
+                        padding: 5px;
+                        border: 1px solid #d9d9d9;
+                        font-size: 14px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+        .time-chuse-line{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .modal-footer{
+        border-top:0px;
+        background-color: #f2f2f2;
+        text-align: center;
+        .btn{
+            width: 100px;
+            border-radius: 0;
+            border: oldlace;
+        }
+        .add{
+            background-color: #8cc63f
+        }
+        .cancel{
+            background-color: #808080
+        }
+    }
+
+
+}
+
+.md-datepicker-input-mask{
+    display: none;
+}*/
+
+// .time-picker{
+    width:120px;
+    input{
+        border-radius: 0;
+        border-right: 0;
+    }
+    input:focus{
+        box-shadow: none;
+        border-color: #d4d4d4;
+    }
+    span{
+        border-radius: 0;
+    }
+    .input-group-addon{
+        padding:0 12px!important;
+        background-color: #fff;
+        .glyphicon{
+            display: block;
+            font-size: 12px;
+        }
+    }
+}

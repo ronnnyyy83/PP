@@ -1,0 +1,30 @@
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Define Computer Group Members</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="row-padding">
+                <label style="width:100px">IP Adress from</label>
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part1" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part2" class="small-input" />
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part3" class="small-input" />
+                <input type="text" ng-change="isChange = true" ng-model="IPFrom.part4" class="small-input" /> 
+            </div>
+            <div class="row-padding">
+                <label style="width:100px">IP Adress to</label>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part1" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part2" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part3" class="small-input"/>
+                <input type="text" ng-change="isChange = true" ng-model="IPTo.part4" class="small-input"/>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="add()">OK</button>
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,187 @@
+.addComputerWrapper {
+    min-height: 80%;
+    /*width:900px;*/
+    > .modal-header{
+        background-color: #ffffff;
+        padding:0px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > div {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 24px;
+            font-weight: 300;
+            text-align: left;
+        }
+        > img {
+            cursor: pointer;
+        }
+    }
+    > .modal-body {
+            >div:first-child {
+                > ul {
+                    border-bottom: 5px solid #8cc63f;
+                    margin-bottom: 18px;
+                    > li {
+                        > a {
+                            padding: 0 30px;
+                            height: 44px;
+                            line-height: 44px;
+                        }
+                    }
+                }
+                > div.tab-content {
+                    > div.tab-pane {
+                        &:first-child {
+                            > div.savingsWrapper {
+                                > div.container-fluid {
+                                    padding-left: 0;
+                                    > div.row {
+                                        > div {
+                                            &:first-child {
+                                                > div.container-fluid {
+                                                    > div.row {
+                                                        &:first-child {
+                                                            font-family: Calibri;
+                                                            color: #4d4d4d;
+                                                            font-size: 18px;
+                                                            font-weight: 700;
+                                                        }
+                                                        &:nth-child(2) {
+                                                            border-bottom: 1px solid #cccccc;
+                                                            padding-bottom: 9px;
+                                                            padding-top: 7px;
+                                                            font-family: Calibri;
+                                                            color: #4d4d4d;
+                                                            font-size: 12px;
+                                                            font-weight: 300;
+                                                            letter-spacing: -0.156px;
+                                                            > input.custom-checkbox-green-type00 {
+                                                              & + label,
+                                                              &:checked + label {
+                                                                width: inherit;
+                                                                margin-left: 30px;
+                                                                margin-top: 4px;
+                                                                font-size: 13px;
+                                                                font-weight: 300;
+
+                                                                &::before {
+                                                                  left: -25px;
+                                                                  top: -0px;
+                                                                }
+                                                              }
+                                                            }
+                                                            > span {
+                                                                float: right;
+                                                                &::before {
+                                                                    font-size: 17px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &:last-child {
+                                                padding-right: 0;
+                                                border-left: 1px solid #cccccc;
+                                                > div.container-fluid {
+                                                    > div.row {
+                                                        &:first-child {
+                                                            > div.col-xs-12 {
+                                                                padding: 0;
+                                                                display: flex;
+                                                                align-items: center;
+                                                                > span {
+                                                                    font-family: Calibri;
+                                                                    color: #4d4d4d;
+                                                                    font-size: 18px;
+                                                                    font-weight: 700;
+                                                                    text-align: left;
+                                                                    margin-right: 53px;
+                                                                }
+                                                                > input {
+                                                                    flex-grow: 1;
+                                                                    height: 33px;
+                                                                }
+                                                            }
+                                                        }
+                                                        &:last-child {
+                                                            > div.col-xs-12 {
+                                                                padding: 0;
+                                                                > div.container-fluid {
+                                                                    padding: 0;
+                                                                    padding-top:20px;
+                                                                    > table {
+                                                                        > thead {
+                                                                            font-family: Calibri;
+                                                                            color: rgba(26, 26, 26, 0.7);
+                                                                            font-size: 14px;
+                                                                            font-weight: 700;
+                                                                            letter-spacing: -0.182px;
+                                                                        }
+                                                                        > tbody {
+                                                                            font-family: Calibri;
+                                                                            color: #333333;
+                                                                            font-size: 14px;
+                                                                            font-weight: 300;
+                                                                            letter-spacing: -0.182px;
+                                                                            background-color: #ffffff;
+                                                                            > tr {
+                                                                                > td {
+                                                                                    &:first-child {
+                                                                                        > input.custom-checkbox-green-type00 {
+                                                                                            display: none;
+                                                                                            &+label {
+                                                                                                position: relative;
+                                                                                                margin: 0;
+                                                                                                height: 15px;
+                                                                                                width: 35px;
+                                                                                            }
+                                                                                            &+label::before {
+                                                                                                position: absolute;
+                                                                                                content: '';
+                                                                                                height: 15px;
+                                                                                                width: 15px;
+                                                                                                border: 1px solid #d9d9d9;
+                                                                                                left: 10px;
+                                                                                                top: 3px;
+                                                                                            }
+                                                                                            &:checked + label::before {
+                                                                                                position: absolute;
+                                                                                                content: '\f00c';
+                                                                                                font-family: 'FontAwesome';
+                                                                                                color: #a3d165;
+                                                                                                height: 15px;
+                                                                                                width: 15px;
+                                                                                                border: 1px solid #d9d9d9;
+                                                                                                text-align: center;
+                                                                                                line-height: 15px;
+                                                                                                left: 10px;
+                                                                                                top: 3px;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+}

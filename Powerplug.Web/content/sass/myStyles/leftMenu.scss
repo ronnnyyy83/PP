@@ -1,0 +1,33 @@
+nav {
+  > div {
+    > ul {
+      > li {
+        &[aria-expanded=true] {
+          border-top: 1px solid #494646;
+        }
+        > ul {
+          height: 48px;
+          width: 246px;
+          margin-left: -47px;
+          padding-left: 47px;
+          line-height: 48px;
+          > li {
+            list-style: none;
+            background-color: #3d3a3a;
+            border-bottom: 1px solid #666666;
+            height: 48px;
+            width: 246px;
+            margin-left: -47px; 
+            padding-left: 47px;
+            line-height: 48px;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }

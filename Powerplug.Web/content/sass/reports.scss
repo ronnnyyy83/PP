@@ -1,0 +1,437 @@
+#ui-datepicker-div.report-monthly{
+    z-index:2 !important;
+    .ui-datepicker-calendar {
+        display: none;
+    }
+}
+
+.reports{
+    .report-img{
+        float: right;
+        width: 414px;
+        border: solid 7px #cdcdcd;
+        margin-top: 109px;
+        margin-left: 20px;
+        img{ 
+            width: 400px;
+        }
+    }
+    .report-generation{               
+        overflow: hidden;
+        > div{
+            padding-top:25px;
+            padding-bottom: 25px;
+        }
+        table {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            > thead {
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.182px;
+                > tr{
+                    > td{
+                        border-bottom: 1px solid #ddd;
+                    }
+                }
+            }
+
+            > tbody {
+                font-family: Calibri;
+                color: #333333;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.182px;
+
+                > tr {
+                    border: none;
+                    outline: none;
+
+                    &.bg-row-selected {
+                        background-color: rgba(242,242,242,0.6);
+                    }
+                    > td {
+                        vertical-align: middle;
+                        font-family: Calibri;
+                        border-bottom: 1px solid #ddd;
+                        border-top:none;
+
+                        select{
+                            font-family: Calibri;
+                            border:none;
+                            font-size: 14px;
+                            background-color: transparent;
+                        }                        
+                    }
+                }
+            }
+        }
+        .report-name{    
+            font-weight: bold;
+            font-size: 20px;            
+            span:first-child{
+                padding-right: 15px;                
+            }
+        }
+        .report-details{
+            .report-title{
+                &:first-child{
+                    padding-bottom:10px;                    
+                }
+                span{
+                    display: block;
+                    &:first-child{
+                        float:left;
+                        width:130px;
+                        font-weight:bold;
+                        padding-top: 6px;  
+                        font-size:15px;                      
+                    }
+                    &:last-child{
+                        overflow: hidden;
+                        input{
+                            width: 100%;
+                            border:solid 1px #cdcdcd;
+                            height:30px;
+                            padding: 5px;
+                        }
+                        textarea{
+                            width: 100%;
+                            border-color: #cdcdcd;
+                            height: 70px;
+                            padding: 5px;
+                            resize: none;
+                        }
+                    }
+                }
+            }
+        }
+        .report-date{
+            > span{
+                vertical-align:middle;
+                padding-right: 15px;
+                font-weight:bold; 
+                font-size:15px;  
+            }
+            > div{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right:40px;
+                &.form-group{
+                    margin-bottom:0px;
+                }
+                select{
+                    border-color: #cdcdcd;
+                    height:30px;
+                }
+            }
+        }
+        .report-computers{
+            > div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                &.report-computer-list-container{
+                    border:solid 1px #cdcdcd;
+                    width:100%;
+                    height:150px;
+                    overflow:auto;
+                }
+                .action-settings{
+                    font-weight:normal;
+                    padding-left:20px;
+                    &:before{
+                        margin-right:5px;
+                    }
+                }
+            }
+        }
+        .report-sort{
+            > div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                &.report-sort-container{
+                    border:solid 1px #cdcdcd;
+                    width:100%;
+                    height:150px;
+                    .sort-arrow-container{
+                        float:left;
+                        width:40px;
+                        height:150px;
+                        border-right:solid 1px #cdcdcd;
+                        color:#8cc63f;
+                        font-size:18px;
+                        text-align: center;
+                        padding-top: 50px;
+                        span{
+                            &.glyphicon{
+                                font-weight:700;
+                                cursor:pointer;                                
+                            }
+                        }
+                    }
+                    .report-sort-items{
+                        height: 150px;
+                        overflow: auto;
+                    }
+                }
+            }
+        }
+        .report-usage{
+            > div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                &.report-usage-container{
+                    border:solid 1px #cdcdcd;
+                    width:100%;
+                    height:120px;
+                    padding: 5px;
+                    overflow-y:auto;
+                    ul{
+                        margin-bottom:0px;
+                        li{
+                            padding-top:5px;
+                            padding-bottom: 5px;
+                            &.bg-row-selected {
+                                background-color: rgba(242,242,242,0.6);
+                            }
+                        }
+                    }
+                }
+                .action-settings{
+                    font-weight:normal;
+                    padding-left:20px;
+                    &:before{
+                        margin-right:5px;
+                    }
+                }
+            }
+        }
+        .report-options{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                input.custom-checkbox-green-type00+label{
+                    width: 25px;
+                    &:before{
+                        left:0px;
+                    }
+                }
+                input.custom-checkbox-green-type00:checked+label{
+                    &:before{
+                        left:0px;
+                    }
+                }
+                &:last-child{
+                    padding-top:10px;
+                }
+            }
+        }
+        .report-inactive{
+            div{
+                &:first-child{
+                    font-weight:bold;                        
+                    font-size:15px;
+                    padding-bottom:10px;
+                }
+                input.custom-checkbox-green-type00+label{
+                    width: 25px;
+                    &:before{
+                        left:0px;
+                    }
+                }
+                input.custom-checkbox-green-type00:checked+label{
+                    &:before{
+                        left:0px;
+                    }
+                }
+            }
+        }
+        .report-output{
+            span{
+                display: block;
+                &:first-child{
+                    float:left;
+                    width:100px;
+                    font-weight:bold; 
+                    padding-top:6px;
+                    font-size:15px;                      
+                }
+                &:last-child{
+                    overflow: hidden;
+                    select{
+                        width: 100%;
+                        border:solid 1px #cdcdcd;
+                        height:30px;
+                        padding: 5px;
+                    }
+                }
+            }    
+        }
+    }
+
+    .report-selection{
+        padding-top:30px;
+        padding-bottom:30px;
+        border-bottom: solid 1px #e6e6e6;
+        span{                      
+            &:first-child{
+                font-size:18px;
+                font-weight: bold;
+                float:left;
+                width: 180px;
+                display:block;
+                padding-top:8px;
+            }
+            &:last-child{
+                overflow:hidden;
+                display: block;
+                select{
+                    width: 100%;
+                    border-color: #cdcdcd;
+                    height: 40px;
+                    option[default] {
+                      display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .template-list{
+        padding-top: 30px;
+        
+        .template-title{
+            font-size:20px;
+            font-weight: bold;
+            padding-bottom: 6px;
+            border-bottom: solid 2px #8cc63f;
+        }
+
+        ul.templates-container{            
+            li{
+                list-style:none;
+                background-color: rgba(242,242,242,.6);
+                border-bottom: outset 1px #f6f6f6;
+                width: 100%;
+                height:65px;
+                margin-top:5px;
+                padding:10px;
+                cursor:pointer;
+                .button-container{
+                    float:right;
+                    width:90px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    .action-settings{
+                        font-family: Calibri;
+                        color: rgba(26,26,26,.7);
+                        font-size: 14.83px;
+                        font-weight: 700;
+                        text-align: left;
+                        &:before{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                .imgContainer{
+                    width:70px;
+                    height: 65px;
+                    float:left;
+                    padding-left:10px;
+                    padding-top: 2px;
+                }
+                .dataContainer{
+                    overflow:hidden;
+                    font-size:16px;
+                    .template-name{
+                        font-weight:bold;
+                    }
+                    .template-date{
+                        font-size: 14px;
+                        padding-top:4px;
+                        .template-date-green{
+                            color: #8cc63f;
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}
+.modal-dialog.modal-days-size{
+    width: 400px;
+}
+
+.power-plug-dialog{
+    &.report-days-container{
+        
+        .modal-body{
+            ul{
+                list-style:none;
+                li{
+                    display:inline-block;
+                    width: 122px;
+                }
+            }
+
+            .report-data-row {
+                padding-bottom: 20px;
+
+                span {
+                    width: 120px;
+                    display: inline-block;
+                    font-family: Calibri;
+                    font-size: 16px;
+                    color: rgba(26, 26, 26, 0.7);
+                    &.smaller{
+                        width:auto;
+                        font-size:14px;
+                        padding-right:10px;
+                    }
+                }
+
+                input[type=text] {
+                    width: 400px;
+                    height: 40px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                    padding: 5px;
+                }
+
+                input[type=number] {
+                    width: 55px;
+                    height: 30px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                    padding-left: 5px;
+                    margin-right: 5px;
+                    line-height: normal;
+                }
+
+                select {
+                    font-weight: normal;
+                    width: 152px;
+                    height: 30px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    color: #1a1a1a;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Add New User</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <ng-form name="newUser">
+
+                <div class="settings-data-row" ng-class="{'has-error': newUser.username.$error.required && toValidate}">
+                    <span>User Name: </span> <input required name="username" type="text" ng-model="user.userName" class="form-control" ng-change="validateFields()" />
+                </div>
+                <div class="settings-data-row" ng-class="{'has-error': (newUser.password.$error.required || newUser.password.$error.minlength || newUser.password.$error.match) && toValidate}">
+                    <span>Password: </span> <input ng-minlength="6" required type="password" name="password" ng-model="user.password" ng-change="validateFields()" class="form-control" />
+                </div>
+                <div class="settings-data-row" ng-class="{'has-error': (newUser.confirmPassword.$error.required || newUser.confirmPassword.$error.match) && toValidate}">
+                    <span>Confirm Password: </span> <input required type="password" name="confirmPassword" ng-model="user.confirmPassword" class="form-control" ng-change="validateFields()" />
+                </div>
+
+                <div class="validation">
+                    <div class="help-block error" ng-show="isValide.error">{{isValide.message}}</div>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="add()">OK</button>
+            <button ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+.modal-dialog.modal-large {
+    width: 900px;
+}
+
+.power-plug-dialog {
+    font-family: Calibri;
+    color: rgba(26, 26, 26, 0.7);
+    background-color: #ffffff;
+    min-height: 80%;
+
+    .modal-header {
+        &:before, &:after {
+            display: none;
+        }
+
+        padding-left: 32px;
+        padding-right: 34px;
+        min-height: 110px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        > div {
+            font-family: Calibri;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 24px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        > img {
+            cursor: pointer;
+        }
+    }
+
+    .modal-body {
+        max-height: 460px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        > div:first-child {
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+     
+        .help-block.error {
+          color: #a94442;
+         }
+        .small-title{
+            color: #333333;
+            font-size: 16px;
+            display: inline-block;
+            font-weight: bold;
+            padding-right: 25px;
+        }
+        input[type="number"] {
+            font-weight:normal;
+            background: transparent;
+            height: 40px;
+            padding: 0px 0 0px 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 14px;
+            line-height: 40px;
+        }
+        input[type="number"]:disabled{
+          background-color: #f6f6f6;
+        }
+        input[type=number].big-arrows::-webkit-inner-spin-button, 
+        input[type=number].big-arrows::-webkit-outer-spin-button { 
+           height:40px;
+            margin: 0; 
+        }
+
+        input[type=text], input[type="password"] {
+            width: 300px;
+            height: 40px;
+            color: #1a1a1a;
+            font-size: 14px;
+            padding: 5px;
+        }
+        .date-picker{
+            input:disabled + .input-group-addon{
+                background-color:#eee;
+            }
+        }
+
+        input[type=text].small-input {
+            width: 53px;
+            margin-right: 5px;
+        }
+
+        input[type=text].med-input {
+            width: 210px;
+        }
+
+        select {
+            font-weight: normal;
+            width: 105px;
+            height: 40px;
+            margin-left: 20px;
+            margin-right: 10px;
+            color: #1a1a1a;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            color: #1a1a1a;
+            font-size: 14px;
+            padding: 5px;
+            resize: none;
+        }
+
+        label {
+            display: inline-block;
+            font-family: Calibri;
+            font-size: 16px;
+            color: rgb(93,93,93);
+        }
+
+        .action-type-select {
+            padding: 15px 0;
+            min-height: 40px;
+            box-sizing: content-box;
+
+            .left-block-line {
+                min-height: 40px;
+                padding-right: 0px;
+                line-height: 40px;
+
+                label {
+                    margin: 0px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+
+    .buttonsBlock {
+        background-color: #f2f2f2;
+        text-align: center;
+        padding: 15px 0;
+
+        > button {
+            height: 40px;
+            width: 120px;
+            border: none;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 20.3px;
+            font-weight: 700;
+
+            &:first-child {
+                background-color: #8cc63f;
+            }
+
+            &:last-child {
+                background-color: #808080;
+            }
+        }
+    }
+}

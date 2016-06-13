@@ -1,0 +1,23 @@
+﻿<div class="settings-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Script Properties</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeScriptDialog()">
+    </div>
+    <div class="modal-body">        
+        <div>
+            <div class="settings-data-row">
+                <span>Script Name:</span> <input type="text" ng-model="script.scriptName" />
+            </div>
+            <div class="settings-data-row">
+                <span>Description:</span> <textarea ng-model="script.scriptDesc"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="addUpdateScript()">OK</button>
+            <button ng-click="closeScriptDialog()">Cancel</button>
+       </div>
+    </div>
+</div>

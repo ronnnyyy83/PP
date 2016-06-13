@@ -1,0 +1,182 @@
+﻿<div class="reports clearfix">   
+    <div class="report-img">
+        <img src="content/images/report/{{vm.reportData.reportId}}.png" />
+    </div>
+    <div class="report-generation">
+        <div class="report-name">
+            <span><img src="content/images/savingPlans/_Group_.png" /></span>
+            <span>{{vm.reportData.reportName}}</span>
+        </div>
+        <div class="report-details">
+            <div class="report-title">
+                <span>Report Title</span>
+                <span><input type="text" ng-model="vm.reportData.title" /></span>
+            </div>
+            <div class="report-title">
+                <span>Report Subtitle</span>
+                <span><textarea ng-model="vm.reportData.subtitle"></textarea></span>
+            </div>
+        </div>
+        <div class="report-date" ng-if="vm.reportData.monthsFilter === false">
+            <span>From Date</span>
+            <div class="form-group date-picker">
+                <div class='input-group date from-date'>
+                    <input type='text' id="from-date" class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-triangle-bottom">
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <span>To Date</span>
+            <div class="form-group date-picker">
+                <div class='input-group date to-date'>
+                    <input type='text' id="to-date" class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-triangle-bottom">
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="report-date" ng-if="vm.reportData.monthsFilter === true">
+            <span>From Month</span>
+            <div>                
+                <select ng-model="vm.selectedFromMonth" convert-to-number>
+                    <option ng-repeat="month in vm.months" ng-selected="vm.selectedFromMonth == month.key" value="{{month.key}}">{{month.value}}</option>
+                </select>
+                <select ng-options="year for year in vm.years" ng-model="vm.selectedFromYear"></select>
+            </div>
+            <span>To Month</span>
+            <div>
+                <select ng-model="vm.selectedToMonth" convert-to-number>
+                    <option ng-repeat="month in vm.months" value="{{month.key}}">{{month.value}}</option>
+                </select>
+                <select ng-options="year for year in vm.years" ng-model="vm.selectedToYear"></select>
+            </div>
+        </div>
+        <div class="report-computers" ng-if="vm.reportData.computerFilter === true">
+            <div class="clearfix">
+                <div class="fr">
+                    <span class="buttonTypeOneAdd action-settings" ng-click="vm.addComputerDialog()">Add Computer</span>
+                    <span class="buttonTypeOneAdd action-settings" ng-click="vm.addComputerGroupDialog()">Add Group</span>
+                    <span class="buttonTypeOneRemove action-settings" ng-click="vm.removeComputer()">Remove</span>
+                </div>
+                <div class="fl">Computers to include in the report</div>
+            </div>
+            <div class="report-computer-list-container" ng-scrollbars ng-scrollbars-config="vm.config">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Type</td>
+                            <td>Sub Groups</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="group in vm.reportData.groups" class="script-row" ng-class="vm.reportData.selectedComputer == group.groupGUID ? 'bg-row-selected' : ''" ng-click="vm.reportData.selectedComputer = group.groupGUID">
+                            <td>{{ group.groupName}}</td>
+                            <td>Computer Group</td>
+                            <td>{{ group.includeSubGroups? 'Yes' : 'No'}}</td>
+                        </tr>
+                        <tr ng-repeat="computer in vm.reportData.computers" class="script-row" ng-class="vm.reportData.selectedComputer == computer.name ? 'bg-row-selected' : ''" ng-click="vm.reportData.selectedComputer = computer.name">
+                            <td>{{ computer.name }}</td>
+                            <td>Computer</td>
+                            <td>N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="report-sort" ng-if="vm.reportData.sortOrder !== undefined && vm.reportData.sortOrder.length > 0">
+            <div>Field Sort Order</div>
+            <div class="report-sort-container clearfix">
+                <div class="sort-arrow-container">
+                    <div>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="vm.moveUp()">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="glyphicon glyphicon-menu-down" ng-click="vm.moveDown()">
+                        </span>
+                    </div>
+                </div>
+                <div class="report-sort-items" ng-scrollbars ng-scrollbars-config="vm.config">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Field Name</td>
+                                <td>Sort Direction</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="column in vm.reportData.sortOrder" class="script-row" ng-class="vm.reportData.selectedSort == column.field ? 'bg-row-selected' : ''" ng-click="vm.reportData.selectedSort = column.field">
+                                <td>{{ column.display }}</td>
+                                <td>
+                                    <select ng-model="column.order">
+                                        <option value="asc">Ascending</option>
+                                        <option value="desc">Descending</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="report-usage" ng-if="vm.reportData.usageDays !== undefined">
+            <div class="clearfix">
+                <div class="fr">
+                    <span class="buttonTypeOneAdd action-settings" ng-click="vm.addDaysDialog()">Add</span>                    
+                    <span class="buttonTypeOneRemove action-settings" ng-click="vm.removeDays()">Remove</span>
+                </div>
+                <div class="fl">Days of Week Ranges</div>
+            </div>           
+            <div class="report-usage-container" ng-scrollbars ng-scrollbars-config="vm.configSmaller">
+                <ul>
+                    <li ng-repeat="days in vm.daysArr" ng-class="vm.reportData.selectedDay == days ? 'bg-row-selected' : ''" ng-click="vm.reportData.selectedDay = days">
+                        {{days}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="report-options" ng-if="vm.reportData.showDetails !== undefined">
+            <div>Options</div>
+            <div>
+                <input id="chkDetails" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showDetails" />
+                <label for="chkDetails"></label>
+                Show Details
+            </div>
+            <div>
+                <input id="chkSummary" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showSummary" />
+                <label for="chkSummary"></label>
+                Show Summary
+            </div>
+        </div>
+        <div class="report-inactive" ng-if="vm.reportData.showInactive !== undefined">
+            <div>Deleted Computers</div>
+            <div>
+                <input id="chkDeleted" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.reportData.showInactive" />
+                <label for="chkDeleted"></label>
+                Display Deleted Computers
+            </div>
+        </div>
+        <div class="report-output">
+            <span>Output</span>
+            <span><select ng-model="vm.reportData.operation" ng-options="out as out for out in vm.reportData.output"></select></span>
+        </div>
+    </div>
+</div>
+<div class="save-button-margin"></div>
+<div class="buttons-container">
+    <div>
+        <input type="button" value="Generate" class="btn-save-green" ng-click="vm.generateReport()" />
+        <input type="button" value="Save as Template" class="btn-black" ng-click="vm.saveTemplateDialog()" />
+        <input type="button" value="Cancel" class="btn-discard-gray" ng-click="vm.cancel()" />
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

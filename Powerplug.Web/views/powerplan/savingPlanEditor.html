@@ -1,0 +1,29 @@
+﻿<div class="loader-bg" ng-show="vm.isLoading"><div class="loader">Loading...</div></div>
+<div style="padding-bottom:80px">
+    <div class="panel-body">
+        <!-- <div style="margin-bottom:20px;">
+           Policy Name: <input type="text" ng-model="vm.savingPlan.policyName" />
+        </div> -->
+        <div ui-view="overview"></div>
+        <div id="workhoursaction" ui-view="workhoursaction"></div>
+        <div id="worktimesaction" ui-view="worktimesaction"></div>
+        <div id="events" ui-view="events"></div>
+        <div id="computers" ui-view="computers"></div>
+        <div id="settings" ui-view="settings"></div>
+        <div id="permissions" ui-view="permissions" style="display:none;"></div>
+        <div id="description" ui-view="description"></div>
+    </div>
+</div>
+ <!--<div style="position:fixed;bottom:0px;right:0px;left:246px;border-top:solid 3px gray;background-color:#f3f3f3;height:100px; z-index: 10;" class="clearfix">
+    <div class="pull-right" style="padding-top:30px;padding-right:30px;">
+        <input type="button" value="Save Changes" class="btn btn-primary" ng-click="vm.saveChanges()"/>
+    </div>
+</div>-->
+
+
+<div class="buttons-container">
+    <div>
+        <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+        <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+    </div>
+</div>

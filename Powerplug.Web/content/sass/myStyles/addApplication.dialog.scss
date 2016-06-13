@@ -1,0 +1,44 @@
+div.addAppWrapper {
+    > div {
+        &.modal-header {
+            padding: 0;
+            border: none;
+            > span {
+                display: inline-block;
+                margin: 45px 33px;
+                font-family: Calibri;
+                color: rgba(26, 26, 26, 0.7);
+                font-size: 24px;
+                font-weight: 300;
+            }
+            > img {
+                float: right;
+                margin: 52px 30px;
+            }
+        }
+        &.modal-body {
+            > ng-form {
+                .action-type-select{
+                    padding: 10px 0;
+                }
+                > div {
+                    > input.custom-radio-button-t2 + label {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 13px;
+                        font-weight: 300;
+                        letter-spacing: -0.169px;
+                        line-height: 14px;
+                    }
+                    > input.custom-radio-button-t2:checked + label {
+                        font-weight: 700;
+                    }
+                    > input[type='number'] {
+                        width: 90px;
+                        margin-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

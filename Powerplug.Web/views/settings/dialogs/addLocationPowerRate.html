@@ -1,0 +1,39 @@
+﻿<div class="settings-prop">
+    <div class="powerplug-modal-header">
+        <div>Add Power Rate</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="settings-data-row">
+                <span class="middle">From Date:</span>
+                <!-- bootstarp date picker start -->
+                <div class="date-picker">
+                    <div class='input-group date power-plug-date-picker'>
+                        <input id="from-date" class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-triangle-bottom">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!-- bootstarp date picker end -->
+            </div>
+            <div class="settings-data-row" 
+                 ng-class="{'has-error': toValidate && (selected.powerRateId == lastRate.powerRateId)}">
+                <span class="middle">Power Rate:</span>
+                <select class="power-plug-form-control power-plug-select" ng-model="selected" ng-options="rate as rate.rateName for rate in availableRates track by rate.powerRateId"></select>
+            </div>
+            <div class="validation">
+                <div class="help-block error" 
+                     ng-show="toValidate && (selected.powerRateId == lastRate.powerRateId)">
+                Power Rate Must be diffrent than the last Power Rate already associated with the Location.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="add()">OK</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

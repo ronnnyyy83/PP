@@ -1,0 +1,82 @@
+<div class="power-plug-dialog addPermissionsWrapper">
+    <div class="modal-header">
+        <div>Add Permissions</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closePermissionDialog()">
+    </div>
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div>
+            <div>
+              <span>Select this object type</span>
+            </div>
+            <div>
+              <span>Select from this location</span>
+            </div>
+            <div>
+              <span>Filter:</span>
+              <span>Name</span>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>Users or Groups</div>
+              <div><span>...</span></div>
+            </div>
+            <div>
+              <div>Users or Groups</div>
+              <div><span>...</span></div>
+            </div>
+            <div>
+              <label class="customDropdown">
+                  <select>
+                      <option value="1">Contains</option>
+                  </select>
+              </label>
+            </div>
+          </div>
+          <div>
+            <div class="btn-group">
+              <a class="btn" href>Search</a>
+              <a class="btn" href>
+                <span class="fa fa-search"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <span>{{}}0 Users</span>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <td>
+                        <input type="checkbox" id="as00" class="custom-checkbox-green-type00" ng-model="selectedAllUsers" ng-click="checkAll('users')"/>
+                        <label for='as00'></label>
+                      </td>
+                      <td>Name</td>
+                      <td>Logon Name</td>
+                      <td>Description</td>
+                      <td>In Folder</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="user in users" deleteThisSectionItsOnlyForExample>
+                    <td>
+                      <input type="checkbox" id="{{$index}}" class="custom-checkbox-green-type00" ng-model="user.selected"/>
+                      <label for="{{$index}}"></label>
+                    </td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.logonName}}</td>
+                    <td>{{user.description}}</td>
+                    <td>{{user.isInFolder}}</td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="addPermission()">Add</button>
+        <button ng-click="closePermissionDialog()">Cancel</button>
+    </div>
+</div>

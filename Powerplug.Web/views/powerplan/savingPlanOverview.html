@@ -1,0 +1,182 @@
+<div class='container-fluid overview'>
+    <div class="flex">
+        <div>
+            <div class="row" ng-repeat="summaryItem in vm.summary">
+                <div class="col-xs-12">
+                    <img src="/content/images/savingPlans/Overview/PC.png" />
+                    <span>{{summaryItem.type == 'computerSaving' ? 'Computer savings' : 'Monitor savings'}}</span>
+                    <img class="margin" ng-src="{{summaryItem.time == 'work' ? '/content/images/savingPlans/Overview/sun.png' : '/content/images/savingPlans/Overview/moon.png'}}" />
+                    <span>{{summaryItem.time == 'work' ? 'work hours' : 'non-work hours'}}: {{summaryItem.text}}</span>
+                </div>
+            </div>            
+        </div>
+        <div>
+            <div>
+                <div>
+                    <span>Valid From</span>
+                </div>
+                <div>
+                    <!-- bootstarp date picker start -->
+                    <div class="form-group date-picker">
+                        <div class='input-group date from-date'>
+                            <input type='text' id="from-date" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-triangle-bottom">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>Valid To</span>
+                </div>
+                <div>
+                    <!-- bootstarp date picker start -->
+                    <div class="form-group date-picker">
+                        <div class='input-group date to-date'>
+                            <input type='text' id="to-date" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-triangle-bottom">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- bootstarp date picker end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+          <charts data-chart-type="'work'" data-graph="vm.workDaysGraph"></charts>
+        </div>
+        <div class="col-xs-4">
+          <charts data-chart-type="'non-work'" data-graph="vm.nonWorkDaysGraph"></charts>
+        </div>
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-6">
+                    <img src="/content/images/savingPlans/Overview/bigPC.png" />
+                </div>
+                <div class="col-xs-6">
+                    <img src="/content/images/savingPlans/Overview/efficiency.png" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12 bigNumber">{{vm.savingPlan.plannedComputers}}</div>
+                        <div class="col-xs-12 font">Assigned Computers</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div color-letter data-letter="vm.savingPlan.plannedEfficiency" class="col-xs-12 bigNumber"></div>
+                        <div class="col-xs-12 font">Projected Efficiency</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12 bigNumber green">{{vm.savingPlan.actualComputers}}</div>
+                        <div class="col-xs-12 font">Actual Reporting</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div color-letter data-letter="vm.savingPlan.actualEfficiency" class="col-xs-12 bigNumber"></div>
+                        <div class="col-xs-12 font">Actual Reported Efficiency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#workhoursaction" class="scroll">Hours & Actions</a></li>
+        <li><a href="#worktimesaction" class="scroll">Savings</a></li>
+        <li><a href="#events" class="scroll">Events</a></li>
+        <li><a href="#computers" class="scroll">Computers</a></li>
+        <li><a href="#settings" class="scroll">Settings</a></li>
+        <li><a href="#permissions" class="scroll">Permissions</a></li>
+        <li><a href="#description" class="scroll">Description</a></li>
+      </ul>
+    </div>
+</div>
+<!-- <div fusioncharts
+     width="500"
+     height="400"
+     type="msline"
+     chart="{{vm.graphWorkDays.attrs}}"
+     categories="{{vm.graphWorkDays.categories}}"
+     dataset="{{vm.graphWorkDays.dataset}}"></div>
+</div>
+<div class="pull-left">
+<div fusioncharts
+     width="500"
+     height="400"
+     type="msline"
+     chart="{{vm.graphNonWorkDays.attrs}}"
+     categories="{{vm.graphNonWorkDays.categories}}"
+     dataset="{{vm.graphNonWorkDays.dataset}}">
+
+</div> -->
+
+<!-- <div class="clearfix">
+    <div class="pull-left">
+        <ul >
+            <li ng-repeat="savingPlanDetail in vm.savingPlan.details">
+                {{savingPlanDetail.item}} : {{savingPlanDetail.description}}
+            </li>
+        </ul>
+    </div>
+    <div class="pull-right">
+        <div>
+            Valid From: <md-datepicker ng-model="vm.savingPlan.validFrom" md-placeholder="Enter date"></md-datepicker>
+        </div>
+        <div>
+            Valid To: <md-datepicker ng-model="vm.savingPlan.validTo" md-placeholder="Enter date"></md-datepicker>
+        </div>
+    </div>
+</div>
+<div class="clearfix" style="margin-top:30px;">
+    <div class="pull-left">
+        <div class="clearfix">
+            <div class="pull-left">
+                <div fusioncharts
+                     width="500"
+                     height="400"
+                     type="msline"
+                     chart="{{vm.graphWorkDays.attrs}}"
+                     categories="{{vm.graphWorkDays.categories}}"
+                     dataset="{{vm.graphWorkDays.dataset}}"></div>
+            </div>
+            <div class="pull-left">
+                <div fusioncharts
+                     width="500"
+                     height="400"
+                     type="msline"
+                     chart="{{vm.graphNonWorkDays.attrs}}"
+                     categories="{{vm.graphNonWorkDays.categories}}"
+                     dataset="{{vm.graphNonWorkDays.dataset}}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right" style="width:400px;padding-top:50px;">
+        <div class="clearfix">
+            <div class="pull-left">
+                <div style="width:200px;">{{vm.savingPlan.plannedComputers}}<br />Assigned Computers</div>
+                <div style="width:200px;">{{vm.savingPlan.actualComputers}}<br />Actual Reporting</div>
+            </div>
+            <div class="pull-right">
+                <div style="width:200px;">{{vm.savingPlan.plannedEfficiency}}<br />Projected Efficiency</div>
+                <div style="width:200px;">{{vm.savingPlan.acutalEfficiency}}<br />Actual Reported Efficiency</div>
+            </div>
+        </div>
+    </div>
+</div> -->

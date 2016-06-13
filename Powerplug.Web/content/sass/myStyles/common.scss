@@ -1,0 +1,81 @@
+.topGreenLine {
+    z-index: 100;
+}
+.power-plug-list li{
+            height: 47px;
+            border-bottom: 1px solid #cccccc;
+            font-family: Calibri;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: -0.182px;
+            list-style:none;
+            div{
+                height :50px;
+                line-height:50px;
+            }
+}
+md-datepicker {
+    display: inline-block;
+    height: 30px;
+    > div {
+        margin: 7px 0 0 12px;
+        &.md-datepicker-input-container {
+            border: none;
+            width: 88px;
+        }
+    }
+    > button {
+        display: none !important;
+    }
+    button.md-focused {
+        background-color: none;
+    }
+    button {
+        top: 0 !important;
+        left: 53px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    input {
+        font-family: Calibri;
+        color: rgba(102, 102, 102, 0.7) !important;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.182px;
+        text-align: left;
+    }
+}
+
+
+.nav-tabs {
+    border-bottom: none;
+    > li {
+        margin-bottom: 8px;
+        > a,
+        a:focus,
+        a:hover {
+            border: none;
+            background-color: #808080;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 300;
+            outline: none;
+            border: none;
+            border-bottom: 6px solid #808080;
+            padding: 5px 0;
+        }
+        &.active {
+            > a,
+            a:focus,
+            a:hover {
+                background-color: #a3d165;
+                color: #ffffff;
+                border: none;
+                border-bottom: 6px solid #88b73d;
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+<div class="settingsWrapper">
+    <span>Settings</span>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-6"><span>Power Saving Options</span></div>
+          <div class="col-xs-6"><span>Tray Icon Options</span></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div>
+                    <input type="checkbox" id="set01" class="custom-checkbox" ng-model="vm.savingPlan.settings.hidEnableWake">
+                    <label for="set01">Configure Keyboard and Mouse to wake-up the computer from sleep mode</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set02" class="custom-checkbox" ng-model="vm.savingPlan.settings.requestPasswordOnResume">
+                    <label for="set02">Require password on resume</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set03" class="custom-checkbox" ng-model="vm.savingPlan.settings.monitorOnResume">
+                    <label for="set03">Turn monitor on after system resume</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set04" class="custom-checkbox" ng-model="vm.savingPlan.settings.closeOutlookOnStandby">
+                    <label for="set04">Close Microsoft Outlook before entering standby</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set05" class="custom-checkbox" ng-model="vm.savingPlan.settings.outlookCloseForNetPST">
+                    <label for="set05">Close Microsoft Outlook only when PST files are stored on a network drive</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set06" class="custom-checkbox" ng-model="vm.savingPlan.settings.outlookRestoreWindows">
+                    <label for="set06">Restore opened items when microsoft outlook resumes</label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div>
+                    <input type="checkbox" id="set07" class="custom-checkbox" ng-model="vm.savingPlan.settings.showTrayIcon">
+                    <label for="set07">Display PowerPlug Pro Tray Icon</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set08" class="custom-checkbox" ng-model="vm.savingPlan.settings.allowKeepAwake">
+                    <label for="set08">Allow Users to Disable Power Saving Operations</label>
+                </div>
+                <div>
+                    <label class="customDropdown"><span>Maximum Duration</span>
+                        <select ng-disabled="!vm.savingPlan.settings.allowKeepAwake" ng-model="vm.savingPlan.settings.keepAwakeMaxHours" convert-to-number>
+                            <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 360" value="360">6 Hours</option>
+                            <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 720" value="720">12 Hours</option>
+                            <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 1080" value="1080">18 Hours</option>
+                            <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 1440" value="1440">24 Hours</option>
+                            <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 2160" value="2160">36 Hours</option>
+                            <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 2880" value="2880">48 Hours</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="set09" class="custom-checkbox" ng-model="vm.savingPlan.settings.allowPresentationMode">
+                    <label for="set09">Allow “Presentation Mode” (Disables all power saving operations for 3 hours)</label>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <h3>Settings</h3>
+<div class="clearfix">
+    <div class="pull-left" style="width:49%;">
+        <div>Power Saving Options</div>
+        <div class="well" style="height:175px;">
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.hidEnableWake" /> Configure Keyboard and Mouse to wake-up the computer from sleep mode</div>
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.requestPasswordOnResume" /> Require password on resume</div>
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.monitorOnResume" /> Turn monitor on after system resume</div>
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.closeOutlookOnStandby" /> Close Microsoft Outlook before entering standby</div>
+            <div style="padding-left:16px;">
+                <div><input type="checkbox" ng-model="vm.savingPlan.settings.outlookCloseForNetPST" /> Close Microsoft Outlook only when PST files are stored on a network drive</div>
+                <div><input type="checkbox" ng-model="vm.savingPlan.settings.outlookRestoreWindows" /> Restore opened items when microsoft outlook resumes</div>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right" style="width:49%;">
+        <div>Tray Icon Options</div>
+        <div class="well" style="height:175px;">
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.showTrayIcon" /> Display PowerPlug Pro Tray Icon</div>
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.allowKeepAwake" /> Allow Users to Disable Power Saving Operations</div>
+            <div style="padding-left:16px;">
+                Maximum Duration
+                <select ng-model="vm.savingPlan.settings.keepAwakeMaxHours" convert-to-number>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 0" value="0"></option>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 360" value="360">6 Hours</option>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 720" value="720">12 Hours</option>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 1080" value="1080">18 Hours</option>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 1440" value="1440">24 Hours</option>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 2160" value="2160">36 Hours</option>
+                    <option ng-selected="vm.savingPlan.settings.keepAwakeMaxHours == 2880" value="2880">48 Hours</option>
+                </select>
+            </div>
+            <div><input type="checkbox" ng-model="vm.savingPlan.settings.allowPresentationMode" /> Allow “Presentation Mode” (Disables all power saving operations for 3 hours)y</div>
+        </div>
+    </div>
+</div> -->

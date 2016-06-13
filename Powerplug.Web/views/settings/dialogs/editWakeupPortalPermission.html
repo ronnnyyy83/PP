@@ -1,0 +1,49 @@
+﻿<div class="power-plug-dialog settings-prop permission-dialog">
+    <div class="modal-header">
+        <div>Edit Permission Records</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <h4>Permission</h4>
+            <div class="clearfix">
+                <div class="radio-btns">
+                    <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="permission.allow" ng-value="true" id="allow">
+                    <label for="allow" class="ratio-label"><span><span></span></span>Allow</label>
+                </div>
+                <div class="radio-btns">
+                    <input class="custom-radio-button-t2" type="radio" name="{{scheduleType}}" ng-model="permission.allow" ng-value="false" id="deny">
+                    <label for="deny" class="ratio-label"><span><span></span></span>Deny</label>
+                </div>
+            </div>
+            <hr>
+            <h4>Details</h4>
+            <ng-form name="editPermission">
+                <div class="settings-data-row" ng-class="{'has-error': editPermission.username.$error.required && toValidate}">
+                    <span style="width:150px" class="middle ">User Name:</span> <input required name="username" type="text" ng-model="permission.username" class="form-control middle " ng-change="validateFields()" />
+                </div>
+                <div class="settings-data-row" ng-class="{'has-error': editPermission.domainName.$error.required && toValidate}">
+                    <span style="width:150px" class="middle ">User Domain</span> <input required type="text" name="domainName" ng-model="permission.domainName" ng-change="validateFields()" class="form-control middle " />
+                </div>
+                <div class="settings-data-row clearfix" ng-class="{'has-error': editPermission.computerName.$error.required && toValidate}">
+                    <span style="width:150px" class="middle ">Computer Name</span> 
+                   <div class="open-dialog">
+                        <input style="width:258px" required type="text" name="computerName" ng-model="permission.computerName" ng-change="validateFields()" class="form-control middle" />
+                        <btn class="open-dialog middle" ng-click="openDialog()">...</btn>
+                   </div>
+                </div>
+                <div class="settings-data-row" ng-class="{'has-error': editPermission.computerDomain.$error.required && toValidate}">
+                    <span class="middle" style="width:150px" >Computer Domain</span> <input required type="text" name="computerDomain" ng-model="permission.computerDomain" ng-change="validateFields()" class="form-control middle " />
+                </div>
+
+                <div class="validation">
+                    <div class="help-block error" ng-show="isValide.error">{{isValide.message}}</div>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+            <button ng-click="addUpdatePermission()" class="btn btn-success add">OK</button>
+            <button ng-click="cancel()"  class="btn btn-warning cancel">Cancel</button>
+    </div>
+</div>

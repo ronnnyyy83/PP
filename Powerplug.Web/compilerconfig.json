@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "content/css/powerplan.css",
+    "inputFile": "content/sass/powerplan.scss"
+  },
+  {
+    "outputFile": "content/css/myStyle.css",
+    "inputFile": "content/sass/myStyle.scss"
+  }
+]

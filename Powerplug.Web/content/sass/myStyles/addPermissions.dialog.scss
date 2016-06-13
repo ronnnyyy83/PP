@@ -1,0 +1,210 @@
+.power-plug-dialog.addPermissionsWrapper {
+    overflow: inherit;
+    > .modal-body {
+        > div.container-fluid {
+            > div.row {
+                &:first-child {
+                  display: flex;
+                  justify-content: space-between;
+                  background-color: #f8f8f8;
+                  height: 196px;
+                  align-items: stretch;
+                  > div {
+                    flex-grow: 1;
+                    &:first-child {
+                      > div {
+                        height: 65px;
+                        line-height: 65px;
+                        margin-left: 31px;
+                        > span {
+                          font-family: Calibri;
+                          color: #4d4d4d;
+                          font-size: 18px;
+                          font-weight: 700;
+                          text-align: left;
+                        }
+                        &:last-child {
+                          display: flex;
+                          justify-content: space-between;
+                          align-items: center;
+                          > span {
+                            display: block;
+                              &:last-child {
+                                margin-right: 12px;
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 14px;
+                                font-weight: 300;
+                                letter-spacing: -0.182px;
+                              }
+                          }
+                        }
+                      }
+                    }
+                    &:nth-child(2) {
+                      > div {
+                        height: 65px;
+                        &:first-child,
+                        &:nth-child(2) {
+                          > div {
+                            display: inline-block;
+                            margin-top: 15px;
+                            &:first-child {
+                              float: left;
+                              width: 288px;
+                              height: 34px;
+                              background-color: #ffffff;
+                              line-height: 34px;
+                              font-family: Calibri;
+                              color: rgba(102, 102, 102, 0.7);
+                              font-size: 14px;
+                              font-weight: 300;
+                              letter-spacing: -0.182px;
+                              padding-left: 12px;
+                              border: 2px solid #e2e2e2;
+                            }
+                            &:last-child {
+                              width: 34px;
+                              height: 34px;
+                              background-color: #333333;
+                              color: #ffffff;
+                              position: relative;
+                              border: 2px solid #e2e2e2;
+                              border-left: none;
+                              > span {
+                                position: absolute;
+                                bottom: 3px;
+                                left: 11px;
+                              }
+                            }
+                          }
+                        }
+                        &:nth-child(3) {
+                          line-height: 65px;
+                          > label {
+                            > select {
+                              background-color: #ffffff;
+                              height: 33px;
+                              width: 105px;
+                              border: 1px solid #bebebe;
+                              &:focus {
+                                outline: none;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    &:nth-child(3) {
+                      > div.btn-group {
+                        margin-top: 39px;
+                        > a {
+                          height: 55px;
+                          padding: 0px;
+                          line-height: 55px;
+                          border-radius: 0px;
+                          font-family: Calibri;
+                          color: #ffffff;
+                          font-size: 23px;
+                          font-weight: 700;
+                          border: none;
+                          &:first-child {
+                            background-color: #29abe2;
+                            width: 110px;
+                          }
+                          &:last-child {
+                            background-color: #3a8ec1;
+                            width: 55px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &:last-child {
+                  margin-top: 31px;
+                    > span {
+                        font-family: Calibri;
+                        color: #4d4d4d;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                    > table {
+                        > thead {
+                            font-family: Calibri;
+                            color: rgba(26, 26, 26, 0.7);
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                        }
+                        > tbody {
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 300;
+                            letter-spacing: -0.182px;
+                            > tr {
+                                > td {
+                                    border: none;
+                                    border-top: 1px solid #cccccc;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > div.buttonsBlock {
+        text-align: center;
+        min-height: 100px;
+        background-color: #f2f2f2;
+        > button {
+            margin-top: 30px;
+            height: 40px;
+            width: 120px;
+            border: none;
+            font-family: Calibri;
+            color: #ffffff;
+            font-size: 20.3px;
+            font-weight: 700;
+            &:first-child {
+                background-color: #8cc63f;
+            }
+            &:last-child {
+                background-color: #808080;
+            }
+        }
+    }
+    input.custom-checkbox-green-type00 {
+        display: none;
+        &+label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px;
+        }
+        &+label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+        }
+        &:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
+        }
+    }
+}

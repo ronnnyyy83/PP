@@ -1,0 +1,167 @@
+﻿<div class="dashboard-container">
+    <div class="dashboard-saving-header clearfix">
+        <div class="dashboard-saving-header-selection">
+            <select ng-model="vm.statisticPeriod" ng-change="vm.changeStatisticPeriod()">
+                <option value="1">Last 14 Days</option>
+                <option value="3">Previous Month</option>
+                <option value="5">Last 6 Months</option>
+                <option value="6">Last 12 Months</option>
+                <option value="0">Since Installation</option>
+            </select>
+        </div>
+        <div class="dashboard-saving-header-title">Saving Statistics</div>
+    </div>
+    <div class="dashboard-saving-data-container clearfix">
+        <div class="dashboard-saving-data energy">
+            <div class="saving-data-title">Energy Saving</div>
+            <div class="saving-data">
+                {{(vm.Math.round(vm.statistics.energySaving * 100)/100).toFixed(1);}} <span>{{vm.statistics.energySavingUnit}}</span>
+            </div>
+        </div>
+        <div class="dashboard-saving-data money">
+            <div class="saving-data-title">Money Saving</div>
+            <div class="saving-data">
+                {{(vm.Math.round(vm.statistics.moneySaving * 100)/100).toFixed(2);}} <span>{{vm.statistics.moneySavingUnit}}</span>
+            </div>
+        </div>
+        <div class="dashboard-saving-data tree">
+            <div class="saving-data-title">Tree Equivalent</div>
+            <div class="saving-data">
+                {{(vm.Math.round(vm.statistics.trees * 100)/100).toFixed(2);}}
+            </div>
+        </div>
+        <div class="dashboard-saving-data emission">
+            <div class="saving-data-title">Emission Saving</div>
+            <div class="saving-data">
+                {{(vm.Math.round(vm.statistics.emissionSaving * 100)/100).toFixed(1);}} <span>{{vm.statistics.emissionSavingUnit}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-secondRow-container clearfix">
+        <div class="devices-container">
+            <div class="part-title">Connected Devices</div>
+            <div ng-if="vm.devices.last24Hours === 0 && vm.devices.lastWeek === 0 && vm.devices.last30Days === 0" class="empty-state">
+                No Data Available
+            </div>
+            <highchart id="chartDevices" config="vm.highchartsDeviceNG" ng-if="vm.devices.last24Hours > 0 || vm.devices.lastWeek > 0 || vm.devices.last30Days > 0"></highchart>
+        </div>
+        <div class="energyUsage-container">
+            <div class="part-title clearfix">
+                <div class="part-right">
+                    <select ng-model="vm.energyUsagePeriod" ng-change="vm.changeEnergyUsagePeriod()">
+                        <option value="1">Last 14 Days</option>
+                        <option value="3">Previous Month</option>
+                        <option value="5">Last 6 Months</option>
+                        <option value="6">Last 12 Months</option>
+                        <option value="0">Since Installation</option>
+                    </select>
+                </div>
+                <div class="part-left">Energy Usage</div>
+            </div>
+            <div class="energy-data-container clearfix">
+                <div ng-if="vm.energyUsage.energyGrade === '-'" class="empty-state">
+                    No Data Available
+                </div>
+                <div ng-if="vm.energyUsage.energyGrade !== '-'">
+                    <div class="energy-bg">
+                        <img ng-src="content/images/dashboard/energyusage-{{vm.energyUsage.energyGrade.toLowerCase()}}.png" />
+                    </div>
+                    <div class="energy-data">
+                        <div>
+                            <div color-letter data-letter="vm.energyUsage.energyGrade" class="bigNumber"></div>
+                            <div class="font">Last 30 Days</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="computerStat-container">
+            <div class="part-title">Computer Status in the last 12 hours</div>
+            <charts data-graph="vm.computerStatuses" data-graph-space="0" data-graph-height="200"></charts>
+        </div>
+    </div>
+    <div class="dashboard-thirdRow-container clearfix">
+        <div class="plans-container">
+            <div class="part-title">Active Saving Plans</div>
+            <div class="clearfix plan-data">                
+                <div class="plan-efficiency">                    
+                    <div>
+                        <div class="bigNumber">{{vm.powerPlans.assignedComputers}}</div>
+                        <div class="font">Assigned Computers</div>
+                    </div>
+                    <div>
+                        <div class="bigNumber green">{{vm.powerPlans.actualReporting}}</div>
+                        <div class="font">Actual Reporting</div>
+                    </div>                    
+                </div>
+                <div class="plan-table">
+                    <div>
+                        <span>Plans</span><span>Computers</span>
+                    </div>
+                    <div ng-repeat="planComputer in vm.powerPlans.activePlansConverted">
+                        <span>{{planComputer.plans}}</span><span>{{planComputer.computers}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graphs-container">
+            <div class="part-title clearfix">
+                <div class="part-right">
+                    <select ng-model="vm.graphPeriod" ng-change="vm.changeGraphPeriod()">
+                        <option value="1">Last 14 Days</option>
+                        <option value="2">Last 30 Days</option>
+                        <option value="4">Last 60 Days</option>
+                        <option value="5">Last 6 Months</option>
+                        <option value="6">Last 12 Months</option>
+                    </select>
+                </div>
+                <div class="part-left">
+                    <select ng-model="vm.graphType" ng-change="vm.changeGraphType()">
+                        <option value="AC">Active Computers</option>
+                        <option value="PC">Power Consumption and Savings</option>
+                        <option value="PS">Power Savings - PowerPlug vs. Other</option>
+                        <option value="CA">Computers Activity Analysis</option>
+                    </select>
+                </div>
+            </div>
+            <div class="graph-data" ng-if="vm.graphType=='AC'">
+                <highchart id="chartAC" config="vm.highchartsActiveComputersNG" ></highchart>
+            </div>
+            <div class="graph-data clearfix" ng-if="vm.graphType=='PC'">
+                <div class="graph-legend">
+                    <div class="legend-first green"></div>
+                    <div>Power Saved</div>
+                    <div class="legend-second blue"></div>
+                    <div>Power Consumed</div>
+                </div>
+                <div class="graph">
+                    <highchart id="chartPC" config="vm.highchartsPowerConsumptionNG"></highchart>
+                </div>
+            </div>
+            <div class="graph-data clearfix" ng-if="vm.graphType=='PS'">
+                <div class="graph-legend">
+                    <div class="legend-first no-border blue"></div>
+                    <div>Power Saved (other)</div>
+                    <div class="legend-second no-border green"></div>
+                    <div>Power Saved (Powerplug)</div>
+                </div>
+                <div class="graph">
+                    <highchart id="chartPS" config="vm.highchartsPowerSavingNG"></highchart>
+                </div>
+            </div>
+            <div class="graph-data clearfix" ng-if="vm.graphType=='CA'">
+                <div class="graph-legend">
+                    <div class="legend-first no-border green"></div>
+                    <div>Down Time (savings)</div>
+                    <div class="legend-second no-border red less-margin"></div>
+                    <div>Idle Time (not in use)</div>
+                    <div class="legend-second no-border blue less-margin"></div>
+                    <div>Work Time (in use)</div>
+                </div>
+                <div class="graph">
+                    <highchart id="chartCA" config="vm.highchartsComputerActivityNG"></highchart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿<div class="settings">
+    <div class="settings-content script-content">
+        <span>Saved Scripts</span>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Script Name</td>
+                    <td>Owner</td>
+                    <td>Description</td>
+                    <td colspan="2">
+                        <span class="buttonTypeOneAdd action-settings" ng-click="vm.showScriptDialog(0)">Add</span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="script in vm.scripts" class="script-row" data-id="{{script.scriptId}}" ng-click="vm.selectScript($event)">
+                    <td>{{ script.scriptName}}</td>
+                    <td>{{ script.owner}}</td>
+                    <td>{{ script.scriptDesc}}</td>
+                    <td class="button-container"><span class="buttonTypeOneEdit action-settings" ng-click="vm.showScriptDialog(script.scriptId)">Edit</span></td>
+                    <td class="button-container"><span class="buttonTypeOneRemove action-settings" ng-click="vm.removeScript(script.scriptId)">Remove</span></td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bg-separator" ng-show="vm.currentScriptId > 0"></div>
+    <uib-tabset active="active" ng-show="vm.currentScriptId > 0">
+        <uib-tab index="0" heading="Script">
+            <div class="type-selection">
+                Type
+                <select ng-model="vm.currentScriptType" ng-change="vm.changeScriptType()">
+                    <option value="vbs">VBScript</option>
+                    <option value="bat">Batch</option>
+                    <option value="cmd">CMD</option>
+                    <option value="js">JScript</option>
+                </select>
+            </div>
+            <div class="text-container">
+                <textarea ng-change="vm.changeScriptText()" ng-model="vm.currentScriptText"></textarea>
+            </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Security" style="display:none;">
+            <div style="margin-bottom:100px;"></div>
+        </uib-tab>
+    </uib-tabset>
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

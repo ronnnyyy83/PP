@@ -1,0 +1,48 @@
+﻿<div class="settings-prop power-plug-dialog addComputerGroupWrapper">
+    <div class="modal-header">
+        <div>Add a Group</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeComputerGroupsDialog()">
+    </div>
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <span>{{computerGroupsList.length}} Groups</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>
+                          <input type="checkbox" id="AG02" class="custom-checkbox-green-type00" ng-model="selectedAllGroups" ng-click="checkAll('groups')"/>
+                          <label for='AG02'></label>
+                        </td>
+                        <td>Name</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="computerGroup in computerGroupsList">
+                        <td>
+                          <input type="checkbox" id="{{computerGroup.groupGUID}}" data-name="{{computerGroup.groupName}}" 
+                                 ng-model="computerGroup.selected" class="computer-group-selection custom-checkbox-green-type00"/>
+                          <label for='{{computerGroup.groupGUID}}'></label>
+                        </td>
+                        <td>{{computerGroup.groupName}}</td>
+                        <td>{{computerGroup.groupDesc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonsBlock">
+        <button class="btn btn-success" ng-click="addComputerGroups()">OK</button>
+        <button class="btn btn-danger" ng-click="closeComputerGroupsDialog()">Cancel</button>
+    </div>
+</div>

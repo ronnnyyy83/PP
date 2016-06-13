@@ -1,0 +1,76 @@
+﻿<div class="settings">
+    <div class="settings-content">
+        <div class="clearfix">
+            <div class="users-container">
+                <div class="users-buttons-container clearfix">                    
+                    <div class="buttons">
+                        <span class="buttonTypeOneAdd action-settings users-add-button" ng-click="vm.openAddUserDialog()">Add</span>
+                        <span class="buttonTypeOneRemove action-settings users-remove-button" ng-click="vm.deleteChosenUsers()">Remove</span>
+                    </div>
+                    <div class="users-title">Users</div>
+                </div>
+                <div class="users-table-container">
+                    <div class="users-table-positioning">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <input id="spc01" type="checkbox" class="custom-checkbox-green-type00" ng-model="vm.selectedAll" ng-click="vm.checkAll()" />
+                                        <label for="spc01"></label>
+                                    </td>
+                                    <td>Object</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="permObj in vm.users" class="script-row" ng-class="vm.selectedIndex === $index?'bg-row-selected':''">
+                                    <td>
+                                        <input id="permObj-{{$index}}" type="checkbox" class="custom-checkbox-green-type00" ng-model="permObj.selected" />
+                                        <label for="permObj-{{$index}}"></label>
+                                    </td>
+                                    <td  ng-click="vm.selectPermObj(permObj, $index)">{{ permObj.permObjDesc}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="roles-container">
+                <uib-tabset active="active">
+                    <uib-tab index="0" heading="Roles">
+                        <div class="green-line"></div>
+                        <div class="clearfix role-padding">
+                            <div class="role-desc-container">
+                                <div class="role-desc-title">Permission Description</div>
+                                <div>
+                                 {{ vm.selectedRole.description}}
+                               </div>
+                            </div>
+                            <div class="role-table-container">
+                                <ul>
+                                    <li ng-repeat="role in vm.roles" class="role-row" ng-class="vm.selectedRole.index == $index? 'selected-li': ''">
+                                        <input id="li-role{{$index}}" type="checkbox" class="custom-checkbox-green-type00" ng-model="role.selected" 
+                                               ng-change="vm.updatePermObj(role)" />
+                                        <label for="li-role{{$index}}" ng-class="vm.selectedIndex < 0? 'custom-disabled': '' "></label>
+                                        <span ng-click="vm.showRoleDescription(role.description, $index)"> {{ role.permGroup}} </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+            </div>
+        </div>
+    </div>    
+    <div class="save-button-margin"></div>
+    <div class="buttons-container">
+        <div>
+            <input type="button" value="Save Changes" class="btn-save-green" ng-click="vm.saveChanges()" />
+            <input type="button" value="Discard" class="btn-discard-gray" ng-click="vm.discardChanges()" />
+        </div>
+    </div>
+</div>
+<style>    
+    div.content-wrapper {
+        background-color: #fff;
+    }    
+</style>

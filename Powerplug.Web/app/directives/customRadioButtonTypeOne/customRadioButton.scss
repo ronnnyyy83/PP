@@ -1,0 +1,47 @@
+$offColor: #f3f3f3;
+$onColor: #8fc73e;
+$textColor: #898989;
+custom-radio-button div {
+  margin: 0 0 0.75em;
+}
+custom-radio-button input[type="radio"] {
+  display: none;
+}
+custom-radio-button input[type="radio"] + label {
+  color: $textColor;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+custom-radio-button input[type="radio"] + label span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+custom-radio-button input[type="radio"] + label span span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 4px 4px 0px 4px;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+custom-radio-button input[type="radio"] + label > span {
+  border: 1px solid $offColor;
+}
+custom-radio-button input[type="radio"]:checked + label span span {
+  background-color: $onColor;
+}
+custom-radio-button input[type="radio"] + label span,
+custom-radio-button input[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}

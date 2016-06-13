@@ -1,0 +1,170 @@
+.power-plug-dialog.addScript {
+    > .modal-body {
+        > span {
+            margin-left: 37px;
+            font-family: Calibri;
+            color: #4d4d4d;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        > div {
+            &:nth-child(2) {
+                background-color: #ffffff;
+                border: none;
+                > table {
+                    margin-bottom: 0;
+                    border-bottom: 1px solid #b2b2b2;
+                    > thead {
+                        font-family: Calibri;
+                        color: rgba(26, 26, 26, 0.7);
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: -0.182px;
+                        td {
+                            padding-left: 0;
+                            &:first-child {
+                                padding: 0;
+                                vertical-align: middle;
+                                text-align: center;
+                            }
+                        }
+                    }
+                    > tbody {
+                        font-family: Calibri;
+                        color: #333333;
+                        font-size: 14px;
+                        font-weight: 300;
+                        letter-spacing: -0.182px;
+                        > tr {
+                            > td {
+                                &:first-child {
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+                > div {
+                    &:nth-child(3) {
+                        text-align: center;
+                        padding: 15px 0;
+                        background-color: #f2f2f2;
+                    }
+                    > button {
+                        height: 40px;
+                        width: 120px;
+                        border: none;
+                        font-family: Calibri;
+                        color: #ffffff;
+                        font-size: 20.3px;
+                        font-weight: 700;
+                        &:first-child {
+                            background-color: #8cc63f;
+                        }
+                        &:last-child {
+                            background-color: #808080;
+                        }
+                    }
+                }
+            }
+            div.savedStriptInfo {
+                margin: 5px 0;
+                background-color: #f8f8f8;
+                > span {
+                    margin-top: 20px;
+                    display: inline-block;
+                    margin-left: 54px;
+                    font-family: Calibri;
+                    color: #4d4d4d;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                > div {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 19px;
+                    padding-bottom: 19px;
+                    border-bottom: 1px solid #b3b3b3;
+                    > div {
+                        &:nth-child(1) {
+                            margin-left: 89px;
+                            line-height: 27px;
+                        }
+                        &:nth-child(2) {
+                            line-height: 28px;
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 300;
+                            letter-spacing: -0.182px;
+                        }
+                        &:nth-child(3) {
+                            line-height: 28px;
+                            font-family: Calibri;
+                            color: #333333;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.182px;
+                            margin-left: 73px;
+                        }
+                        &:nth-child(4) {
+                            margin-left: 24px;
+                            > label {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 13px;
+                                font-weight: 300;
+                                letter-spacing: -0.169px;
+                                line-height: 14px;
+                                text-align: left;
+                            }
+                        }
+                        &:nth-child(5) {
+                            margin-left: 48px;
+                            > label {
+                                font-family: Calibri;
+                                color: rgba(26, 26, 26, 0.7);
+                                font-size: 13px;
+                                font-weight: 300;
+                                letter-spacing: -0.169px;
+                                line-height: 14px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    input.custom-checkbox-green-type00 {
+        display: none;
+        &+label {
+            position: relative;
+            margin: 0;
+            height: 15px;
+            width: 35px;
+        }
+        &+label::before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            left: 10px;
+            top: 3px;
+        }
+        &:checked + label::before {
+            position: absolute;
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            color: #a3d165;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #d9d9d9;
+            text-align: center;
+            line-height: 15px;
+            left: 10px;
+            top: 3px;
+        }
+    }
+}

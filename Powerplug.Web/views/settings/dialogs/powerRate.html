@@ -1,0 +1,53 @@
+﻿<div class="settings-prop powerRate-prop power-plug-dialog">
+    <div class="modal-header">
+        <div>Power Rate</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="cancel()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="validation">
+                <div class="help-block error" ng-show="errorMsg.show">{{errorMsg.text}}</div>
+            </div>
+            <ng-form name="powerRateForm">
+                <div class="settings-data-row power-rate-data"  ng-class="{'has-error': powerRateForm.rateName.$error.required && toValidate}">
+                    <span>Power Rate Name</span>
+                    <input type="text" class="form-control" ng-model="rate.rateName" required name="rateName"/>
+                </div>
+                <div class="settings-data-row power-rate-data">
+                    <span>Power Company</span> 
+                    <input type="text" class="form-control" ng-model="rate.powerCompany" name="powerCompany"/>
+                </div>
+                <div class="settings-table-container">
+                    <span>Power Cost</span>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>From Date</td>
+                                <td>To Date</td>
+                                <td>Cost per kWh</td>
+                                <td colspan="2">
+                                    <span class="buttonTypeOneAdd action-settings" ng-click="addPowerCostDialog()">Add</span>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cost in rate.powerCost" class="script-row">
+                                <td>{{ getDate(cost.fromDate)}}</td>
+                                <td>{{ getDate(cost.toDate)}}</td>
+                                <td>{{ cost.costPerKWH + currencySymbol}}</td>
+                                <td class="button-container">
+                                    <span class="buttonTypeOneRemove action-settings"
+                                          ng-click="removeCost($index)" ng-show="$last">Remove</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="add()">OK</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

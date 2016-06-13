@@ -1,0 +1,64 @@
+<div class="power-plug-dialog addScript">
+    <div class="modal-header">
+        <div>Add a Script</div>
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeEventScripts()">
+    </div>
+    <div class="modal-body">
+        <span>{{eventScripts.length}} Scripts</span>
+        <div class="well">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>
+                          <input type="checkbox" id="as00" class="custom-checkbox-green-type00" ng-model="selectedAllScripts" ng-click="checkAll('scripts')"/>
+                          <label for='as00'></label>
+                        </td>
+                        <td>Name</td>
+                        <td>Owner</td>
+                        <td>Type</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="script in eventScripts">
+                        <td>
+                            <input type="checkbox" id="{{script.scriptId}}" data-name="{{script.scriptName}}"  data-script-id="{{script.scriptId}}" data-guid="{{script.scriptGUID}}" class="script-selection custom-checkbox-green-type00" ng-model="script.selected"/>
+                            <label for='{{script.scriptId}}'></label>
+                        </td>
+                        <td>{{script.scriptName}}</td>
+                        <td>{{script.owner}}</td>
+                        <td>{{script.scriptType}}</td>
+                        <td>{{script.scriptDesc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="savedStriptInfo">
+                <span>Saved scripts</span>
+                <div>
+                    <div>
+                        <input type="checkbox" id="chb1" name="" class="custom-checkbox-green" />
+                        <label for='chb1'></label>
+                    </div>
+                    <div>
+                        <span>Show all scripts</span>
+                    </div>
+                    <div>
+                        <span>Execution Context</span>
+                    </div>
+                    <div>
+                        <input class="custom-radio-button-t2" type='radio' id='r1' name='radContext' ng-model="context" value="System"/>
+                        <label for='r1'><span><span></span></span>System</label>
+                    </div>
+                    <div>
+                        <input class="custom-radio-button-t2" type='radio' id='r2' name='radContext' ng-model="context" value="User"/>
+                        <label for='r2'><span><span></span></span>User</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <button ng-click="addEventScripts()">OK</button>
+        <button ng-click="closeEventScripts()">Cancel</button>
+    </div>
+</div>

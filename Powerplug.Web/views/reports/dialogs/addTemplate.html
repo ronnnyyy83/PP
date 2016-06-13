@@ -1,0 +1,39 @@
+﻿<div class="power-plug-dialog report-days-container">
+    <div class="modal-header">
+        <div>Save Report Template</div>
+        <!-- <i class="fa fa-times" ></i> -->
+        <img src="content/images/savingPlans/Modal/X.png" alt="close" ng-click="closeDialog()">
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="report-data-row">
+                <span>Template Name:</span> <input type="text" ng-model="reportData.savedReportName" />
+            </div>
+            <div class="report-data-row" ng-if="reportData.monthsFilter !== undefined">
+                <span>Report Dates:</span> 
+                <span class="smaller">From</span> 
+                <input type="number" ng-model="reportData.fromRelative" ng-change="checkFromRelative()"/> 
+                <span class="smaller">to</span> 
+                <input type="number" ng-model="reportData.toRelative" ng-change="checkToRelative()"/> 
+                <select ng-model="reportData.timeframe" ng-change="changeTimeframe()">
+                    <option ng-selected="reportData.timeframe == 'Days'" ng-if="reportData.monthsFilter === false">Days</option>
+                    <option ng-selected="reportData.timeframe == 'Weeks'" ng-if="reportData.monthsFilter === false">Weeks</option>
+                    <option ng-selected="reportData.timeframe == 'Months'" ng-if="reportData.monthsFilter !== undefined">Months</option>
+                    <option ng-selected="reportData.timeframe == 'Quarters'" ng-if="reportData.monthsFilter === false">Quarters</option>
+                </select> 
+                <span class="smaller">ago</span>
+            </div>
+        </div>
+    </div>
+    <div class="buttonsBlock">
+        <div>
+            <button ng-click="addTemplate()">OK</button>
+            <button ng-click="closeDialog()">Cancel</button>
+        </div>
+    </div>
+</div>
+<style>
+    div.content-wrapper {
+        background-color: #fff;
+    }
+</style>

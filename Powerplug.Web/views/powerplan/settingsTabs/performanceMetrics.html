@@ -1,0 +1,34 @@
+<div class="container-fluid tab-line">
+    <span>Do not Perform the operation while:</span>
+    <div>
+        <div class="container-fluid">
+            <div class="row tab-line">
+                <div class="col-xs-12 day-select">
+                    <input type="checkbox" ng-attr-id="{{worktype + 'Cpu'}}" ng-model="isCpu" 
+                           ng-change="ShouldOnChangeUpdateJson()" class="custom-checkbox-green-type01" />
+                    <label for="{{worktype + 'Cpu'}}">CPU utilization is above</label>
+                    <input type="number" ng-disabled="!isCpu" class="tab-input big-arrows"
+                           ng-attr-id="{{worktype + 'CpuText'}}" ng-model="cpuThreshold" ng-change="ShouldOnChangeUpdateJson()" /> Percent
+                </div>
+            </div>
+            <div class="row tab-line">
+                <div class="col-xs-12 day-select">
+                    <input type="checkbox" ng-attr-id="{{worktype + 'Io'}}" ng-model="isIo" 
+                           ng-change="ShouldOnChangeUpdateJson()" class="custom-checkbox-green-type01" />
+                    <label for="{{worktype + 'Io'}}">Disk I/O operations are above</label>
+                    <input type="number" ng-disabled="!isIo" class="tab-input big-arrows" ng-attr-id="{{worktype + 'IoText'}}" 
+                           ng-model="ioThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> KB/Second
+                </div>
+            </div>
+            <div class="row tab-line">
+                <div class="col-xs-12 day-select">
+                    <input type="checkbox" ng-attr-id="{{worktype + 'Network'}}" ng-model="isNetwork" 
+                           ng-change="ShouldOnChangeUpdateJson()" class="custom-checkbox-green-type01" />
+                    <label for="{{worktype + 'Network'}}">Network I/O Operations are above</label>
+                    <input type="number" ng-disabled="!isNetwork" class="tab-input big-arrows" ng-attr-id="{{worktype + 'NetworkText'}}"
+                            ng-model="networkThresholdInKb" ng-change="ShouldOnChangeUpdateJson()" /> KB/Second
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

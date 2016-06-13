@@ -1,0 +1,33 @@
+﻿<div class="configuration-partial">
+    <div class="configuration-header">System</div>
+    <div class="configuration-body">
+        <div class="section">
+            <div class="section-title">Power Savings Options</div>
+            <div class="section-body">
+                <div class="checkbox-wrapper">
+                    <input id="server-saving-cb" type="checkbox" class="custom-checkbox-green-type01"
+                           ng-true-value="false" ng-false-value="true"
+                           ng-model="vm.system.performSavingsOnServers">
+                    <label for="server-saving-cb">Do not perform power savings on Server Computers</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="vm-saving-cb" type="checkbox" class="custom-checkbox-green-type01"
+                           ng-true-value="false" ng-false-value="true" ng-model="vm.system.performSavingsOnVM">
+                    <label for="vm-saving-cb">Do not perform power savings on Virtual machines</label>
+                    <div class="remark">
+                        (supports virtualization platforms from VMware and Microsoft)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title green-link">
+                <span>Default Work Time</span>
+                <span ng-click="vm.openDefualtWorkHoursDialog()"> Set Default Work Time </span>
+            </div>
+            <div class="section-body">
+                <div>{{vm.defaultWorkTimeText}} </div>
+            </div>
+        </div>
+    </div>
+</div>

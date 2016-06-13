@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row tab-line">
+        <div class="col-xs-12 labelWrapper day-select">
+            <input type="checkbox" class="custom-checkbox-green-type01" ng-model="options.force">
+            <label>Force operation</label>
+        </div>
+    </div>
+    <div class="row tab-line">
+        <div class="col-xs-12 day-select">
+            <input type="checkbox" class="custom-checkbox-green-type01" ng-model="options.logoff">
+            <label>Logoff before power saving operation</label>
+        </div>
+    </div>
+    <div class="row tab-line">
+        <div class="col-xs-12 day-select">
+            <input type="checkbox" class="custom-checkbox-green-type01" ng-model="options.messageChecked" ng-change="updateMessage()">
+            <label>Display a message to the user</label>
+            <button ng-disabled="!options.messageChecked" ng-click="specifyMessageDialog()" class="tab-button">Specify</button>
+        </div>
+    </div>
+</div>
